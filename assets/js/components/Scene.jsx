@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../theme-context';
+import Navigation from './Navigation';
 
 class Scene extends Component {
   static contextType = ThemeContext
@@ -9,10 +10,12 @@ class Scene extends Component {
   }
 
   render() {
+    const { theme } = this.props.location.state
     return (
-      <div>
-        Scene
-      </div>
+      <React.Fragment>
+       <Navigation />
+       <h1 className="title-scene">{theme.name.replace(' ', '</br>')}</h1>
+     </React.Fragment>
     );
   }
 }

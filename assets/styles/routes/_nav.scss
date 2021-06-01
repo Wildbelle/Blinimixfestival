@@ -1,0 +1,38 @@
+.nav-1, .nav-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .border {
+    border: 2px solid #262C7E;
+    padding: 5px;
+    width: 82px;
+    height: 95px;
+  }
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      text-align: right;
+      h5{
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .icon {
+      margin-right: auto;
+    }
+  }
+}
+.nav-1 {
+  margin-bottom: 30px;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  background: black;
+}
