@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'GillSans';
+    src: url("../fonts/OpenSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'GillSansBold';
+    src: url("../fonts/OpenSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'AbrilFatface';
+    src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype");
+}
+
+@for $i from 1 through 6 {
+
+    h#{$i},
+    .h#{$i} {
+        color: #{$dark};
+        font-family: 'AbrilFatface' !important;
+    }
+}
+
+// Titles
+h1,
+h2,
+.h1,
+.h2 {
+    font-size: 160px;
+}
+
+h3,
+h4,
+.h3,
+.h4 {
+    font-size: 60px;
+}
+
+h5,
+h6,
+.h5,
+.h6 {
+    font-size: 40px;
+}
+
+// Texts
+p,
+a,
+li,
+span,
+button,
+label,
+select {
+    color: #{$dark};
+    font-size: 14px;
+}
+
+p,
+li,
+span,
+label,
+select {
+    font-family: 'GillSans', Helvetica, Arial, sans-serif;
+}
+
+a,
+button {
+    font-family: 'GillSansBold', Helvetica, Arial, sans-serif;
+}

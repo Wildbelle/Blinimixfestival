@@ -1,0 +1,12 @@
+// Color system
+$dark: #262C7E;
+$white: #FFF;
+
+// Variables
+$border: 2px solid $dark;
+$padding-card: 20px;
+
+%card-design {
+    border: #{$border};
+    padding: #{$padding-card};
+}

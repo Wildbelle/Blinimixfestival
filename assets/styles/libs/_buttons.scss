@@ -1,0 +1,25 @@
+.btn {
+    color: #{$dark};
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: #{$border};
+    border-radius: none;
+    text-decoration: none;
+    padding: 0.375rem 0.75rem;
+    transition: color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+// Btn cards
+.block-btn {
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+}
