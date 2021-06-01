@@ -1,5 +1,12 @@
-body {
-  background-color: lightgray;
+* {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0FBQ0osQyIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmF5O1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==*/
+.illus-map {
+  width: "174px";
+  height: "174px";
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0VBQ0E7RUFDQTtBQUNKOztBQUlBO0VBQ0k7RUFDQTtBQURKLEMiLCJmaWxlIjoiYXBwLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIioge1xuICAgIG1hcmdpbjogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG59XG5cbiR3aWR0aElsbHVzOiAxNzQ7XG5cbi5pbGx1cy1tYXAge1xuICAgIHdpZHRoOiAkd2lkdGhJbGx1cyArICdweCc7XG4gICAgaGVpZ2h0OiAkd2lkdGhJbGx1cyArICdweCc7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogOTkycHgpIHtcbiAgICAkd2lkdGhJbGx1czogMTgwO1xufSJdLCJzb3VyY2VSb290IjoiIn0=*/

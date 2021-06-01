@@ -3,7 +3,7 @@
     "app": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-c573ca.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-299bb2.js",
         "/build/app.js"
       ],
       "css": [

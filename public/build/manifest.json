@@ -1,6 +1,15 @@
 {
+  "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/app.css": "/build/app.css",
-  "build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-c573ca.js": "/build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-c573ca.js"
+  "build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-b88871.js": "/build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-b88871.js",
+  "build/vendors-node_modules_react-dom_index_js.js": "/build/vendors-node_modules_react-dom_index_js.js",
+  "build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-5c2c9b.js": "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-5c2c9b.js",
+  "build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-3763f3.js": "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-3763f3.js",
+  "build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-da34e9.js": "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-da34e9.js",
+  "build/assets_js_routes_LoadingPage_jsx.js": "/build/assets_js_routes_LoadingPage_jsx.js",
+  "build/assets_js_routes_Home_jsx.js": "/build/assets_js_routes_Home_jsx.js",
+  "build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-99014e.js": "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-99014e.js",
+  "build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-b6a285.js": "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-b6a285.js",
+  "build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-299bb2.js": "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-299bb2.js"
 }
