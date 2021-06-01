@@ -5,3 +5,12 @@ index:
 map:
    path: /map
    controller: App\Controller\SiteController::index
+food:
+   path: /food
+   controller: App\Controller\SiteController::index
+game:
+   path: /game
+   controller: App\Controller\SiteController::index
+scenes:
+   path: /scene/{id}
+   controller: App\Controller\SiteController::index
