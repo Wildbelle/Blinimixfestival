@@ -14,9 +14,7 @@ class Scene extends Component {
     return (
       <React.Fragment>
        <Navigation />
-       <div className="container">
-       <h1 className="title-scene">{theme.title}</h1>
-       </div>
+       <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
      </React.Fragment>
     );
   }
