@@ -14,7 +14,9 @@ class Scene extends Component {
     return (
       <React.Fragment>
        <Navigation />
-       <h1 className="title-scene">{theme.name.replace(' ', '</br>')}</h1>
+       <div className="container">
+       <h1 className="title-scene">{theme.title}</h1>
+       </div>
      </React.Fragment>
     );
   }

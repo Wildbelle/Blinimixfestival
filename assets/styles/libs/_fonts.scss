@@ -19,6 +19,7 @@
     .h#{$i} {
         color: #{$dark};
         font-family: 'AbrilFatface' !important;
+        margin: 0;
     }
 }
 
@@ -28,20 +29,25 @@ h2,
 .h1,
 .h2 {
     font-size: 160px;
+    line-height: 158px;
 }
 
 h3,
-h4,
-.h3,
-.h4 {
+.h3 {
     font-size: 60px;
+    line-height: 58px;
 }
 
 h5,
-h6,
-.h5,
-.h6 {
+.h5 {
     font-size: 40px;
+    line-height: 38px;
+}
+
+h6,
+.h6 {
+    font-size: 20px;
+    line-height: 18px;
 }
 
 // Texts

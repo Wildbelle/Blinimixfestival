@@ -8,7 +8,7 @@ export const themes = {
   pink: {
     name: "pink",
     color: "#FFBCD7",
-    title: "La str'eat food",
+    title: "La {'\n'} str'eat {'\n'} food",
     url: "/food"
   },
   blue : {
