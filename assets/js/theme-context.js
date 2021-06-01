@@ -6,19 +6,34 @@ export const themes = {
     color: "#96F2DC"
   },
   pink: {
-    color: "#FFBCD7"
+    name: "pink",
+    color: "#FFBCD7",
+    title: "La str'eat food",
+    url: "/food"
   },
   blue : {
-    color: "#CEF2FF"
+    name: "blue",
+    color: "#CEF2FF",
+    title: "Le blini game",
+    url: "/game"
   },
   red: {
-    color: "#FF8080"
+    name: "red",
+    color: "#FF8080",
+    title: "La remix room",
+    url: "/scene/1"
   },
   yellow: {
-    color: "#FFF3B1"
+    name: "yellow",
+    color: "#FFF3B1",
+    title: "La urban room",
+    url: "/scene/2"
   },
   green: {
-    color: "#D8FACC"
+    name: "green",
+    color: "#D8FACC",
+    title: "La chill room",
+    url: "/scene/3"
   }
 }
 

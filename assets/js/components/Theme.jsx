@@ -3,6 +3,7 @@ import LoadingPage from '../routes/LoadingPage'
 import InteractiveMap from '../routes/InteractiveMap'
 import { ThemeContext } from '../theme-context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Scene from './Scene';
 
 
 class Theme extends Component {
@@ -18,6 +19,7 @@ class Theme extends Component {
           <Router>
             <Route exact path="/" component={LoadingPage} />
             <Route exact path="/map" component={InteractiveMap} />
+            <Route path={['/food', '/game', '/scene']} component={Scene} />
           </Router>
         </div>
       </React.Fragment>

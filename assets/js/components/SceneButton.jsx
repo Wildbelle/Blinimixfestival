@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom';
 
 class SceneButton extends Component {
   static propTypes = {
-    color: PropTypes.string.isRequired,
-  }
-
-  componentDidMount() {
-    console.log(this.props.color);
+    theme: PropTypes.object.isRequired,
   }
 
   render() {
-    const { color } = this.props
+    const {theme } = this.props
     return (
-      <div
+      <NavLink
         className="illus-map"
-        style={{backgroundColor: color}}
+        style={{backgroundColor: theme.color}}
+        to={{
+          pathname: theme.url,
+          state: {
+            theme: theme
+          }
+        }}
       >
-      </div>
+      </NavLink>
     );
   }
 }

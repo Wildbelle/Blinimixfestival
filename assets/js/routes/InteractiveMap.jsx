@@ -31,8 +31,7 @@ class InteractiveMap extends Component {
                   return (
                     <SceneButton
                       key={index}
-                      color={Object.values(themes)[index].color}
-                      url={Object.values(themes)[index].url}
+                      theme={Object.values(themes)[index]}
                     />
                   )
                 }
@@ -44,8 +43,7 @@ class InteractiveMap extends Component {
                   return (
                     <SceneButton
                       key={index}
-                      color={Object.values(themes)[index].color}
-                      url={Object.values(themes)[index].url}
+                      theme={Object.values(themes)[index]}
                     />
                   )
                 }
