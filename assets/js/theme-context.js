@@ -1,11 +1,15 @@
 import React from 'react'
 
 export const themes = {
-  blue : {
-    color: "#CEF2FF"
+
+  aqua: {
+    color: "#96F2DC"
   },
   pink: {
     color: "#FFBCD7"
+  },
+  blue : {
+    color: "#CEF2FF"
   },
   red: {
     color: "#FF8080"
@@ -15,9 +19,6 @@ export const themes = {
   },
   green: {
     color: "#D8FACC"
-  },
-  aqua: {
-    color: "#96F2DC"
   }
 }
 

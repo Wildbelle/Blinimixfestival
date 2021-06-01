@@ -2,6 +2,6 @@ index:
    path: /
    controller: App\Controller\SiteController::index
 
-home:
-   path: /home
+map:
+   path: /map
    controller: App\Controller\SiteController::index

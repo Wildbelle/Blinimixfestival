@@ -5,19 +5,14 @@
 @import 'libs/buttons';
 @import 'libs/grids';
 
-* {
+html, body, #root, .main {
     margin: 0;
     width: 100%;
     height: 100%;
 }
 
-$widthIllus: 174;
-
-.illus-map {
-    width: $widthIllus + 'px';
-    height: $widthIllus + 'px';
+.main {
+    position: relative;
 }
 
-@media only screen and (min-width: 992px) {
-    $widthIllus: 180;
-}
+@import './routes/map';

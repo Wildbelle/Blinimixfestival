@@ -1,0 +1,36 @@
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: blue;
+  color: white;
+  padding: 15px;
+}
+
+.page-interactive-map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bloc-interactive-map {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    .illus-map {
+      width: 174px;
+      height: 174px;
+      border-radius: 100%;
+      margin: 16px;
+    }
+  }
+}
