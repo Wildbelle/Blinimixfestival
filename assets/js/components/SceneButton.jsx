@@ -8,7 +8,7 @@ class SceneButton extends Component {
   }
 
   render() {
-    const {theme } = this.props
+    const { theme } = this.props
     return (
       <NavLink
         className="illus-map"
