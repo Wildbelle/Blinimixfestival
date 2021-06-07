@@ -15,7 +15,7 @@ class InteractiveMap extends Component {
   }
 
   componentDidMount() {
-    this.context.changeTheme('aqua')
+    this.context.changeTheme('white')
   }
   
   render() {

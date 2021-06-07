@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../theme-context';
+import Game from './Game';
 import Navigation from './Navigation';
 
 class Scene extends Component {
@@ -9,12 +10,12 @@ class Scene extends Component {
     super(props)
   
     this.state = {
-       navVisible: true
+       navVisible: true,
+       gameModalOpen: false
     }
   }
 
-  componentDidUpdate() {
-    console.log('mount scene')
+  setupTheme = () => {
     const {
       props: {
         location: {
@@ -27,7 +28,8 @@ class Scene extends Component {
         }
       },
       state: {
-        navVisible
+        navVisible,
+        gameModalOpen
       }
     } = this
     
@@ -38,7 +40,13 @@ class Scene extends Component {
         navVisible && this.setState({navVisible: false})
         break;
       case "/game":
-        navVisible && this.setState({navVisible: false})
+        if (navVisible) {
+          this.setState({navVisible: false, gameModalOpen: true})
+        }
+        if (!gameModalOpen) {
+          this.setState({gameModalOpen: true})
+        }
+         
         break;
       case "/scene/1":
         !navVisible && this.setState({navVisible: true})
@@ -55,6 +63,14 @@ class Scene extends Component {
     }
   }
 
+  componentDidMount() {
+    this.setupTheme()
+  }
+
+  componentDidUpdate() {
+    this.setupTheme()
+  }
+
   render() {
     const {
       props: {
@@ -65,13 +81,20 @@ class Scene extends Component {
         }
       },
       state: {
-        navVisible
+        navVisible,
+        gameModalOpen
       }
     } = this
     return (
       <React.Fragment>
-       <Navigation navVisible={navVisible} />
-       <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
+        <Navigation navVisible={navVisible} />
+
+        {gameModalOpen
+          ? <Game />
+          : null
+        }
+
+         <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
      </React.Fragment>
     );
   }

@@ -2,8 +2,8 @@ import React from 'react'
 
 export const themes = {
 
-  aqua: {
-    color: "#96F2DC"
+  white: {
+    color: "#FFFFFF"
   },
   pink: {
     name: "pink",

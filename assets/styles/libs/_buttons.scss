@@ -20,6 +20,6 @@
 // Btn cards
 .block-btn {
     display: flex;
-    align-items: start;
-    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }

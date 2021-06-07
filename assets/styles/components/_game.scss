@@ -1,0 +1,61 @@
+%flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-play-game {
+  @extend %card-design;
+  background: #{$blue};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(355px - #{$padding-card});
+  text-align: center;
+
+  .header-modal {
+    @extend %flex-box;
+  
+    div {
+      @extend %flex-box;
+      border: #{$border};
+      width: 74px;
+      flex-direction: column;
+    }
+  }
+
+  .block-btn {
+
+    button {
+      @extend %card-design;
+      background: transparent;
+    }
+  }
+}
+
+[class*="modal-question"] {
+  @extend %card-design;
+  background: #{$blue};
+  position: absolute;
+  top: 51%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  width: calc(355px - #{$padding-card});
+
+  .header-modal {
+    @extend %flex-box;
+  }
+
+  .grid-answer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+
+    .btn-answer {
+      @extend %card-design;
+      background: #{$blue};
+    }
+  }
+}
