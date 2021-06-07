@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ThemeContext } from '../theme-context';
 import Game from './Game';
 import Navigation from './Navigation';
+import Recepies from './Recepies';
 
 class Scene extends Component {
   static contextType = ThemeContext
@@ -11,7 +12,8 @@ class Scene extends Component {
   
     this.state = {
        navVisible: true,
-       gameModalOpen: false
+       gameModalOpen: false,
+       recepiesModalOpen: false
     }
   }
 
@@ -29,7 +31,8 @@ class Scene extends Component {
       },
       state: {
         navVisible,
-        gameModalOpen
+        gameModalOpen,
+        recepiesModalOpen
       }
     } = this
     
@@ -37,7 +40,12 @@ class Scene extends Component {
 
     switch (pathname) {
       case "/food":
-        navVisible && this.setState({navVisible: false})
+        if (navVisible) {
+          this.setState({navVisible: false, recepiesModalOpen: true})
+        }
+        if (!recepiesModalOpen) {
+          this.setState({recepiesModalOpen: true})
+        }
         break;
       case "/game":
         if (navVisible) {
@@ -46,7 +54,6 @@ class Scene extends Component {
         if (!gameModalOpen) {
           this.setState({gameModalOpen: true})
         }
-         
         break;
       case "/scene/1":
         !navVisible && this.setState({navVisible: true})
@@ -82,7 +89,8 @@ class Scene extends Component {
       },
       state: {
         navVisible,
-        gameModalOpen
+        gameModalOpen,
+        recepiesModalOpen,
       }
     } = this
     return (
@@ -91,6 +99,10 @@ class Scene extends Component {
 
         {gameModalOpen
           ? <Game />
+          : null
+        }
+        {recepiesModalOpen
+          ? <Recepies />
           : null
         }
 

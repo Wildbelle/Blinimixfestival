@@ -1,0 +1,25 @@
+[class*="modal-recepie"] {
+  border: #{$border};
+  background: #{$pink};
+  position: absolute;
+  top: 51%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  width: 355px;
+
+  
+  .btn-close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+  }
+  
+  .grid-recepie {
+    display: grid;
+    grid-template-rows: 1fr .75fr;
+    
+    img {
+      width: 100%;
+    }
+  }
+}
