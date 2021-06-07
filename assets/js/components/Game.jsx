@@ -57,7 +57,6 @@ class AllQuestions extends React.Component {
   }
 
   addResponse = (response) => {
-    console.log('response', response)
     const newAllResponses = this.state.allResponses
     newAllResponses.push(response)
     this.setState({allResponses: newAllResponses})
