@@ -1,8 +1,8 @@
-$extraSmall: 760px;
-$small: 990px;
-$medium: 1200px;
-$large: 1400px;
-$extraLarge: 1600px;
+$extraSmall: 576px;
+$small: 768px;
+$medium: 992px;
+$large: 1200px;
+$extraLarge: 1400px;
 
 $extraSmall-up: "only screen and (min-width: #{$extraSmall})";
 $extraSmall-down: "only screen and (max-width: #{$extraSmall})";

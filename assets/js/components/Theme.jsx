@@ -17,9 +17,11 @@ class Theme extends Component {
           style={{backgroundColor: this.context.theme.color}}
         >
           <Router>
+            <div className="container">
             <Route exact path="/" component={LoadingPage} />
             <Route exact path="/map" component={InteractiveMap} />
             <Route path={['/food', '/game', '/scene']} component={Scene} />
+            </div>
           </Router>
         </div>
       </React.Fragment>
