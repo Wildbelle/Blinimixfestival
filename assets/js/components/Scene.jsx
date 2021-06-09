@@ -85,7 +85,7 @@ export default class Scene extends Component {
             sceneVideo:true
           })
         }
-        if(sceneVideo) {
+        if(!sceneVideo) {
           this.setState({
             gameModalOpen: false,
             recepiesModalOpen: false,
@@ -102,7 +102,7 @@ export default class Scene extends Component {
             sceneVideo:true
           })
         }
-        if(sceneVideo) {
+        if(!sceneVideo) {
           this.setState({
             gameModalOpen: false,
             recepiesModalOpen: false,
@@ -119,7 +119,7 @@ export default class Scene extends Component {
             sceneVideo:true
           })
         }
-        if(sceneVideo) {
+        if(!sceneVideo) {
           this.setState({
             gameModalOpen: false,
             recepiesModalOpen: false,
