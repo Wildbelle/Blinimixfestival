@@ -19,7 +19,13 @@ body,
 }
 
 .navbrand {
-    width: 20%;
+    height: 60px;
+}
+
+@media #{$medium-up} {
+    .navbrand {
+        width: 20%;
+    }
 }
 
 @import './routes/map';

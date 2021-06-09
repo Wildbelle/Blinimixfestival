@@ -3,8 +3,15 @@
     height: 100%;
     margin-right: auto;
     margin-left: auto;
-    grid-column: $grid-columns;
-    column-gap: $grid-gutter-width;
+    // grid-column: $grid-columns;
+    // column-gap: $grid-gutter-width;
+}
+
+@media (max-width: 576px) {
+
+    .container {
+        max-width: 85%;
+    }
 }
 
 @media (min-width: 576px) {
