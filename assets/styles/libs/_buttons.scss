@@ -21,16 +21,27 @@
         border: none;
         padding: 0;
         top: 2%;
-        right: 4%;
+        right: 2%;
+
+        &:hover {
+            color: white;
+            background: transparent;
+        }
     }
 
     &:hover {
-        color: #{$pink};
+        color: white;
         background: #{$dark};
     }
 
+
     &.btn-icon {
         border: none;
+
+        &:hover {
+            color: white;
+            background: transparent;
+        }
     }
 }
 
@@ -40,9 +51,10 @@
     align-items: center;
     justify-content: flex-end;
 
-    .btn-action {
-        text-transform: uppercase;
-        display: inline-block;
-        padding: 0.6rem 1.4rem;
-    }
+}
+
+.btn-action {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
 }

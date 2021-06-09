@@ -54,7 +54,7 @@ class MobileCard extends React.Component {
     const btnClose = document.querySelector(`.btn-close-${index}`)
     modal.style.top = `${51 - index}%`
     modal.style.left = `${51 - index}%`
-    modal.style.zIndex = 10 - (index * 2)
+    modal.style.zIndex = 20 - (index * 2)
     btnClose.style.zIndex = 9 - (index * 2)
   }
 
@@ -184,8 +184,8 @@ class DesktopCard extends React.Component {
         {visible &&
           <div className={"modal-recepie-" + (index)}>
             <button className={"btn btn-close-" + (index)} onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
-            {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => this.prevStep()}>Précédent</button>}
-            {stepIndex !== 2 && <button className="btn btn-next" onClick={() => this.nextStep()}>Suivant</button>}
+            {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => this.prevStep()}>⟵</button>}
+            {stepIndex !== 2 && <button className="btn btn-next" onClick={() => this.nextStep()}>⟶</button>}
             <div className={"recepie-container-slider-" + (index)}>
               <div className="item-slider grid-recepie">
                 <div className="block-img-recepie">

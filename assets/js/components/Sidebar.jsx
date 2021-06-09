@@ -14,13 +14,13 @@ class Sidebar extends Component {
             <div className="sidebar">
                 <div className="social-share">
                     <button className="btn btn-icon">
-                        <FontAwesomeIcon icon={faFacebook}/>
+                        <FontAwesomeIcon className="icon" icon={faFacebook}/>
                     </button>
                     <button className="btn btn-icon">
-                        <FontAwesomeIcon icon={faTwitter}/>
+                        <FontAwesomeIcon className="icon" icon={faTwitter}/>
                     </button>
                     <button className="btn btn-icon">
-                        <FontAwesomeIcon icon={faWhatsapp}/>
+                        <FontAwesomeIcon className="icon" icon={faWhatsapp}/>
                     </button>
                 </div>
                 <div className="social-network">

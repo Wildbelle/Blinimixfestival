@@ -1,4 +1,5 @@
 $padd: '23px';
+
 [class*="recepie-container-slider"] {
   height: 100%;
   display: flex;
@@ -8,6 +9,7 @@ $padd: '23px';
 .item-slider {
   height: 100%;
   display: block;
+
   &.item-slider-ingredients {
     display: flex;
     flex-direction: column;
@@ -19,17 +21,25 @@ $padd: '23px';
     justify-content: space-around;
     margin: #{$padd};
   }
+
   .flex-ingredients {
-    margin: auto #{$padd};
+    margin: 0 #{$padd};
     display: flex;
     justify-content: center;
     text-align: center;
+
+    .title-list-ingredient {
+      line-height: 45px;
+    }
+
     hr {
+      width: 20%;
       color: #{$dark};
       background: #{$dark};
       border-color: #{$dark};
       margin-bottom: 15px;
     }
+
     ul {
       list-style: none;
       padding-inline-start: 0;

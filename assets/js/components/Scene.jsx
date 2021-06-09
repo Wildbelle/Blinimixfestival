@@ -4,6 +4,7 @@ import Game from './Game';
 import Navigation from './Navigation';
 import Recepies from './Recepies';
 import Video from './Video';
+import Sidebar from './Sidebar';
 
 export default class Scene extends Component {
   static contextType = ThemeContext
@@ -159,6 +160,8 @@ export default class Scene extends Component {
     } = this
     return (
       <React.Fragment>
+        <Sidebar />
+        <div className="container">
         <Navigation navVisible={navVisible} />
 
         {gameModalOpen
@@ -175,6 +178,7 @@ export default class Scene extends Component {
           : null
         }
         <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
+        </div>
      </React.Fragment>
     );
   }

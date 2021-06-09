@@ -4,7 +4,6 @@ import InteractiveMap from '../routes/InteractiveMap'
 import { ThemeContext } from '../theme-context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Scene from './Scene';
-import Sidebar from './Sidebar';
 
 
 class Theme extends Component {
@@ -18,12 +17,9 @@ class Theme extends Component {
           style={{backgroundColor: this.context.theme.color}}
         >
           <Router>
-            <Sidebar />
-            <div className="container">
             <Route exact path="/" component={LoadingPage} />
             <Route exact path="/map" component={InteractiveMap} />
             <Route path={['/food', '/game', '/scene']} component={Scene} />
-            </div>
           </Router>
         </div>
       </React.Fragment>

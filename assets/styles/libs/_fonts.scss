@@ -5,6 +5,11 @@
 
 @font-face {
     font-family: 'GillSansBold';
+    src: url("../fonts/GillSansStd-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'GillSansBoldC';
     src: url("../fonts/GillSansStd-BoldCondensed.otf") format("opentype");
 }
 
@@ -62,6 +67,7 @@ label,
 select {
     color: #{$dark};
     font-size: 14px;
+    line-height: 14px;
 }
 
 p,
@@ -79,6 +85,7 @@ button {
 }
 
 @media #{$medium-up} {
+
     h1,
     h2,
     .h1,

@@ -41,7 +41,7 @@ export const themes = {
 
 export const recepies = [
   {
-    name: "Nachos au guacamole, haricots, tomate et cheddar",
+    name: "Nachos au guacamole, haricots, tomate & cheddar",
     persons: 2,
     timePrepa: 25,
     timeCooking: 15,
@@ -71,18 +71,21 @@ export const recepies = [
           "100 g de chips tortillas",
           "50 g de haricots rouges cuits",
           "50 g de maïs",
-          "Sauce cheddar (50 g de cheddar + 5 cl de lait + 3 cl de crème liquide)",
           "1 tomate bien mûre",
           "1 piment jalapeno",
           "1 citron vert coupé en quartiers",
           "5 brins de coriandre frais",
           "Poivre et sel et tabasco au goût",
+          "Pour la Sauce Cheddar :",
+          "50 g de cheddar",
+          "5 cl de lait",
+          "3 cl de crème liquide",
         ]
       }
     ]
   },
   {
-    name: "Sandwich pita d'aubergines, épinards, houmous et harissa",
+    name: "Sandwich pita d'aubergines, épinards, houmous & harissa",
     persons: 4,
     timePrepa: 15,
     timeCooking: 20,
@@ -113,24 +116,16 @@ export const recepies = [
         title: "Ingrédients",
         ingredients: [
           "1 pot de houmous Blini",
+          "100 g de tomates marinées",
           "4 pains pita",
           "1 mini concombre",
-          "100 g de tomates marinées",
           "Harissa au goût",
-        ]
-      },
-      {
-        title: "Pour l'aubergine",
-        ingredients: [
-          "1 grosse aubergine tranchée finement sur la largeur",
+          "Pour l'aubergine :",
+          "1 aubergine tranchée finement sur la largeur",
           "3 cuil. à soupe d'huile d'olive",
           "Sel et poivre noir au goût",
           "1/2 cuil. à café de graines de cumin",
-        ]
-      },
-      {
-        title: "pour les épinards",
-        ingredients: [
+          "Pour les épinards :",
           "1 cuil. à soupe d'huile d'olive",
           "2 gousses d'ail émincées",
           "3 poignées de pousses d’épinards",
@@ -168,12 +163,12 @@ export const recepies = [
         title: "Ingrédients",
         ingredients: [
           "8 grandes tranches de saumon fumé Delpierre",
-          "1 pot de tarama Blini",
+          "2 poignées de feuilles de salade de saison",
           "8 tranches de pain complet aux graines",
+          "1 pot de tarama Blini",
+          "4 radis ",
           "2 avocats",
           "1 citron vert",
-          "2 poignées de feuilles de salade de saison",
-          "4 radis ",
           "Poivre noir au goût",
         ]
       }
@@ -218,27 +213,27 @@ export const recepies = [
       {
         title: "Ingrédients",
         ingredients: [
-          "650 g de filets de cabillaud Delpierre coupés en morceaux",
           "1 pot de tzatziki Blini",
+          "1 cuil. à café de piment d’espelette ou piment moulu",
+          "650 g de filets de cabillaud Delpierre coupés en morceaux",
           "6 pommes de terre moyennes, coupées en 8 quartiers chacune ",
+          "1/2 cuil. à café de poivre noir moulu",
+          "1/2 cuil. à café de levure chimique",
+          "1/2 cuil. à café de poudre d’oignon ",
           "125 g de farine tout usage + 75 g ",
           "2 cuil. à soupe de fécule de maïs",
-          "1/2 cuil. à café de levure chimique",
-          "1/2 cuil. à café de sel",
-          "1/2 cuil. à café de poivre noir moulu",
-          "1/2 cuil. à café de poudre d’oignon ",
-          "1 cuil. à café de piment d’espelette ou piment moulu",
-          "25 cl de bière blonde",
-          "1 oeuf légèrement battu",
           "Huile végétale pour la friture",
-          "1 citron vert",
+          "25 cl de bière blonde",
+          "1/2 cuil. à café de sel",
+          "1 oeuf légèrement battu",
           "4 brins de persil",
+          "1 citron vert",
         ]
       }
     ]
   },
   {
-    name: "Rillettes de chorizo, poivrons piquillos et citron vert servies avec des Blinis",
+    name: "Rillettes de chorizo, poivrons piquillos & citron vert servies avec des Blinis",
     persons: 6,
     timePrepa: 15,
     timeCooking: 0,

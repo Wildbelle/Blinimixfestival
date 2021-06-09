@@ -16,27 +16,37 @@
   .grid-recepie {
     display: grid;
     grid-template-columns: 1.25fr .75fr;
-    
+
     .block-img-recepie {
       position: relative;
     }
+
     img {
       width: 100%;
     }
   }
 
-
+  .btn-next,
   .btn-prev {
     z-index: 9;
     position: absolute;
-    left: 23px;
     bottom: 23px;
+    border: none;
+    font-size: 24px;
+    padding: 0;
+
+    &:hover {
+      color: white;
+      background: transparent;
+    }
   }
+
+  .btn-prev {
+    left: 2%;
+  }
+
   .btn-next {
-    z-index: 9;
-    position: absolute;
-    right: 23px;
-    bottom: 23px;
+    right: 2%;
   }
 }
 
@@ -47,9 +57,12 @@
 
     .grid-recepie {
       height: 100%;
+
       .block-img-recepie {
         height: 100%;
+        border-right: #{$border};
         position: relative;
+
         img {
           height: 100%;
         }
