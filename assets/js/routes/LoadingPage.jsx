@@ -5,9 +5,9 @@ import logo from '../../img/LogoBliniMix.png'
 class LoadingPage extends Component {
 
   componentDidMount() {
-      // setTimeout(() => {
-      //   this.props.history.push('/map')
-      // }, 3000)
+      setTimeout(() => {
+        this.props.history.push('/map')
+      }, 3000)
   }
 
   render() {
