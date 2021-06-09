@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
 class Recepie extends Component {
   constructor(props) {
     super(props)
@@ -37,7 +40,7 @@ class Recepie extends Component {
     return (
       <React.Fragment>
         {visible && <div className={"modal-recepie-" + (index)}>
-          <button className="btn-close" onClick={() => hide()}>X</button>
+          <button className="btn btn-close" onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
           <div className="grid-recepie">
             <div>
               <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />

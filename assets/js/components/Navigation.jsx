@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
 import { faUtensils } from '@fortawesome/free-solid-svg-icons'
 
+import logo from '../../img/LogoBliniMix.png'
+
 class Navigation extends Component {
   
   render() {
@@ -15,7 +17,7 @@ class Navigation extends Component {
     return (
       <React.Fragment>
         <div className="nav-1">
-          <div className="logo-2 border">Logo</div>
+          <img className="navbrand" src={logo} alt="logo"/>
           <div className="menu border">---</div>
         </div>
         {navVisible &&

@@ -34,8 +34,7 @@ export default class Game extends Component {
                 </div>
 
                 <div className="block-btn">
-                  <button onClick={() => this.setState({start: true})}>JOUER</button>
-                  <button>PARTAGER</button>
+                  <button className="btn btn-action" onClick={() => this.setState({start: true})}>jouer</button>
                 </div>
               </div>
         }

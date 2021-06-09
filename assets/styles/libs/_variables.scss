@@ -7,8 +7,15 @@ $pink: #FFBCD7;
 // Variables
 $border: 2px solid $dark;
 $padding-card: 20px;
+$zindex-card: 20;
 
 %card-design {
     border: #{$border};
     padding: #{$padding-card};
+    z-index: #{$zindex-card};
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
 }
+
+$grid-columns: 12;
+$grid-gutter-width: 16px;

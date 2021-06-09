@@ -2,6 +2,8 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    grid-column: $grid-columns;
+    column-gap: $grid-gutter-width;
 }
 
 @media (min-width: 576px) {

@@ -53,7 +53,7 @@ class Question extends Component {
         {visible && <div className={"modal-question-" + (index)}>
           <div className="header-modal">
             <h6>{index + 1}.</h6>
-            <button onClick={() => reply(null)}>X</button>
+            <button className="btn btn-close" onClick={() => reply(null)}><FontAwesomeIcon icon={faTimes}/></button>
           </div>
           <p>Combien y t-il d'artistes présent à cette première édition ?</p>
           <div className="grid-answer">

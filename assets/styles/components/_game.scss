@@ -16,20 +16,12 @@
 
   .header-modal {
     @extend %flex-box;
-  
+
     div {
       @extend %flex-box;
       border: #{$border};
       width: 74px;
       flex-direction: column;
-    }
-  }
-
-  .block-btn {
-
-    button {
-      @extend %card-design;
-      background: transparent;
     }
   }
 }

@@ -18,6 +18,10 @@ body,
     position: relative;
 }
 
+.navbrand {
+    width: 20%;
+}
+
 @import './routes/map';
 @import './routes/nav';
 
