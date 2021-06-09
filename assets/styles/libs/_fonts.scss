@@ -75,7 +75,7 @@ button {
     font-family: 'GillSansBold', Helvetica, Arial, sans-serif;
 }
 
-@media #{medium-up} {
+@media #{$medium-up} {
     h1,
     h2,
     .h1,

@@ -52,7 +52,6 @@
   }
 }
 
-
 @media (min-width: #{$small}) and (orientation: landscape) {
   .page-interactive-map {
     .bloc-interactive-map {
@@ -75,25 +74,6 @@
       .illus-map {
         width: 200px;
         height: 200px;
-      }
-    }
-  }
-}
-
-@media #{$medium-up} and (min-height: #{$medium}) {
-  .logo {
-    width: 175px;
-  }
-
-  .page-interactive-map {
-    .bloc-interactive-map {
-      flex-direction: column;
-      .item {
-        flex-direction: row;
-      }
-      .illus-map {
-        width: 250px;
-        height: 250px;
       }
     }
   }

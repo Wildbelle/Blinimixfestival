@@ -39,40 +39,15 @@
   margin-bottom: 30px;
 }
 
-@media #{medium-up} {
+@media #{$medium-up} {
   .nav-1,
-.nav-2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .nav-2 {
 
-  .border {
-    border: #{$border};
-    padding: 5px;
-    width: 82px;
-    height: 95px;
-  }
-
-  .card-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .title {
-      display: flex;
-      flex-direction: column;
-      margin-left: auto;
-      text-align: right;
-
-      h5 {
-        padding: 0;
-        margin: 0;
-      }
-    }
-
-    .icon {
-      margin-right: auto;
+    .border {
+      border: #{$border};
+      padding: 5px;
+      width: 62px;
+      height: 75px;
     }
   }
-}
 }
