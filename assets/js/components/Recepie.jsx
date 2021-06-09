@@ -107,6 +107,7 @@ class DesktopCard extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.recepie)
     if(this.state.visible) {
       const { index } = this.props
       const modal = document.querySelector(`.modal-recepie-${index}`)
@@ -196,8 +197,30 @@ class DesktopCard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="item-slider">
-                2
+              <div className="item-slider item-slider-ingredients">
+                <div className="flex-infos-time">
+                  <p className="item-infos-time">
+                    {recepie.persons} PERS.
+                  </p>
+                  <p className="item-infos-time">
+                    {recepie.timePrepa} MIN.
+                  </p>
+                  <p className="item-infos-time">
+                    {recepie.timeCooking > 0 && recepie.timeCooking + " MIN."}
+                  </p>
+                </div>
+                <div className="flex-ingredients">
+                  {recepie.ingredients.map((list, index) => (
+                    <div key={index} className="col-ingredients">
+                      <h6 className="title-list-ingredient">{list.title}</h6>
+                      <ul className="list-flex-ingredient">
+                        {list.ingredients.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="item-slider">
                 <div className="flex-steps">

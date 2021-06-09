@@ -1,3 +1,4 @@
+$padd: '23px';
 [class*="recepie-container-slider"] {
   height: 100%;
   display: flex;
@@ -7,9 +8,32 @@
 .item-slider {
   height: 100%;
   display: block;
+  &.item-slider-ingredients {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-infos-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: #{$padd};
+  }
+  .flex-ingredients {
+    margin: auto #{$padd};
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    ul {
+      list-style: none;
+      padding-inline-start: 0;
+      // text-align: center;
+    }
+  }
 
   .flex-steps {
-    padding: 23px;
+    padding: #{$padd};
     width: auto;
     display: flex;
     flex-flow: column wrap;
@@ -24,7 +48,7 @@
 .slide-step-recepie {
   .block-title {
     height: calc(100% - 36px);
-    padding: 23px;
+    padding: #{$padd};
     display: flex;
     align-items: center;
     justify-content: center;

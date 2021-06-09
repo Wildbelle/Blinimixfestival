@@ -42,7 +42,7 @@ export const themes = {
 export const recepies = [
   {
     name: "Nachos au guacamole, haricots, tomate et cheddar",
-    personnes: 2,
+    persons: 2,
     timePrepa: 25,
     timeCooking: 15,
     steps: [
@@ -83,7 +83,7 @@ export const recepies = [
   },
   {
     name: "Sandwich pita d'aubergines, épinards, houmous et harissa",
-    personnes: 4,
+    persons: 4,
     timePrepa: 15,
     timeCooking: 20,
     steps: [
@@ -142,7 +142,7 @@ export const recepies = [
   },
   {
     name: "Sandwich de tarama, saumon fumé, avocat",
-    personnes: 4,
+    persons: 4,
     timePrepa: 10,
     timeCooking: 0,
     steps: [
@@ -181,7 +181,7 @@ export const recepies = [
   },
   {
     name: "Spicy Fish & Chips avec du Tzatziki",
-    personnes: 4,
+    persons: 4,
     timePrepa: 45,
     timeCooking: 8,
     steps: [
@@ -239,7 +239,7 @@ export const recepies = [
   },
   {
     name: "Rillettes de chorizo, poivrons piquillos et citron vert servies avec des Blinis",
-    personnes: 6,
+    persons: 6,
     timePrepa: 15,
     timeCooking: 0,
     steps: [
