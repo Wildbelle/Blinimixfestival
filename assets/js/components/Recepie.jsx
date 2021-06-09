@@ -213,6 +213,7 @@ class DesktopCard extends React.Component {
                   {recepie.ingredients.map((list, index) => (
                     <div key={index} className="col-ingredients">
                       <h6 className="title-list-ingredient">{list.title}</h6>
+                      <hr/>
                       <ul className="list-flex-ingredient">
                         {list.ingredients.map((item, i) => (
                           <li key={i}>{item}</li>
