@@ -18,7 +18,11 @@ class Navigation extends Component {
       <React.Fragment>
         <div className="nav-1">
           <img className="navbrand" src={logo} alt="logo"/>
-          <div className="menu border">---</div>
+          <div className="menu border">
+            <div className="burger-box">
+              <div className="burger-bar"></div>
+            </div>
+          </div>
         </div>
         {navVisible &&
           <div className="nav-2">
