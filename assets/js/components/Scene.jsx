@@ -175,7 +175,7 @@ export default class Scene extends Component {
           : null
         }
 
-         <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
+        <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
      </React.Fragment>
     );
   }

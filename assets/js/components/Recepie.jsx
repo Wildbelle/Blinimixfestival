@@ -6,17 +6,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 export default class Recepie extends Component {
   constructor(props) {
     super(props)
-
-    this.hide = this.hide.bind(this)
   
     this.state = {
-       visible: true,
        mobile: false
     }
-  }
-
-  hide = () => {
-    this.setState({visible: false})
   }
 
   componentDidMount() {
@@ -30,15 +23,13 @@ export default class Recepie extends Component {
       state: {
         visible,
         mobile
-      },
-      hide
+      }
     } = this
     return (
       <React.Fragment>
-        {visible && 
-          mobile
-            ? <MobileCard {...props} hide={hide} />
-            : <DesktopCard {...props} hide={hide} />
+        {mobile
+          ? <MobileCard {...props} />
+          : <DesktopCard {...props} />
         }
       </React.Fragment>
     );
@@ -46,81 +37,185 @@ export default class Recepie extends Component {
 }
 
 class MobileCard extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.hide = this.hide.bind(this)
+  
+    this.state = {
+       visible: true
+    }
+  }
+  
 
   componentDidMount() {
-    console.log('props', this.props)
     const { index } = this.props
     const modal = document.querySelector(`.modal-recepie-${index}`)
+    const btnClose = document.querySelector(`.btn-close-${index}`)
     modal.style.top = `${51 - index}%`
     modal.style.left = `${51 - index}%`
-    modal.style.zIndex = 4 - index
+    modal.style.zIndex = 10 - (index * 2)
+    btnClose.style.zIndex = 9 - (index * 2)
+  }
+
+  hide() {
+    console.log('hide')
+    this.setState({visible: false})
   }
 
   render() {
     const {
       props: {
         index,
-        recepie,
-        hide
-      }
+        recepie
+      },
+      state: { visible },
+      hide
     } = this
 
     return (
-      <div className={"modal-recepie-" + (index)}>
-        <button className="btn btn-close" onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
-        <div className="grid-recepie">
-          <div>
-            <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
+      <React.Fragment>
+        {visible &&
+          <div className={"modal-recepie-" + (index)}>
+            <button className={"btn btn-close-" + (index)} onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
+            <div className="grid-recepie">
+              <div>
+                <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
+              </div>
+              <div></div>
+            </div>
           </div>
-          <div></div>
-        </div>
-      </div>
+        }
+      </React.Fragment>
     )
   }
 }
 
 class DesktopCard extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.hide = this.hide.bind(this)
+  
+    this.state = {
+      //  visible: this.props.index == 0 ? true : false,
+       visible: true,
+       modalWidth: 0,
+       stepIndex: 0,
+       sliderContainer: ""
+    }
+  }
 
   componentDidMount() {
-    const { index } = this.props
-    const modal = document.querySelector(`.modal-recepie-${index}`)
-    modal.style.top = `${51 - index}%`
-    modal.style.left = `${51 - index}%`
-    modal.style.zIndex = 4 - index
-    console.log(this.props.recepie)
+    if(this.state.visible) {
+      const { index } = this.props
+      const modal = document.querySelector(`.modal-recepie-${index}`)
+      const modalWidth = modal.getBoundingClientRect().width
+      const btnClose = document.querySelector(`.btn-close-${index}`)
+      const sliderContainer = document.querySelector(`.recepie-container-slider-${index}`)
+      const itemsContainer = sliderContainer.children
+      sliderContainer.style.width = (itemsContainer.length * modalWidth) + "px"
+      itemsContainer.forEach(item => {
+        item.style.width = modalWidth + "px"
+      })
+      
+      modal.style.top = `${51 - index}%`
+      modal.style.left = `${51 - index}%`
+      modal.style.zIndex = 10 - (index * 2)
+      btnClose.style.zIndex = 9 - (index * 2)
+      this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
+    }
+  }
+
+  hide() {
+    this.setState({visible: false})
+  }
+
+  nextStep = () => {
+    const { stepIndex, modalWidth, sliderContainer } = this.state
+    switch ( stepIndex) {
+      case 0:
+        sliderContainer.style.transform = `translateX(${((modalWidth * ( stepIndex + 1)) * -1)}px)`
+        this.setState({stepIndex: 1})
+        break;
+      case 1:
+        sliderContainer.style.transform = `translateX(${((modalWidth * ( stepIndex + 1)) * -1)}px)`
+        this.setState({stepIndex: 2})
+        break;
+    
+      default:
+        break;
+    }
+  }
+
+  prevStep = () => {
+    const { stepIndex, modalWidth, sliderContainer } = this.state
+    switch ( stepIndex) {
+      case 1:
+        sliderContainer.style.transform = `translateX(0px)`
+        this.setState({stepIndex: 0})
+        break;
+      case 2:
+        sliderContainer.style.transform = `translateX(${((modalWidth * ( stepIndex - 1)) * -1)}px)`
+        this.setState({stepIndex: 1})
+        break;
+    
+      default:
+        break;
+    }
   }
 
   render() {
     const {
       props: {
         index,
-        recepie,
-        hide
-      }
+        recepie
+      },
+      state: {
+        visible,
+        stepIndex
+      },
+      hide
     } = this
 
     return (
-      <div className={"modal-recepie-" + (index)}>
-        <button className="btn btn-close" onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
-        <div className="grid-recepie">
-          <div className="block-img-recepie">
-            <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
-          </div>
-          <div className="grid-step-recepie">
-            <h3>{recepie.name}</h3>
-            {recepie.steps.map(step => {
-              if (step.index < 4) {
-                return (
-                  <div className="step-recepie">
-                    <h5>{step.index}.</h5>
-                    <p>{step.text}</p>
+      <React.Fragment>
+        {visible &&
+          <div className={"modal-recepie-" + (index)}>
+            <button className={"btn btn-close-" + (index)} onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
+            {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => this.prevStep()}>Précédent</button>}
+            {stepIndex !== 2 && <button className="btn btn-next" onClick={() => this.nextStep()}>Suivant</button>}
+            <div className={"recepie-container-slider-" + (index)}>
+              <div className="item-slider grid-recepie">
+                <div className="block-img-recepie">
+                  <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
+                </div>
+                <div className="slide-step-recepie">
+                  <div className="block-title">
+                    <h4 className="title-recepie">{recepie.name}</h4>
                   </div>
-                )
-              }
-            })}
-          </div>
-        </div>
-      </div>
+                </div>
+              </div>
+              <div className="item-slider">
+                2
+              </div>
+              <div className="item-slider">
+                <div className="flex-steps">
+                  {recepie.steps.map(step => {
+                    return (
+                      <div key={step.index} className="step-recepie">
+                        <h6>{step.index}.</h6>
+                        <p>{step.text}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+
+            </div>
+        }
+      </React.Fragment>
     )
   }
 }

@@ -16,12 +16,18 @@
     -moz-appearance: none;
     appearance: none;
 
-    &.btn-close {
+    &[class*="btn-close"] {
         position: absolute;
         border: none;
         padding: 0;
         top: 2%;
         right: 4%;
+    }
+
+
+    &:hover {
+        color: #{$pink};
+        background: #{$dark};
     }
 }
 

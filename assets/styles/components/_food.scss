@@ -11,6 +11,7 @@
   left: 51%;
   transform: translate(-50%, -50%);
   width: 355px;
+  overflow: hidden;
 
   .grid-recepie {
     display: grid;
@@ -24,16 +25,18 @@
     }
   }
 
-  .grid-step-recepie {
-    padding: 23px;
-    position: relative;
 
-    .title-recepie {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-    }
+  .btn-prev {
+    z-index: 9;
+    position: absolute;
+    left: 23px;
+    bottom: 23px;
+  }
+  .btn-next {
+    z-index: 9;
+    position: absolute;
+    right: 23px;
+    bottom: 23px;
   }
 }
 
