@@ -24,10 +24,13 @@
         right: 4%;
     }
 
-
     &:hover {
         color: #{$pink};
         background: #{$dark};
+    }
+
+    &.btn-icon {
+        border: none;
     }
 }
 

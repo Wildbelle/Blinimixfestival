@@ -105,7 +105,24 @@
   margin-bottom: 30px;
 }
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 64px;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  right: 16px;
+
+  .social-share {
+    display: grid;
+    padding-bottom: 30vh;
+  }
+}
+
 @media #{$medium-up} {
+
   .nav-1,
   .nav-2 {
 
