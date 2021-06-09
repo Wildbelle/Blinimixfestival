@@ -6,7 +6,7 @@
 
   .block-loading {
     margin: auto;
-    width: 664px;
+    width: 342px;
     text-align: center;
 
     img {
@@ -14,8 +14,21 @@
     }
 
     p {
-      width: 55%;
-      margin: 40px auto 0 auto;
+      display: none;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .loader {
+    .block-loading {
+      width: 664px;
+  
+      p {
+        display: block;
+        width: 55%;
+        margin: 40px auto 0 auto;
+      }
     }
   }
 }
