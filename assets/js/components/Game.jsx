@@ -13,6 +13,7 @@ export default class Game extends Component {
   render() {
     return (
       <React.Fragment>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A8001%2Fgame&layout=button&size=small&width=81&height=20&appId" width="81" height="20" style={{border:'none', overflow:'hidden'}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">test</iframe>
         {
           this.state.start
             ? <AllQuestions />

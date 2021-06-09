@@ -8,6 +8,7 @@
 /var/
 /vendor/
 /public/build/
+/public/videos/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

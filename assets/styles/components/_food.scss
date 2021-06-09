@@ -1,3 +1,8 @@
+%block-recepie {
+  border: #{$border};
+  background: #{$pink};
+}
+
 [class*="modal-recepie"] {
   border: #{$border};
   background: #{$pink};
@@ -9,10 +14,43 @@
 
   .grid-recepie {
     display: grid;
-    grid-template-rows: 1fr .75fr;
-
+    grid-template-columns: 1.25fr .75fr;
+    
+    .block-img-recepie {
+      position: relative;
+    }
     img {
       width: 100%;
+    }
+  }
+
+  .grid-step-recepie {
+    padding: 23px;
+    position: relative;
+
+    .title-recepie {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  [class*="modal-recepie"] {
+    width: 736px;
+    height: 479px;
+
+    .grid-recepie {
+      height: 100%;
+      .block-img-recepie {
+        height: 100%;
+        position: relative;
+        img {
+          height: 100%;
+        }
+      }
     }
   }
 }
