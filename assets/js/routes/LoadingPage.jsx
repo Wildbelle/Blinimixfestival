@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import logo from '../../img/LogoBliniMix.png'
+
 class LoadingPage extends Component {
 
   componentDidMount() {
@@ -11,7 +13,10 @@ class LoadingPage extends Component {
   render() {
     return (
       <div className="loader">
-        Loading Page
+        <div className="block-loading">
+          <img className="loading-logo" src={logo} alt="logo"/>
+          <p>Le Blini Mix Festival, c’est le rendez-vous musical de l’été sur le web. Un festival digital inédit au fil de 3 concerts exceptionnels aux cotés de <strong>VSO</strong>, <strong>Mozambo</strong> et <strong>French Fuse</strong> !</p>
+        </div>
       </div>
     );
   }

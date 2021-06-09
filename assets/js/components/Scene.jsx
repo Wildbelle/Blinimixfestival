@@ -44,42 +44,87 @@ export default class Scene extends Component {
     switch (pathname) {
       case "/food":
         if (navVisible) {
-          this.setState({navVisible: false, recepiesModalOpen: true})
+          this.setState({
+            navVisible: false,
+            recepiesModalOpen: true,
+            gameModalOpen: false,
+            sceneVideo:false
+          })
         }
         if (!recepiesModalOpen) {
-          this.setState({recepiesModalOpen: true})
+          this.setState({
+            recepiesModalOpen: true,
+            gameModalOpen: false,
+            sceneVideo:false
+          })
         }
         break;
       case "/game":
         if (navVisible) {
-          this.setState({navVisible: false, gameModalOpen: true})
+          this.setState({
+            navVisible: false,
+            gameModalOpen: true,
+            recepiesModalOpen: false,
+            sceneVideo:false
+          })
         }
         if (!gameModalOpen) {
-          this.setState({gameModalOpen: true})
+          this.setState({
+            gameModalOpen: true,
+            recepiesModalOpen: false,
+            sceneVideo:false
+          })
         }
         break;
       case "/scene/1":
         if(!navVisible) {
-          this.setState({navVisible: true, sceneVideo: true})
+          this.setState({
+            navVisible: true,
+            gameModalOpen: false,
+            recepiesModalOpen: false,
+            sceneVideo:true
+          })
         }
-        if(!sceneVideo) {
-          this.setState({sceneVideo: true})
+        if(sceneVideo) {
+          this.setState({
+            gameModalOpen: false,
+            recepiesModalOpen: false,
+            sceneVideo:true
+          })
         }
         break;
       case "/scene/2":
         if(!navVisible) {
-          this.setState({navVisible: true, sceneVideo: true})
+          this.setState({
+            navVisible: true,
+            gameModalOpen: false,
+            recepiesModalOpen: false,
+            sceneVideo:true
+          })
         }
-        if(!sceneVideo) {
-          this.setState({sceneVideo: true})
+        if(sceneVideo) {
+          this.setState({
+            gameModalOpen: false,
+            recepiesModalOpen: false,
+            sceneVideo:true
+          })
         }
         break;
       case "/scene/3":
         if(!navVisible) {
-          this.setState({navVisible: true, sceneVideo: true})
+          this.setState({
+            navVisible: true,
+            gameModalOpen: false,
+            recepiesModalOpen: false,
+            sceneVideo:true
+          })
         }
-        if(!sceneVideo) {
-          this.setState({sceneVideo: true})
+        if(sceneVideo) {
+          this.setState({
+            gameModalOpen: false,
+            recepiesModalOpen: false,
+            sceneVideo:true
+          })
         }
         break;
     

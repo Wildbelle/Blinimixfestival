@@ -1,0 +1,21 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .block-loading {
+    margin: auto;
+    width: 664px;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      width: 55%;
+      margin: 40px auto 0 auto;
+    }
+  }
+}

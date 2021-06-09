@@ -10,7 +10,7 @@ export default class Video extends Component {
       <React.Fragment>
         <div className="container-video">
           <video controls className="canvas-video">
-            <source src={"/videos/" + videoName} type={"video/" + (videoName.split('.').pop())} />
+            <source src={"/videos/" + videoName} type="video/mp4" />
             <p>Votre navigateur ne prends pas en charge les vidéos HTML5.
               <a href={"videos/" + videoName}>Télécharger la vidéo</a>
             </p>
