@@ -3,8 +3,9 @@ import { ThemeContext } from '../theme-context';
 import Game from './Game';
 import Navigation from './Navigation';
 import Recepies from './Recepies';
+import Video from './Video';
 
-class Scene extends Component {
+export default class Scene extends Component {
   static contextType = ThemeContext
 
   constructor(props) {
@@ -13,7 +14,8 @@ class Scene extends Component {
     this.state = {
        navVisible: true,
        gameModalOpen: false,
-       recepiesModalOpen: false
+       recepiesModalOpen: false,
+       sceneVideo: false
     }
   }
 
@@ -32,7 +34,8 @@ class Scene extends Component {
       state: {
         navVisible,
         gameModalOpen,
-        recepiesModalOpen
+        recepiesModalOpen,
+        sceneVideo
       }
     } = this
     
@@ -56,13 +59,28 @@ class Scene extends Component {
         }
         break;
       case "/scene/1":
-        !navVisible && this.setState({navVisible: true})
+        if(!navVisible) {
+          this.setState({navVisible: true, sceneVideo: true})
+        }
+        if(!sceneVideo) {
+          this.setState({sceneVideo: true})
+        }
         break;
       case "/scene/2":
-        !navVisible && this.setState({navVisible: true})
+        if(!navVisible) {
+          this.setState({navVisible: true, sceneVideo: true})
+        }
+        if(!sceneVideo) {
+          this.setState({sceneVideo: true})
+        }
         break;
       case "/scene/3":
-        !navVisible && this.setState({navVisible: true})
+        if(!navVisible) {
+          this.setState({navVisible: true, sceneVideo: true})
+        }
+        if(!sceneVideo) {
+          this.setState({sceneVideo: true})
+        }
         break;
     
       default:
@@ -91,6 +109,7 @@ class Scene extends Component {
         navVisible,
         gameModalOpen,
         recepiesModalOpen,
+        sceneVideo
       }
     } = this
     return (
@@ -106,10 +125,13 @@ class Scene extends Component {
           : null
         }
 
+        {sceneVideo
+          ? <Video {...this.props} />
+          : null
+        }
+
          <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
      </React.Fragment>
     );
   }
 }
-
-export default Scene;
