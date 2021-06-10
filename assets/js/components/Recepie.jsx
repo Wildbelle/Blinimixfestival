@@ -8,13 +8,18 @@ export default class Recepie extends Component {
     super(props)
   
     this.state = {
-       mobile: true
+       mobile: window.innerWidth < 768 ? true : false
     }
   }
 
   componentDidMount() {
+    const { mobile } = this.state
     document.addEventListener('resize', () => {
-      // mettre en place le state mobile
+      if(mobile && window.innerWidth > 768) {
+        this.setState({mobile: false})
+      } else if (!mobile && window.innerWidth < 768) {
+        this.setState({mobile: true})
+      }
     })
   }
   render() {
