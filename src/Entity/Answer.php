@@ -4,18 +4,9 @@ namespace App\Entity;
 
 use App\Repository\AnswerRepository;
 use Doctrine\ORM\Mapping as ORM;
-use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=AnswerRepository::class)
- * @ApiResource(
- *      collectionOperations={
- *          "GET",
- *      },
- *      itemOperations={
- *          "GET"
- *      }
- * )
  */
 class Answer
 {

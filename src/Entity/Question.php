@@ -12,12 +12,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Entity(repositoryClass=QuestionRepository::class)
  * @ApiResource(
  *      collectionOperations={
- *          "GET",
- *          "POSTFORM"={
- *              "method"="POST",
- *              "path"="/questions/send",
- *              "controller"=App\Controller\PostFormGame::class,
- *          }
+ *          "GET"
  *      },
  *      itemOperations={
  *          "GET"

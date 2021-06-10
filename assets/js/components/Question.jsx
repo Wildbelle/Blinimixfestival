@@ -10,7 +10,8 @@ class Question extends Component {
   
     this.state = {
      answers: [],
-     visible: true
+     visible: true,
+     formVisible: true
     }
   }
 

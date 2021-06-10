@@ -2,20 +2,11 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=IngredientRepository::class)
- * @ApiResource(
- *      collectionOperations={
- *          "GET",
- *      },
- *      itemOperations={
- *          "GET"
- *      }
- * )
  */
 class Ingredient
 {
