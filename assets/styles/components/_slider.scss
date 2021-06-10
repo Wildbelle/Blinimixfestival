@@ -1,5 +1,3 @@
-$padd: '23px';
-
 [class*="recepie-container-slider"] {
   height: 100%;
   display: flex;
@@ -18,11 +16,11 @@ $padd: '23px';
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin: #{$padd};
+      margin: #{$padding-card};
     }
   
     .flex-ingredients {
-      margin: 0 #{$padd};
+      margin: 0 #{$padding-card};
       display: flex;
       justify-content: center;
       text-align: center;
@@ -48,14 +46,14 @@ $padd: '23px';
     }
   
     .flex-steps {
-      padding: #{$padd};
+      padding: #{$padding-card};
       width: auto;
       display: flex;
       flex-flow: column wrap;
       height: 80%;
   
       .step-recepie {
-        width: 50%;
+        width: 100%;
       }
     }
   }
@@ -63,7 +61,7 @@ $padd: '23px';
   .slide-step-recepie {
     .block-title {
       height: calc(100% - 36px);
-      padding: #{$padd};
+      padding: #{$padding-card};
       display: flex;
       align-items: center;
       justify-content: center;
@@ -71,6 +69,30 @@ $padd: '23px';
   
     .title-recepie {
       margin: auto;
+    }
+  }
+
+  &.mobile {
+    .slide-step-recepie {
+      height: 240px;
+      .block-title {
+        padding: 0 #{$padding-card};
+      }
+    }
+
+    .item-slider {
+      .absolute-steps {
+        position: absolute;
+        top: 0;
+        bottom: 0;  
+      }
+      .flex-steps {
+        display: block;
+        overflow-y: scroll;
+        .step-recepie {
+          width: 100%;
+        }
+      }
     }
   }
 }

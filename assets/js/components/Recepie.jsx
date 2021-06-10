@@ -66,7 +66,6 @@ class MobileCard extends React.Component {
       })
 
       modal.style.top = `${51 - index}%`
-      modal.style.left = `${51 - index}%`
       modal.style.zIndex = 10 - (index * 2)
       btnClose.style.zIndex = 9 - (index * 2)
       this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
@@ -161,7 +160,7 @@ class MobileCard extends React.Component {
                     <hr/>
                     <ul className="list-flex-ingredient">
                       {list.ingredients.map((item, i) => (
-                        <li key={i}>{item}</li>
+                        <li key={i} dangerouslySetInnerHTML={{__html: item}}></li>
                       ))}
                     </ul>
                   </div>
@@ -169,15 +168,17 @@ class MobileCard extends React.Component {
               </div>
             </div>
             <div className="item-slider">
-              <div className="flex-steps">
-                {recepie.steps.map(step => {
-                  return (
-                    <div key={step.index} className="step-recepie">
-                      <h6>{step.index}.</h6>
-                      <p>{step.text}</p>
-                    </div>
-                  )
-                })}
+              <div className="absolute-steps">
+                <div className="flex-steps">
+                  {recepie.steps.map(step => {
+                    return (
+                      <div key={step.index} className="step-recepie">
+                        <h6>{step.index}.</h6>
+                        <p>{step.text}</p>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -311,7 +312,7 @@ class DesktopCard extends React.Component {
                       <hr/>
                       <ul className="list-flex-ingredient">
                         {list.ingredients.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <li key={i} dangerouslySetInnerHTML={{__html: item}}></li>
                         ))}
                       </ul>
                     </div>
