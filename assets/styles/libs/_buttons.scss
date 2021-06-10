@@ -24,24 +24,17 @@
         right: 2%;
 
         &:hover {
-            color: white;
-            background: transparent;
+            transform: scale(1.1);
         }
     }
 
     &:hover {
-        color: white;
-        background: #{$dark};
+        transform: scale(1.1);
     }
 
 
     &.btn-icon {
         border: none;
-
-        &:hover {
-            color: white;
-            background: transparent;
-        }
     }
 }
 

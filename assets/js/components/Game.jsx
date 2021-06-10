@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Question from './Question';
+import { questions } from '../theme-context'
 
 export default class Game extends Component {
   constructor(props) {
@@ -13,19 +14,18 @@ export default class Game extends Component {
   render() {
     return (
       <React.Fragment>
-        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A8001%2Fgame&layout=button&size=small&width=81&height=20&appId" width="81" height="20" style={{border:'none', overflow:'hidden'}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">test</iframe>
         {
           this.state.start
             ? <AllQuestions />
             : <div className="modal-play-game">
                 <div className="header-modal">
                   <div>
-                    <p>PLACES</p>
+                    <p className="info">PLACES</p>
                     <h5>10 <span className="h6">Offertes</span></h5>
                   </div>
                   <h5>Jeu<br/>concours</h5>
                   <div>
-                    <p>DATE</p>
+                    <p className="info">DATE</p>
                     <h5>4 <span className="h6">Sept.</span></h5>
                   </div>
                 </div>
@@ -67,9 +67,9 @@ class AllQuestions extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {Array(4).fill(0).map((value, index) => {
+        {questions.map((value, index) => {
           return (
-            <Question key={index} index={index} addResponse={this.addResponse} />
+            <Question key={index} index={index} question={value} addResponse={this.addResponse} />
           )
         })}
       </React.Fragment>

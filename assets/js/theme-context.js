@@ -39,6 +39,93 @@ export const themes = {
   }
 }
 
+export const questions = [
+  {
+    question: "A quoi fait référence l’acronyme/nom du groupe VSO ?",
+    answers:[
+      {
+        index: 'A',
+        text: "Vraiment Super Original",
+      },
+      {
+        index: 'B',
+        text: "Vachement Sexy Oulalalah",
+      },
+      {
+        index: 'C',
+        text: "Voler Sur Orbite",
+      },
+      {
+        index: 'D',
+        text: "Un vaisseau enfin",
+      }
+    ]
+  },
+  {
+    question: "Si vous voulez vous déguiser en membre de French Fuse il vous faut ?",
+    answers:[
+      {
+        index: 'A',
+        text: "Des lunettes de soleil et un bonnet",
+      },
+      {
+        index: 'B',
+        text: "Un tambour et une fleur dans les cheveux",
+      },
+      {
+        index: 'C',
+        text: "De l’amour et de l’eau fraîche",
+      },
+      {
+        index: 'D',
+        text: "Une barbe et un tatouage dans le cou",
+      }
+    ]
+  },
+  {
+    question: "Mozambo est une contraction de ?",
+    answers:[
+      {
+        index: 'A',
+        text: "Moby Dick et Rambo",
+      },
+      {
+        index: 'B',
+        text: "Mozambique et mambo",
+      },
+      {
+        index: 'C',
+        text: "Mozart et Rimbaud",
+      },
+      {
+        index: 'D',
+        text: "Maurice et Carambo",
+      }
+    ]
+  },
+  {
+    question: "Quelle est la recette idéale pour un festival ? ",
+    answers:[
+      {
+        index: 'A',
+        text: "Rillettes de Chorizo et Blinis",
+      },
+      {
+        index: 'B',
+        text: "Fish and Chips au Tzatziki",
+      },
+      {
+        index: 'C',
+        text: "Nachos au Guacamole",
+      },
+      {
+        index: 'D',
+        text: "Les 3 bien sûr !",
+      }
+    ]
+  }
+]
+
 export const recepies = [
   {
     name: "Nachos au guacamole, haricots, tomate & cheddar",

@@ -1,3 +1,5 @@
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 
 class Question extends Component {
@@ -18,15 +20,6 @@ class Question extends Component {
     modal.style.top = `${51 - index}%`
     modal.style.left = `${51 - index}%`
     modal.style.zIndex = 4 - index
-
-    this.setState({
-      answers: [
-        "reponse1",
-        "reponse2",
-        "reponse3",
-        "reponse4"
-      ]
-    })
   }
 
   reply (response) {
@@ -40,10 +33,10 @@ class Question extends Component {
   render() {
     const {
       props: {
-        index
+        index,
+        question
       },
       state: {
-        answers,
         visible
       },
       reply
@@ -55,10 +48,10 @@ class Question extends Component {
             <h6>{index + 1}.</h6>
             <button className="btn btn-close" onClick={() => reply(null)}><FontAwesomeIcon icon={faTimes}/></button>
           </div>
-          <p>Combien y t-il d'artistes présent à cette première édition ?</p>
+          <p>{question.question}</p>
           <div className="grid-answer">
-            {answers.map((value, index) => (
-              <button key={index} className="btn-answer" onClick={() => reply(value)} > {value} </button>
+            {question.answers.map((value, index) => (
+              <button key={index} className="btn-answer" onClick={() => reply(value)} > {value.text} </button>
             ))}
           </div>
         </div>}
