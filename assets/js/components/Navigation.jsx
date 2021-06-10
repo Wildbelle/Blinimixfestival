@@ -9,10 +9,6 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../img/LogoBliniMix.png'
 
 class Navigation extends Component {
-
-  componentDidUpdate() {
-    console.log(this.props)
-  }
   
   render() {
     const { pink, blue } = themes

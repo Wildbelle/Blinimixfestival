@@ -60,7 +60,6 @@ class AllQuestions extends React.Component {
     const newAllResponses = this.state.allResponses
     newAllResponses.push(response)
     this.setState({allResponses: newAllResponses})
-    console.log(this.state.allResponses)
   }
   
 

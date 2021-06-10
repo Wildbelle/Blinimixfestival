@@ -17,10 +17,14 @@ class SceneButton extends Component {
     } = this
     const illus = document.querySelector(`.theme-${theme.name}`)
     illus.addEventListener('mouseover', () => {
-      setupTitleMap(theme.title)
+      setTimeout(() => {
+        setupTitleMap(theme.title)
+      }, 300)
     })
     illus.addEventListener('mouseout', () => {
-      setupTitleMap('')
+      setTimeout(() => {
+        setupTitleMap('')
+      }, 300)
     })
   }
 
