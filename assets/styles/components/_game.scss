@@ -11,7 +11,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(500px - #{$padding-card});
+  max-width: calc(350px - 10px);
   text-align: center;
 
   .header-modal {
@@ -44,10 +44,12 @@
   @extend %card-design;
   background: #{$blue};
   position: absolute;
+  display: grid;
   top: 51%;
   left: 51%;
   transform: translate(-50%, -50%);
-  width: calc(355px - #{$padding-card});
+  width: calc(350px - 10px);
+  height: 260px;
 
   .header-modal {
     @extend %flex-box;
@@ -68,5 +70,17 @@
         color: #{$blue};
       }
     }
+  }
+}
+
+@media #{$medium-up} {
+  .modal-play-game {
+    max-width: calc(500px - #{$padding-card});
+    padding: #{$padding-card};
+  }
+
+  [class*="modal-question"] {
+    width: calc(400px - #{$padding-card});
+    padding: #{$padding-card};
   }
 }
