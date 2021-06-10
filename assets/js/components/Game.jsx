@@ -77,11 +77,11 @@ class AllQuestions extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* {this.state.questions.length > 0 && this.state.questions.map((value, index) => {
+        {this.state.questions.length > 0 && this.state.questions.map((value, index) => {
           return (
             <Question key={index} index={index} question={value} addResponse={this.addResponse} />
           )
-        })} */}
+        })}
       </React.Fragment>
     )
   }

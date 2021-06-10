@@ -159,26 +159,24 @@ class MobileCard extends React.Component {
                 </p>
               </div>
               <div className="flex-ingredients">
-                {recepie.ingredients.map((list, index) => (
                   <div key={index} className="col-ingredients">
-                    <h6 className="title-list-ingredient">{list.title}</h6>
+                    <h6 className="title-list-ingredient">Ingrédients</h6>
                     <hr/>
                     <ul className="list-flex-ingredient">
-                      {list.ingredients.map((item, i) => (
+                      {recepie.ingredients.map((item, i) => (
                         <li key={i} dangerouslySetInnerHTML={{__html: item}}></li>
                       ))}
                     </ul>
                   </div>
-                ))}
               </div>
             </div>
             <div className="item-slider">
               <div className="absolute-steps">
                 <div className="flex-steps">
-                  {recepie.steps.map(step => {
+                  {recepie.steps.map((step, index) => {
                     return (
-                      <div key={step.index} className="step-recepie">
-                        <h6>{step.index}.</h6>
+                      <div key={index} className="step-recepie">
+                        <h6>{step.number}.</h6>
                         <p>{step.text}</p>
                       </div>
                     )
@@ -329,7 +327,7 @@ class DesktopCard extends React.Component {
                   {recepie.steps.map((step, index) => {
                     return (
                       <div key={index} className="step-recepie">
-                        <h6>{step.index}.</h6>
+                        <h6>{step.number}.</h6>
                         <p>{step.text}</p>
                       </div>
                     )

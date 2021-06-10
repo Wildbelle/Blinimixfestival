@@ -48,10 +48,10 @@ class Question extends Component {
             <h6>{index + 1}.</h6>
             <button className="btn btn-close" onClick={() => reply(null)}><FontAwesomeIcon icon={faTimes}/></button>
           </div>
-          <p>{question.question}</p>
+          <p>{question.text}</p>
           <div className="grid-answer">
             {question.answers.map((value, index) => (
-              <button key={index} className="btn-answer" onClick={() => reply(value)} > {value.text} </button>
+              <button key={index} className="btn-answer" onClick={() => reply(value)} > {value} </button>
             ))}
           </div>
         </div>}
