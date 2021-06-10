@@ -32,7 +32,7 @@ class Ingredient
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Recepie::class, inversedBy="ingredients")
+     * @ORM\ManyToOne(targetEntity=Recepie::class, inversedBy="ingredients", fetch="EAGER")
      */
     private $recepie;
 

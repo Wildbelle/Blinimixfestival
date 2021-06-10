@@ -37,7 +37,7 @@ class Step
     private $text;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Recepie::class, inversedBy="steps")
+     * @ORM\ManyToOne(targetEntity=Recepie::class, inversedBy="steps", fetch="EAGER")
      */
     private $recepie;
 

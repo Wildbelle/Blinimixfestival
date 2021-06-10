@@ -49,12 +49,12 @@ class Recepie
     private $timeCooking;
 
     /**
-     * @ORM\OneToMany(targetEntity=Step::class, mappedBy="recepie")
+     * @ORM\OneToMany(targetEntity=Step::class, mappedBy="recepie", fetch="EAGER")
      */
     private $steps;
 
     /**
-     * @ORM\OneToMany(targetEntity=Ingredient::class, mappedBy="recepie")
+     * @ORM\OneToMany(targetEntity=Ingredient::class, mappedBy="recepie", fetch="EAGER")
      */
     private $ingredients;
 

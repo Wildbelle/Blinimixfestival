@@ -52,8 +52,19 @@ class AllQuestions extends React.Component {
     this.addResponse = this.addResponse.bind(this)
 
     this.state = {
-       allResponses: []
+       allResponses: [],
+       questions: []
     }
+  }
+
+  componentDidMount() {
+    fetch('/api/questions', {
+      headers: {
+        "Accept": 'application/json'
+      }
+    })
+      .then(result => result.json())
+      .then(data => this.setState({questions: data}))
   }
 
   addResponse = (response) => {
@@ -66,11 +77,11 @@ class AllQuestions extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {questions.map((value, index) => {
+        {/* {this.state.questions.length > 0 && this.state.questions.map((value, index) => {
           return (
             <Question key={index} index={index} question={value} addResponse={this.addResponse} />
           )
-        })}
+        })} */}
       </React.Fragment>
     )
   }
