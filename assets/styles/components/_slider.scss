@@ -4,73 +4,73 @@ $padd: '23px';
   height: 100%;
   display: flex;
   transition: transform .6s ease-in-out;
-}
-
-.item-slider {
-  height: 100%;
-  display: block;
-
-  &.item-slider-ingredients {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .flex-infos-time {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: #{$padd};
-  }
-
-  .flex-ingredients {
-    margin: 0 #{$padd};
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
-    .title-list-ingredient {
-      line-height: 45px;
+  
+  .item-slider {
+    height: 100%;
+    display: block;
+  
+    &.item-slider-ingredients {
+      display: flex;
+      flex-direction: column;
     }
-
-    hr {
-      width: 20%;
-      color: #{$dark};
-      background: #{$dark};
-      border-color: #{$dark};
-      margin-bottom: 15px;
+  
+    .flex-infos-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: #{$padd};
     }
-
-    ul {
-      list-style: none;
-      padding-inline-start: 0;
-      margin: 0 .5rem;
-      // text-align: center;
+  
+    .flex-ingredients {
+      margin: 0 #{$padd};
+      display: flex;
+      justify-content: center;
+      text-align: center;
+  
+      .title-list-ingredient {
+        line-height: 45px;
+      }
+  
+      hr {
+        width: 20%;
+        color: #{$dark};
+        background: #{$dark};
+        border-color: #{$dark};
+        margin-bottom: 15px;
+      }
+  
+      ul {
+        list-style: none;
+        padding-inline-start: 0;
+        margin: 0 .5rem;
+        // text-align: center;
+      }
+    }
+  
+    .flex-steps {
+      padding: #{$padd};
+      width: auto;
+      display: flex;
+      flex-flow: column wrap;
+      height: 80%;
+  
+      .step-recepie {
+        width: 50%;
+      }
     }
   }
-
-  .flex-steps {
-    padding: #{$padd};
-    width: auto;
-    display: flex;
-    flex-flow: column wrap;
-    height: 80%;
-
-    .step-recepie {
-      width: 50%;
+  
+  .slide-step-recepie {
+    .block-title {
+      height: calc(100% - 36px);
+      padding: #{$padd};
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  }
-}
-
-.slide-step-recepie {
-  .block-title {
-    height: calc(100% - 36px);
-    padding: #{$padd};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .title-recepie {
-    margin: auto;
+  
+    .title-recepie {
+      margin: auto;
+    }
   }
 }
