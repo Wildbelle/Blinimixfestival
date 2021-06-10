@@ -164,7 +164,7 @@ export default class Scene extends Component {
       <React.Fragment>
         <Sidebar />
         <div className="container">
-        <Navigation navVisible={navVisible} />
+        <Navigation {...this.props} navVisible={navVisible} />
 
         {gameModalOpen
           ? <Game />

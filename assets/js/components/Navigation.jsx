@@ -9,6 +9,10 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../img/LogoBliniMix.png'
 
 class Navigation extends Component {
+
+  componentDidUpdate() {
+    console.log(this.props)
+  }
   
   render() {
     const { pink, blue } = themes
@@ -18,11 +22,13 @@ class Navigation extends Component {
       <React.Fragment>
         <div className="nav-1">
           <NavLink exact to="/map"><img className="navbrand" src={logo} alt="logo"/></NavLink>
-          <div className="menu border">
-            <div className="burger-box">
-              <div className="burger-bar"></div>
-            </div>
-          </div>
+          {!this.props.location.pathname.includes('map')
+            &&  <div className="menu border">
+                  <div className="burger-box">
+                    <div className="burger-bar"></div>
+                  </div>
+                </div>
+          }
         </div>
         {navVisible &&
           <div className="nav-2">

@@ -27,6 +27,13 @@
   }
 }
 
+.title-map {
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+
+}
+
 @media (-webkit-device-pixel-ratio: 2) and (max-width: #{$extraSmall}) {
 
   .page-interactive-map {
