@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import SceneButton from '../components/SceneButton';
 import { ThemeContext, themes } from '../theme-context';
 
-import logo from '../../img/LogoBliniMix.png'
+import Navigation from './../components/Navigation';
+import Sidebar from './../components/Sidebar';
 
 class InteractiveMap extends Component {
   static contextType = ThemeContext
@@ -23,7 +24,9 @@ class InteractiveMap extends Component {
   render() {
     return (
       <React.Fragment>
-        <img className="logo" src={logo} alt="logo"/>
+        <Sidebar />
+        <div className="container">
+        <Navigation />
         <div className="page-interactive-map">
           <div className="bloc-interactive-map">
             <div className="item">
@@ -51,6 +54,7 @@ class InteractiveMap extends Component {
               })}
             </div>
           </div>
+        </div>
         </div>
       </React.Fragment>
     );

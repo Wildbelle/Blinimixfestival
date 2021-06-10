@@ -1,49 +1,37 @@
-.logo {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  padding: 15px;
-  width: 140px;
-}
-
 .page-interactive-map {
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .bloc-interactive-map {
-    margin-top: 125px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
     .item {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
     }
+
     .illus-map {
       width: 150px;
       height: 150px;
       border-radius: 100%;
-      margin: 7px;
+      margin: 8px;
     }
   }
 }
 
 @media (-webkit-device-pixel-ratio: 2) and (max-width: #{$extraSmall}) {
-  .logo {
-    width: 100px;
-  }
 
   .page-interactive-map {
     .bloc-interactive-map {
-      margin-top: 100px;
+
       .illus-map {
         width: 100px;
         height: 100px;
@@ -56,6 +44,7 @@
   .page-interactive-map {
     .bloc-interactive-map {
       flex-direction: column;
+
       .item {
         flex-direction: row;
       }
@@ -64,13 +53,10 @@
 }
 
 @media #{$small-up} and (min-height: #{$medium}) {
-  .logo {
-    width: 175px;
-  }
 
   .page-interactive-map {
     .bloc-interactive-map {
-      margin-top: 120px;
+
       .illus-map {
         width: 200px;
         height: 200px;
@@ -80,9 +66,6 @@
 }
 
 @media #{$medium-up} and (min-height: #{$medium}) {
-  .logo {
-    width: 175px;
-  }
 
   .page-interactive-map {
     .bloc-interactive-map {
@@ -95,9 +78,6 @@
 }
 
 @media #{$medium-up} {
-  .logo {
-    width: 150px;
-  }
 
   .page-interactive-map {
     .bloc-interactive-map {
@@ -110,9 +90,6 @@
 }
 
 @media #{$large-up} {
-  .logo {
-    width: 175px;
-  }
 
   .page-interactive-map {
     .bloc-interactive-map {
@@ -123,5 +100,3 @@
     }
   }
 }
-
-

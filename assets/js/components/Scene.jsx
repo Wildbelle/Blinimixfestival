@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../theme-context';
-import Game from './Game';
+
 import Navigation from './Navigation';
+import Sidebar from './Sidebar';
+
+import Game from './Game';
 import Recepies from './Recepies';
 import Video from './Video';
-import Sidebar from './Sidebar';
 
 export default class Scene extends Component {
   static contextType = ThemeContext

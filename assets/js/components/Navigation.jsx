@@ -17,7 +17,7 @@ class Navigation extends Component {
     return (
       <React.Fragment>
         <div className="nav-1">
-          <img className="navbrand" src={logo} alt="logo"/>
+          <NavLink exact to="/map"><img className="navbrand" src={logo} alt="logo"/></NavLink>
           <div className="menu border">
             <div className="burger-box">
               <div className="burger-bar"></div>
@@ -26,14 +26,14 @@ class Navigation extends Component {
         </div>
         {navVisible &&
           <div className="nav-2">
-            <NavLink
-             className="nav-item-page border card-link left"
-             to={{
+            <NavLink 
+              className="nav-item-page border card-link left"
+              to={{
               pathname: pink.url,
               state: {
                 theme: pink
               }
-            }} 
+              }} 
             >
               <div className="icon">
                 <FontAwesomeIcon icon={faUtensils}/>
@@ -43,14 +43,14 @@ class Navigation extends Component {
                 <h6>food</h6>
               </div>
             </NavLink>
-            <NavLink
-              className="nav-item-page border card-link"
-              to={{
+            <NavLink 
+                className="nav-item-page border card-link"
+                to={{
                 pathname: blue.url,
                 state: {
                   theme: blue
                 }
-              }} 
+                }} 
             >
               <div className="icon">
                 <FontAwesomeIcon icon={faDiceD6}/>
