@@ -4,9 +4,18 @@ namespace App\Entity;
 
 use App\Repository\StepRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=StepRepository::class)
+ * @ApiResource(
+ *      collectionOperations={
+ *          "GET",
+ *      },
+ *      itemOperations={
+ *          "GET"
+ *      }
+ * )
  */
 class Step
 {
@@ -26,6 +35,11 @@ class Step
      * @ORM\Column(type="text")
      */
     private $text;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Recepie::class, inversedBy="steps")
+     */
+    private $recepie;
 
     public function getId(): ?int
     {
@@ -52,6 +66,18 @@ class Step
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getRecepie(): ?Recepie
+    {
+        return $this->recepie;
+    }
+
+    public function setRecepie(?Recepie $recepie): self
+    {
+        $this->recepie = $recepie;
 
         return $this;
     }

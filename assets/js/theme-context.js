@@ -217,7 +217,6 @@ export const recepies = [
           "2 gousses d'ail émincées",
           "3 poignées de pousses d’épinards",
           "Sel et poivre noir au goût",
-
         ]
       }
     ]

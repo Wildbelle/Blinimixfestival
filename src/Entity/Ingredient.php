@@ -2,11 +2,20 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=IngredientRepository::class)
+ * @ApiResource(
+ *      collectionOperations={
+ *          "GET",
+ *      },
+ *      itemOperations={
+ *          "GET"
+ *      }
+ * )
  */
 class Ingredient
 {
@@ -22,6 +31,11 @@ class Ingredient
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Recepie::class, inversedBy="ingredients")
+     */
+    private $recepie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +49,18 @@ class Ingredient
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getRecepie(): ?Recepie
+    {
+        return $this->recepie;
+    }
+
+    public function setRecepie(?Recepie $recepie): self
+    {
+        $this->recepie = $recepie;
 
         return $this;
     }

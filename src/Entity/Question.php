@@ -3,10 +3,26 @@
 namespace App\Entity;
 
 use App\Repository\QuestionRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=QuestionRepository::class)
+ * @ApiResource(
+ *      collectionOperations={
+ *          "GET",
+ *          "POSTFORM"={
+ *              "method"="POST",
+ *              "path"="/questions/send",
+ *              "controller"=App\Controller\PostFormGame::class,
+ *          }
+ *      },
+ *      itemOperations={
+ *          "GET"
+ *      }
+ * )
  */
 class Question
 {
@@ -23,16 +39,20 @@ class Question
     private $text;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Answer::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity=Answer::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $trueAnswer;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Answer::class, mappedBy="question")
      */
     private $answers;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Answer::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $trueAnswer;
+    public function __construct()
+    {
+        $this->answers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -51,18 +71,6 @@ class Question
         return $this;
     }
 
-    public function getAnswers(): ?Answer
-    {
-        return $this->answers;
-    }
-
-    public function setAnswers(?Answer $answers): self
-    {
-        $this->answers = $answers;
-
-        return $this;
-    }
-
     public function getTrueAnswer(): ?Answer
     {
         return $this->trueAnswer;
@@ -71,6 +79,36 @@ class Question
     public function setTrueAnswer(Answer $trueAnswer): self
     {
         $this->trueAnswer = $trueAnswer;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Answer[]
+     */
+    public function getAnswers(): Collection
+    {
+        return $this->answers;
+    }
+
+    public function addAnswer(Answer $answer): self
+    {
+        if (!$this->answers->contains($answer)) {
+            $this->answers[] = $answer;
+            $answer->setQuestion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnswer(Answer $answer): self
+    {
+        if ($this->answers->removeElement($answer)) {
+            // set the owning side to null (unless already changed)
+            if ($answer->getQuestion() === $this) {
+                $answer->setQuestion(null);
+            }
+        }
 
         return $this;
     }

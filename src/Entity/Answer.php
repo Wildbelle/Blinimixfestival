@@ -4,9 +4,18 @@ namespace App\Entity;
 
 use App\Repository\AnswerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=AnswerRepository::class)
+ * @ApiResource(
+ *      collectionOperations={
+ *          "GET",
+ *      },
+ *      itemOperations={
+ *          "GET"
+ *      }
+ * )
  */
 class Answer
 {
@@ -22,6 +31,12 @@ class Answer
      */
     private $text;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Question::class, inversedBy="answers")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $question;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +50,18 @@ class Answer
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getQuestion(): ?Question
+    {
+        return $this->question;
+    }
+
+    public function setQuestion(?Question $question): self
+    {
+        $this->question = $question;
 
         return $this;
     }
