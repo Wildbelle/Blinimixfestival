@@ -25,7 +25,9 @@ class Sidebar extends Component {
                 </div>
                 <div className="social-network">
                     <button className="btn btn-icon">
-                      <img className="icon" src={logo} alt="blini"/>
+                        <a href="https://www.instagram.com/blini_fr/?hl=fr" target="_blank">
+                            <img className="icon" src={logo} alt="blini"/>
+                        </a>
                     </button>
                 </div>
             </div>

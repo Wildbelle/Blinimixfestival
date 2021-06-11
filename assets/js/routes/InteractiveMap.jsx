@@ -33,7 +33,7 @@ class InteractiveMap extends Component {
       <React.Fragment>
         <Sidebar />
         <div className="container">
-          <h3 className="title-map">{this.state.title}</h3>
+          <h1 className="title-map">{this.state.title}</h1>
           <Navigation {...this.props} />
           <div className="page-interactive-map">
             <div className="bloc-interactive-map">

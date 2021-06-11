@@ -75,6 +75,7 @@ select {
     color: #{$dark};
     font-size: 14px;
     line-height: 14px;
+    text-decoration: none;
 }
 
 p,
@@ -89,6 +90,7 @@ select {
 a,
 button {
     font-family: 'GillSansBold', Helvetica, Arial, sans-serif;
+    font-style: normal;
 }
 
 @media #{$medium-up} {

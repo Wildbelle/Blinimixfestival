@@ -28,6 +28,7 @@
 
   &.mobile {
     height: 600px;
+
     .grid-recepie {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
@@ -45,7 +46,7 @@
     padding: 0;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
   }
 
