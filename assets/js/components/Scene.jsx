@@ -182,7 +182,7 @@ export default class Scene extends Component {
         }
         <Illus />
         <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
-        <h5 className="subtitle-scene">{{subtitle}}</h5>
+        <h5 className="subtitle-scene">by blini</h5>
         </div>
      </React.Fragment>
     );
