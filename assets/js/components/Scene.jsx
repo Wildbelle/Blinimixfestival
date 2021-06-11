@@ -7,6 +7,7 @@ import Sidebar from './Sidebar';
 import Game from './Game';
 import Recepies from './Recepies';
 import Video from './Video';
+import Illus from './Illus';
 
 export default class Scene extends Component {
   static contextType = ThemeContext
@@ -18,7 +19,7 @@ export default class Scene extends Component {
        navVisible: true,
        gameModalOpen: false,
        recepiesModalOpen: false,
-       sceneVideo: false
+       sceneVideo: false,
     }
   }
 
@@ -179,6 +180,7 @@ export default class Scene extends Component {
           ? <Video {...this.props} />
           : null
         }
+        <Illus />
         <h1 className="title-scene" dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
         </div>
      </React.Fragment>

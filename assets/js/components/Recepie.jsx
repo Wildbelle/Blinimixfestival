@@ -49,7 +49,7 @@ class MobileCard extends React.Component {
     this.hide = this.hide.bind(this)
   
     this.state = {
-      //  visible: this.props.index == 0 ? true : false,
+      //visible: this.props.index == 0 ? true : false,
        visible: true,
        modalWidth: 0,
        stepIndex: 0,

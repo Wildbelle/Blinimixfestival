@@ -69,11 +69,13 @@
 
       .block-img-recepie {
         height: 100%;
+        //width: fit-content;
         border-right: #{$border};
         position: relative;
 
         img {
           height: 100%;
+          width: auto;
         }
       }
     }
