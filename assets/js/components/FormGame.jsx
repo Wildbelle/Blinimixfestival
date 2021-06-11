@@ -39,7 +39,7 @@ function FormGame(props) {
                 <input type="text" placeholder="Date de naissance" ref={register} name="dateOfBirth" />
                 <input type="text" placeholder="Adresse mail" ref={register} name="email" />
 
-                <button type="submit" className="btn">JE PARTICIPE</button>
+                <button type="submit" className="btn btn-action">Je participe</button>
               </form>
             </div>
         }

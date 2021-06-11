@@ -16,7 +16,7 @@ class Recepies extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({visiblePage:true})
-    }, 10000)
+    }, 3000)
 
     fetch('/api/recepies', {
       headers: {

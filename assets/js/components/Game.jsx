@@ -19,7 +19,7 @@ export default class Game extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({visiblePage:true})
-    }, 10000)
+    }, 3000)
   }
 
   addResponse = (response) => {

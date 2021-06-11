@@ -1,7 +1,7 @@
 .nav-1,
 .nav-2 {
   position: relative;
-  z-index: 4;
+  z-index: 22;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,6 +10,7 @@
     &.menu {
       z-index: 4 !important;
     }
+
     border: #{$border};
     padding: 5px;
     width: 50px;
@@ -64,7 +65,7 @@
         }
       }
 
-      &.active{
+      &.active {
         transition-delay: .12s;
         transition-timing-function: cubic-bezier(.215, .61, .355, 1);
         transform: rotate(225deg);
@@ -120,11 +121,11 @@
 
 .sidebar {
   position: relative;
-  z-index: 2;
+  z-index: 22;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  bottom: 64px;
+  bottom: 50px;
   flex-wrap: nowrap;
   position: absolute;
   top: 0;
@@ -151,19 +152,23 @@
   right: -110%;
   z-index: 3;
   transition: right 1s ease-in;
+
   &.desktop {
     right: -50%;
   }
 
   .navburger {
+    padding: 20px;
     height: 100%;
-    display: flex;
+    //display: flex;
+    display: inline-flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    //align-items: center;
+    //justify-content: center;
+    justify-content: flex-end;
 
     .btn {
-      margin: 1rem 0;
+      margin-bottom: 1rem;
     }
   }
 

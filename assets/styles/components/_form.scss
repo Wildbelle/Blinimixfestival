@@ -11,7 +11,8 @@
     align-items: center;
     padding: 0 1rem;
 
-    select, input {
+    select,
+    input {
       margin: .5rem 0;
       padding: .5rem 0;
       text-align-last: center;
@@ -28,9 +29,10 @@
     button {
       margin: .5rem 0;
     }
-    
 
-    select, input {
+
+    select,
+    input {
       width: 100%;
       border: none;
       border-bottom: #{$border};
@@ -42,7 +44,7 @@
         text-align: center;
       }
     }
-    
+
   }
 }
 
@@ -54,4 +56,10 @@
   transform: translate(-50%, -50%);
   color: #{$dark};
   padding: 15px;
+}
+
+@media #{$medium-up} {
+  .card-form {
+    padding: 20px;
+  }
 }
