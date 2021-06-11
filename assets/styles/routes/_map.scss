@@ -19,10 +19,18 @@
     }
 
     .illus-map {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       border-radius: 100%;
       margin: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .illus-map-img {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 }

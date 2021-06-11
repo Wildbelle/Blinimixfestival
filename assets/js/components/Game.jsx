@@ -11,8 +11,15 @@ export default class Game extends Component {
     this.state = {
        start: true,
        end: false,
-       allResponses: []
+       allResponses: [],
+       visiblePage: false
     }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({visiblePage:true})
+    }, 10000)
   }
 
   addResponse = (response) => {
@@ -29,33 +36,35 @@ export default class Game extends Component {
     return (
       <React.Fragment>
         {
-          this.state.start
+          this.state.visiblePage
+          ? this.state.start
 
-            ? this.state.end
-              ? <FormGame {...this.props} responses={this.state.allResponses} />
-              : <AllQuestions addResponse={this.addResponse} />
+              ? this.state.end
+                ? <FormGame {...this.props} responses={this.state.allResponses} />
+                : <AllQuestions addResponse={this.addResponse} />
 
-            : <div className="modal-play-game">
-                <div className="header-modal">
-                  <div>
-                    <p className="info">PLACES</p>
-                    <h5>10 <span className="h6">Offertes</span></h5>
+              : <div className="modal-play-game">
+                  <div className="header-modal">
+                    <div>
+                      <p className="info">PLACES</p>
+                      <h5>10 <span className="h6">Offertes</span></h5>
+                    </div>
+                    <h5>Jeu<br/>concours</h5>
+                    <div>
+                      <p className="info">DATE</p>
+                      <h5>4 <span className="h6">Sept.</span></h5>
+                    </div>
                   </div>
-                  <h5>Jeu<br/>concours</h5>
-                  <div>
-                    <p className="info">DATE</p>
-                    <h5>4 <span className="h6">Sept.</span></h5>
+
+                  <div className="body-modal">
+                    <p>Tentez de gagner 10 places pour le Positive Urban Festival qui aura lieu le 4 septembre 2021 au Zénith et des super kits apéro du festivalier</p>
+                  </div>
+
+                  <div className="block-btn">
+                    <button className="btn btn-action" onClick={() => this.setState({start: true})}>jouer</button>
                   </div>
                 </div>
-
-                <div className="body-modal">
-                  <p>Tentez de gagner 10 places pour le Positive Urban Festival qui aura lieu le 4 septembre 2021 au Zénith et des super kits apéro du festivalier</p>
-                </div>
-
-                <div className="block-btn">
-                  <button className="btn btn-action" onClick={() => this.setState({start: true})}>jouer</button>
-                </div>
-              </div>
+            : null
         }
       </React.Fragment>
     );

@@ -7,12 +7,17 @@ class Recepies extends Component {
     super(props)
   
     this.state = {
-       recepies: []
+       recepies: [],
+       visiblePage: false
     }
   }
   
 
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({visiblePage:true})
+    }, 10000)
+
     fetch('/api/recepies', {
       headers: {
         "Accept": 'application/json'
@@ -24,11 +29,14 @@ class Recepies extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.recepies.map((value, index) => {
-          return (
-            <Recepie key={index} index={index} recepie={value} />
-          )
-        })}
+        {this.state.visiblePage
+          ? this.state.recepies.map((value, index) => {
+              return (
+                <Recepie key={index} index={index} recepie={value} />
+              )
+            })
+          : null
+        }
       </React.Fragment>
     );
   }

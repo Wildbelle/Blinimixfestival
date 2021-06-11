@@ -33,7 +33,7 @@ class SceneButton extends Component {
     return (
       <NavLink
         className={"illus-map theme-" + (theme.name)}
-        style={{backgroundColor: theme.color}}
+        // style={{backgroundColor: theme.color}}
         to={{
           pathname: theme.url,
           state: {
@@ -41,6 +41,7 @@ class SceneButton extends Component {
           }
         }}
       >
+        <img className="illus-map-img" src={'/img/' + theme.illusName} alt="" />
       </NavLink>
     );
   }

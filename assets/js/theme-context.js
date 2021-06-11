@@ -4,28 +4,6 @@ export const themes = {
   white: {
     color: "#FFFFFF"
   },
-  pink: {
-    name: "pink",
-    color: "#FFBCD7",
-    title: "str'eat food",
-    url: "/food",
-    illusName: "IllusFoodRoom.svg"
-  },
-  blue : {
-    name: "blue",
-    color: "#CEF2FF",
-    title: "blini game",
-    url: "/game",
-    illusName: "IllusGameRoom.svg"
-  },
-  red: {
-    name: "red",
-    color: "#FF8080",
-    title: "remix room",
-    url: "/scene/1",
-    videoName: "video_2.mov",
-    illusName: "IllusRemixRoom.svg"
-  },
   yellow: {
     name: "yellow",
     color: "#FFF3B1",
@@ -41,6 +19,28 @@ export const themes = {
     url: "/scene/3",
     videoName: "video_3.mp4",
     illusName: "IllusBeachRoom.svg"
+  },
+  red: {
+    name: "red",
+    color: "#FF8080",
+    title: "remix room",
+    url: "/scene/1",
+    videoName: "video_2.mov",
+    illusName: "IllusRemixRoom.svg"
+  },
+  blue : {
+    name: "blue",
+    color: "#CEF2FF",
+    title: "blini game",
+    url: "/game",
+    illusName: "IllusGameRoom.svg"
+  },
+  pink: {
+    name: "pink",
+    color: "#FFBCD7",
+    title: "str'eat food",
+    url: "/food",
+    illusName: "IllusFoodRoom.svg"
   }
 }
 

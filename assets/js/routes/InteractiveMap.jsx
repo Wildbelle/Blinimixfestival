@@ -15,7 +15,8 @@ class InteractiveMap extends Component {
 
     this.state = {
       items: [],
-      title: ""
+      title: "",
+      mobile: false
     }
   
   }
@@ -25,7 +26,7 @@ class InteractiveMap extends Component {
   }
 
   setupTitleMap = (title) => {
-    this.setState({title: title})
+    this.setState({title: title.replace(' ', '<br/>')})
   }
   
   render() {
@@ -33,37 +34,40 @@ class InteractiveMap extends Component {
       <React.Fragment>
         <Sidebar />
         <div className="container">
-          <h1 className="title-map">{this.state.title}</h1>
+          <h1 className="title-map" dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
           <Navigation {...this.props} />
           <div className="page-interactive-map">
-            <div className="bloc-interactive-map">
-              <div className="item">
-                {Object.keys(themes).map((value, index) => {
-                  if (index > 0 && index < 4) {
-                    return (
-                      <SceneButton
-                        key={index}
-                        theme={Object.values(themes)[index]}
-                        setupTitleMap={this.setupTitleMap}
-                      />
-                    )
-                  }
-                })}
-              </div>
-              <div className="item">
-                {Object.keys(themes).map((value, index) => {
-                  if (index > 3) {
-                    return (
-                      <SceneButton
-                        key={index}
-                        theme={Object.values(themes)[index]}
-                        setupTitleMap={this.setupTitleMap}
-                      />
-                    )
-                  }
-                })}
-              </div>
-            </div>
+            {this.state.mobile
+              ? <div className="bloc-interactive-map">
+                  <div className="item">
+                    {Object.keys(themes).map((value, index) => {
+                      if (index > 0 && index < 4) {
+                        return (
+                          <SceneButton
+                            key={index}
+                            theme={Object.values(themes)[index]}
+                            setupTitleMap={this.setupTitleMap}
+                          />
+                        )
+                      }
+                    })}
+                  </div>
+                  <div className="item">
+                    {Object.keys(themes).map((value, index) => {
+                      if (index > 3) {
+                        return (
+                          <SceneButton
+                            key={index}
+                            theme={Object.values(themes)[index]}
+                            setupTitleMap={this.setupTitleMap}
+                          />
+                        )
+                      }
+                    })}
+                  </div>
+                </div>
+              : <div>DEsktop</div>
+            }
           </div>
         </div>
       </React.Fragment>
