@@ -4,7 +4,7 @@ import { ThemeContext, themes } from './theme-context';
 
 function App() {
 
-  const [currentTheme, setCurrentTheme] = useState(themes['blue'])
+  const [currentTheme, setCurrentTheme] = useState(themes['white'])
 
   const changeTheme = (colorName) => {
     setCurrentTheme(themes[colorName])

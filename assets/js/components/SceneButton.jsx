@@ -62,6 +62,10 @@ class SceneButton extends Component {
           }
         }}
       >
+        {this.props.desktop
+          ? null
+          : <p className="title-illus-map">{theme.title}</p>
+        }
       <img
         className="illus-map-img"
         src={'/img/' + (this.props.desktop ? theme.illusNameDesktop : theme.illusName)}

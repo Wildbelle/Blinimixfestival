@@ -9,7 +9,7 @@ export default class Game extends Component {
     this.addResponse = this.addResponse.bind(this)
   
     this.state = {
-       start: true,
+       start: false,
        end: false,
        allResponses: [],
        visiblePage: false

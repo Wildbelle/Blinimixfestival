@@ -48,7 +48,7 @@ class InteractiveMap extends Component {
         <Sidebar />
         <div className="container">
           <h1 className="title-map" dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
-          <Navigation {...this.props} />
+          <Navigation {...this.props} navVisible={true} />
           <div className="page-interactive-map">
             {this.state.mobile
               ? <div className="bloc-interactive-map">
