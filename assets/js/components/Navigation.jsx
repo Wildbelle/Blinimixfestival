@@ -16,7 +16,22 @@ class Navigation extends Component {
   
     this.state = {
       showLinks: false,
+      mobile: false
     }
+  }
+
+  componentDidMount() {
+    const { mobile } = this.state
+    
+    window.innerWidth < 768 && this.setState({mobile:true})
+    
+    window.addEventListener('resize', () => {
+      if(mobile && window.innerWidth > 768) {
+        this.setState({mobile: false})
+      } else if (!mobile && window.innerWidth < 768) {
+        this.setState({mobile: true})
+      }
+    })
   }
 
   setNav = () => {
@@ -49,7 +64,7 @@ class Navigation extends Component {
                 </div>
           }
         </div>
-        <div className={"canvas-nav-burger " + (this.state.showLinks ? "open" : "")}>
+        <div className={"canvas-nav-burger " + (this.state.showLinks ? "open " : " ") + (this.state.mobile ? "": "desktop")}>
           <div className="navburger">
             {Object.keys(themes).map((value, index) =>{
               const theme = Object.values(themes)[index]

@@ -22,7 +22,19 @@ class InteractiveMap extends Component {
   }
 
   componentDidMount() {
+    const { mobile } = this.state
+
     this.context.changeTheme('white')
+    
+    window.innerWidth < 992 && this.setState({mobile:true})
+    
+    window.addEventListener('resize', () => {
+      if(mobile && window.innerWidth > 992) {
+        this.setState({mobile: false})
+      } else if (!mobile && window.innerWidth < 992) {
+        this.setState({mobile: true})
+      }
+    })
   }
 
   setupTitleMap = (title) => {
@@ -32,6 +44,7 @@ class InteractiveMap extends Component {
   render() {
     return (
       <React.Fragment>
+        <div className="bubble-bkg"></div>
         <Sidebar />
         <div className="container">
           <h1 className="title-map" dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
@@ -76,6 +89,18 @@ class InteractiveMap extends Component {
 }
 
 class DesktopMap extends React.Component {
+
+  componentDidMount() {
+    const canvas = document.querySelector('.canvas-map')
+    let scale = window.innerHeight / 1080
+    canvas.style.transform = `translate(-50%, -50%) scale(${(scale).toFixed(2)})`
+    
+    window.addEventListener('resize', () => {
+      let scale = window.innerHeight / 1080
+      canvas.style.transform = `translate(-50%, -50%) scale(${(scale).toFixed(2)})`
+    })
+
+  }
 
   render() {
     return (

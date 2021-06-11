@@ -6,6 +6,9 @@
 
   .illus-map {
     z-index: 2;
+    .illus-map-img {
+      opacity: 0;
+    }
   }
 
   a {

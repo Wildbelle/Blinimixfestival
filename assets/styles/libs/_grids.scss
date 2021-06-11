@@ -4,8 +4,7 @@
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    // grid-column: $grid-columns;
-    // column-gap: $grid-gutter-width;
+    overflow: hidden;
 }
 
 @media (max-width: 576px) {

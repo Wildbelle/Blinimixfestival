@@ -148,9 +148,12 @@
   width: 300px;
   background: aquamarine;
   top: 0;
-  right: -50%;
+  right: -110%;
   z-index: 3;
   transition: right 1s ease-in;
+  &.desktop {
+    right: -50%;
+  }
 
   .navburger {
     height: 100%;

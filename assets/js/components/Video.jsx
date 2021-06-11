@@ -17,8 +17,6 @@ export default class Video extends Component {
     const container = document.querySelector('.container-video')
     const video = document.getElementById('canvas-video')
     container.addEventListener('click', () => {
-      console.log('click')
-      console.log('state', this.state.videoPlay)
       if(this.state.videoPlay) {
         video.pause()
         this.setState({videoPlay: false})

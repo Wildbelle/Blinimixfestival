@@ -16,7 +16,6 @@ class SceneButton extends Component {
     }
   }
   
-
   componentDidMount() {
     const {
       props: {
@@ -25,10 +24,14 @@ class SceneButton extends Component {
       }
     } = this
     const illus = document.querySelector(`.theme-${theme.name}`)
+    const element = document.querySelector('.bubble-bkg')
 
     illus.addEventListener('mouseover', () => {
       const canvas = document.querySelector('.global')
       canvas.style.filter = "grayscale(60%) "
+      element.style.transform = "translate(-50%, -50%) scale(100)"
+      element.style.background = theme.color
+      
       this.setState({visible: true})
       setTimeout(() => {
         setupTitleMap(theme.title)
@@ -37,6 +40,8 @@ class SceneButton extends Component {
     illus.addEventListener('mouseout', () => {
       const canvas = document.querySelector('.global')
       canvas.style.filter = "grayscale(0)"
+      element.style.transform = "translate(-50%, -50%) scale(1)"
+
       this.setState({visible: false})
       setTimeout(() => {
         setupTitleMap('')
@@ -61,7 +66,9 @@ class SceneButton extends Component {
         className="illus-map-img"
         src={'/img/' + (this.props.desktop ? theme.illusNameDesktop : theme.illusName)}
         style={{
-          opacity: this.state.visible ? 1 : 0
+          opacity: this.props.desktop
+                    ? this.state.visible ? 1 : 0
+                    : 1
         }}
         alt=""
         />
