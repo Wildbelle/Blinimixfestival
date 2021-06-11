@@ -37,11 +37,11 @@ class Navigation extends Component {
         </div>
         <div className="canvas-navburger">
           <div className="navburger">
-            <NavLink className=" btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
-            <NavLink className=" btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
-            <NavLink className=" btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
-            <NavLink className=" btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
-            <NavLink className=" btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
+            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/scene/1" >Urban room</NavLink>
+            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/game" >Beach room</NavLink>
+            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/food" >Remix room</NavLink>
+            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/game" >Blini game</NavLink>
+            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
           </div>
         </div>
       
