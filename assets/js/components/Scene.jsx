@@ -167,7 +167,7 @@ export default class Scene extends Component {
         <Navigation {...this.props} navVisible={navVisible} />
 
         {gameModalOpen
-          ? <Game />
+          ? <Game {...this.props} />
           : null
         }
         {recepiesModalOpen

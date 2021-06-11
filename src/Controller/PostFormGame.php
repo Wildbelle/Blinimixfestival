@@ -7,6 +7,7 @@ use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints\Date;
 
 final class PostFormGame extends AbstractController
@@ -25,12 +26,14 @@ final class PostFormGame extends AbstractController
     $participant->setDateOfBirth($date);
     $participant->setEmail($content->email);
 
-    $participant->setAnswer1($answers[0]->text);
-    $participant->setAnswer2($answers[1]->text);
-    $participant->setAnswer3($answers[2]->text);
-    $participant->setAnswer4($answers[3]->text);
+    $participant->setAnswer1($answers[0]->response);
+    $participant->setAnswer2($answers[1]->response);
+    $participant->setAnswer3($answers[2]->response);
+    $participant->setAnswer4($answers[3]->response);
 
     $em->persist($participant);
-    return $em->flush();
+    $em->flush();
+
+    return new Response("The participant is saved", Response::HTTP_OK, ['Content-Type'=>'tetxt/html']);
   }
 }

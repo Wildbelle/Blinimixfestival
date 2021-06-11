@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Question from './Question';
-import { questions } from '../theme-context'
 import FormGame from './FormGame';
+import Question from './Question';
 
 export default class Game extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ export default class Game extends Component {
     this.addResponse = this.addResponse.bind(this)
   
     this.state = {
-       start: false,
+       start: true,
        end: false,
        allResponses: []
     }
@@ -19,8 +18,11 @@ export default class Game extends Component {
   addResponse = (response) => {
     const newAllResponses = this.state.allResponses
     newAllResponses.push(response)
-    this.setState({allResponses: newAllResponses})
-    console.log(this.state.allResponses)
+    if(newAllResponses.length == 4) {
+      this.setState({allResponses: newAllResponses, end: true})
+    } else {
+      this.setState({allResponses: newAllResponses})
+    }
   }
   
   render() {
@@ -28,7 +30,11 @@ export default class Game extends Component {
       <React.Fragment>
         {
           this.state.start
-            ? <AllQuestions />
+
+            ? this.state.end
+              ? <FormGame {...this.props} responses={this.state.allResponses} />
+              : <AllQuestions addResponse={this.addResponse} />
+
             : <div className="modal-play-game">
                 <div className="header-modal">
                   <div>
