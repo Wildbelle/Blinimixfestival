@@ -28,7 +28,8 @@ export const themes = {
     styleDesktop: {
       top: 0,
       left: '50%',
-      transform: 'translateX(-50%)'
+      transform: 'translateX(-50%)',
+      zIndex: 0
     }
   },
   red: {
