@@ -5,7 +5,6 @@
   
   .item-slider {
     height: 100%;
-    display: block;
   
     &.item-slider-ingredients {
       display: flex;
@@ -41,7 +40,6 @@
         list-style: none;
         padding-inline-start: 0;
         margin: 0 .5rem;
-        // text-align: center;
       }
     }
   
@@ -53,7 +51,7 @@
       height: 80%;
   
       .step-recepie {
-        width: 100%;
+        width: 50%;
       }
     }
   }
@@ -79,8 +77,9 @@
         padding: 0 #{$padding-card};
       }
     }
-
+    
     .item-slider {
+      display: block;
       .absolute-steps {
         position: absolute;
         top: 0;
