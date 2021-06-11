@@ -1,12 +1,15 @@
 .nav-1,
 .nav-2 {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   .border {
+    &.menu {
+      z-index: 4 !important;
+    }
     border: #{$border};
     padding: 5px;
     width: 50px;
@@ -61,7 +64,7 @@
         }
       }
 
-      &:hover {
+      &.active{
         transition-delay: .12s;
         transition-timing-function: cubic-bezier(.215, .61, .355, 1);
         transform: rotate(225deg);
@@ -106,6 +109,10 @@
   }
 }
 
+.nav-2 {
+  z-index: 2;
+}
+
 .nav-1 {
   padding-top: 3%;
   margin-bottom: 30px;
@@ -132,6 +139,33 @@
   .icon {
     width: 1.2rem;
     height: 1.2rem;
+  }
+}
+
+.canvas-nav-burger {
+  position: absolute;
+  height: 100%;
+  width: 300px;
+  background: aquamarine;
+  top: 0;
+  right: -50%;
+  z-index: 3;
+  transition: right 1s ease-in;
+
+  .navburger {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .btn {
+      margin: 1rem 0;
+    }
+  }
+
+  &.open {
+    right: -78px;
   }
 }
 

@@ -18,6 +18,20 @@ class Navigation extends Component {
       showLinks: false,
     }
   }
+
+  setNav = () => {
+    const burger = document.querySelector('.burger-box')
+    const nav = document.querySelector('.canvas-nav-burger')
+    burger.classList.toggle('active')
+
+    if(this.state.showLinks) {
+      console.log('close nav')
+      this.setState({showLinks: false})
+    } else {
+      console.log('open nav')
+      this.setState({showLinks: true})
+    }
+  }
   
   render() {
     const { pink, blue } = themes
@@ -25,23 +39,35 @@ class Navigation extends Component {
     
     return (
       <React.Fragment>
-        <div className={`nav-1 ${this.state.showLinks ? "show-nav" : "hide-nav"} `}>
+        <div className="nav-1">
           <NavLink exact to="/map"><img className="navbrand" src={logo} alt="logo"/></NavLink>
           {!this.props.location.pathname.includes('map')
             &&  <div className="menu border">
-                  <div className="burger-box" onClick={() => setShowLinks(!showLinks)}>
+                  <div className="burger-box" onClick={() => this.setNav()}>
                     <div className="burger-bar"></div>
                   </div>
                 </div>
           }
         </div>
-        <div className="canvas-navburger">
+        <div className={"canvas-nav-burger " + (this.state.showLinks ? "open" : "")}>
           <div className="navburger">
-            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/scene/1" >Urban room</NavLink>
-            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/game" >Beach room</NavLink>
-            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/food" >Remix room</NavLink>
-            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/game" >Blini game</NavLink>
-            <NavLink className="btn" onClick={() => handleShowLinks()} exact to="/food" >Str'eat food</NavLink>
+            {Object.keys(themes).map((value, index) =>{
+              const theme = Object.values(themes)[index]
+              if(index > 0) {
+                return (
+                  <NavLink
+                    key={index}
+                    className="btn"
+                    exact to={{
+                      pathname: theme.url,
+                      state: {
+                        theme: theme
+                      }
+                    }}
+                  > {theme.title} </NavLink>
+                )
+              }
+            })}
           </div>
         </div>
       

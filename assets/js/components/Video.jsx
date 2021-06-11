@@ -14,8 +14,6 @@ export default class Video extends Component {
   }
 
   componentDidMount() {
-    this.setVideo()
-
     const container = document.querySelector('.container-video')
     const video = document.getElementById('canvas-video')
     container.addEventListener('click', () => {
