@@ -66,12 +66,38 @@ class InteractiveMap extends Component {
                     })}
                   </div>
                 </div>
-              : <div>DEsktop</div>
+              : <DesktopMap {...this.props} setupTitleMap={this.setupTitleMap} />
             }
           </div>
         </div>
       </React.Fragment>
     );
+  }
+}
+
+class DesktopMap extends React.Component {
+
+  render() {
+    return (
+      <React.Fragment>
+        <div className="canvas-map">
+          <img src="/img/IllusMap.png" className="global" alt="scene svg" />
+          {Object.keys(themes).map((value, index) => {
+            const current = Object.values(themes)[index]
+            if (index > 0) {
+              return (
+                <SceneButton
+                  key={index}
+                  theme={Object.values(themes)[index]}
+                  setupTitleMap={this.props.setupTitleMap}
+                  desktop={true}
+                />
+              )
+            }
+          })}
+        </div>
+      </React.Fragment>
+    )
   }
 }
 
