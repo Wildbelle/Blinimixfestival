@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import Question from './Question';
 import { questions } from '../theme-context'
+import FormGame from './FormGame';
 
 export default class Game extends Component {
   constructor(props) {
     super(props)
   
+    this.addResponse = this.addResponse.bind(this)
+  
     this.state = {
-       start: false
+       start: false,
+       end: false,
+       allResponses: []
     }
+  }
+
+  addResponse = (response) => {
+    const newAllResponses = this.state.allResponses
+    newAllResponses.push(response)
+    this.setState({allResponses: newAllResponses})
+    console.log(this.state.allResponses)
   }
   
   render() {
@@ -48,11 +60,8 @@ class AllQuestions extends React.Component {
 
   constructor(props) {
     super(props)
-  
-    this.addResponse = this.addResponse.bind(this)
 
     this.state = {
-       allResponses: [],
        questions: []
     }
   }
@@ -66,13 +75,6 @@ class AllQuestions extends React.Component {
       .then(result => result.json())
       .then(data => this.setState({questions: data}))
   }
-
-  addResponse = (response) => {
-    const newAllResponses = this.state.allResponses
-    newAllResponses.push(response)
-    this.setState({allResponses: newAllResponses})
-    console.log(this.state.allResponses)
-  }
   
 
   render() {
@@ -80,9 +82,10 @@ class AllQuestions extends React.Component {
       <React.Fragment>
         {this.state.questions.length > 0 && this.state.questions.map((value, index) => {
           return (
-            <Question key={index} index={index} question={value} addResponse={this.addResponse} />
+            <Question key={index} index={index} question={value} addResponse={this.props.addResponse} />
           )
         })}
+        {/* <FormGame /> */}
       </React.Fragment>
     )
   }
