@@ -120,7 +120,7 @@ class Navigation extends Component {
               </div>
               <div className="title">
                 <h6>blini</h6>
-                <h6>game</h6>
+                <h6>jeu</h6>
               </div>
             </NavLink>
           </div>

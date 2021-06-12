@@ -93,7 +93,7 @@ button {
     font-style: normal;
 }
 
-.title-map {
+.title-scene {
     z-index: 20;
 }
 
@@ -103,14 +103,14 @@ button {
     //line-height: 60px;
     //margin: 22px 60px;
     position: absolute;
-    left: 0;
+    left: 20px;
     bottom: 50px;
     display: flex;
     align-items: flex-end;
 
     .subtitle-scene {
         font-family: 'GillSansBoldC' !important;
-        line-height: 40px;
+        line-height: 46px;
     }
 }
 

@@ -48,7 +48,7 @@ export const themes = {
   blue : {
     name: "blue",
     color: "#CEF2FF",
-    title: "coucours blini",
+    title: "blini jeu",
     url: "/game",
     illusName: "IllusGameRoom.svg",
     illusNameDesktop: "IllusMapGame.svg",

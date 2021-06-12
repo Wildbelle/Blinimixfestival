@@ -144,17 +144,35 @@
 }
 
 .canvas-nav-burger {
-  position: absolute;
-  height: 100%;
-  width: 300px;
-  background: aquamarine;
-  top: 0;
-  right: -110%;
-  z-index: 3;
-  transition: right 1s ease-in;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: -100vw;
+  bottom: 0;
+  width: 0;
+  height: 100vh;
+  padding-bottom: 60px;
+  visibility: hidden;
+  background-color: #{$white};
+  border-left: #{$border};
+  transition: all .8s ease-in-out;
+  z-index: 20;
 
-  &.desktop {
-    right: -50%;
+  // position: absolute;
+  // height: 100%;
+  // width: 300px;
+  // background: aquamarine;
+  // top: 0;
+  // right: -110%;
+  // z-index: 3;
+  // transition: right 1s ease-in;
+
+  &.open.desktop {
+    //right: -50%;
+    width: 18vw;
+    right: 0;
+    visibility: visible;
   }
 
   .navburger {
@@ -173,7 +191,10 @@
   }
 
   &.open {
-    right: -78px;
+    //right: -78px;
+    width: 100vw;
+    right: 0;
+    visibility: visible;
   }
 }
 
