@@ -72,7 +72,7 @@ class MobileCard extends React.Component {
       })
 
       modal.style.top = `${51 - index}%`
-      modal.style.zIndex = 10 - (index * 2)
+      modal.style.zIndex = 0 - (index * 2)
       btnClose.style.zIndex = 9 - (index * 2)
       this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
     }

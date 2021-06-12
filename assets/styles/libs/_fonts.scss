@@ -93,14 +93,35 @@ button {
     font-style: normal;
 }
 
+.title-map {
+    z-index: 20;
+}
+
+.title-scene,
+.title-map {
+    //font-size: 60px;
+    //line-height: 60px;
+    //margin: 22px 60px;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    display: flex;
+    align-items: flex-end;
+
+    .subtitle-scene {
+        font-family: 'GillSansBoldC' !important;
+        line-height: 40px;
+    }
+}
+
 @media #{$medium-up} {
 
     h1,
     h2,
     .h1,
     .h2 {
-        font-size: 140px;
-        line-height: 138px;
+        font-size: 120px;
+        line-height: 118px;
     }
 
     h5,

@@ -16,6 +16,7 @@ class InteractiveMap extends Component {
     this.state = {
       items: [],
       title: "",
+      subtitle: "by blini",
       mobile: false
     }
   
@@ -47,8 +48,11 @@ class InteractiveMap extends Component {
         <div className="bubble-bkg"></div>
         <Sidebar />
         <div className="container">
-          <h1 className="title-map" dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
-          <Navigation {...this.props} navVisible={true} />
+          <div className="title-map">
+          <h1 dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
+          <h5 className="subtitle-scene">{this.state.subtitle}</h5>
+          </div>
+          <Navigation {...this.props} />
           <div className="page-interactive-map">
             {this.state.mobile
               ? <div className="bloc-interactive-map">
@@ -56,11 +60,13 @@ class InteractiveMap extends Component {
                     {Object.keys(themes).map((value, index) => {
                       if (index > 0 && index < 4) {
                         return (
+                      
                           <SceneButton
                             key={index}
                             theme={Object.values(themes)[index]}
                             setupTitleMap={this.setupTitleMap}
                           />
+                  
                         )
                       }
                     })}
@@ -69,11 +75,13 @@ class InteractiveMap extends Component {
                     {Object.keys(themes).map((value, index) => {
                       if (index > 3) {
                         return (
+                          
                           <SceneButton
                             key={index}
                             theme={Object.values(themes)[index]}
                             setupTitleMap={this.setupTitleMap}
                           />
+                          
                         )
                       }
                     })}
