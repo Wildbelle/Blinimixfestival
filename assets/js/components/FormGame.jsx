@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import ModalCgi from './ModalCgi';
+
+
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function FormGame(props) {
   const { register, handleSubmit } = useForm();
+  const {revele, toggle} = ModalCgi();
   const [message, setMessage] = useState(false)
 
   const onSubmit = (data) => {
@@ -23,6 +30,26 @@ function FormGame(props) {
     })
   }
 
+  const Modal = ({revele, cache}) => revele ? (
+      <React.Fragment>
+        <div className="overlay"/>
+
+        <div className="wrapper">
+          <div className="modal-cgi">
+              <div className="header-modal">
+                <button className="btn btn-close" onClick={cache}><FontAwesomeIcon icon={faTimes}/></button>
+              </div>
+              <div className="content-modal">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi debitis deserunt ipsum iusto ut vero consectetur repudiandae, voluptatum non mollitia autem asperiores tempore molestiae. Dolorum soluta incidunt id sint.
+                  </p>
+              </div>
+          </div>
+        </div>
+      </React.Fragment>
+
+      ) : null;
+
     return (
       <React.Fragment>
         {message
@@ -38,6 +65,13 @@ function FormGame(props) {
                 <input type="text" placeholder="Prénom" ref={register} name="firstname" />
                 <input type="text" placeholder="Date de naissance" ref={register} name="dateOfBirth" />
                 <input type="text" placeholder="Adresse mail" ref={register} name="email" />
+                <div>
+                  <button className="btn btn-cgi" onClick={toggle}>conditions générales du concours</button>
+                  <Modal
+                    revele={revele}
+                    cache={toggle}
+                  />
+                </div>
 
                 <button type="submit" className="btn btn-action">Je participe</button>
               </form>

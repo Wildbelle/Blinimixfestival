@@ -94,7 +94,7 @@ button {
 }
 
 .title-scene {
-    z-index: 20;
+    z-index: 2;
 }
 
 .title-scene,
@@ -110,7 +110,7 @@ button {
 
     .subtitle-scene {
         font-family: 'GillSansBoldC' !important;
-        line-height: 46px;
+        line-height: 25px;
     }
 }
 
@@ -128,5 +128,9 @@ button {
     .h5 {
         font-size: 60px;
         line-height: 40px;
+    }
+
+    .subtitle-scene {
+        line-height: 46px;
     }
 }

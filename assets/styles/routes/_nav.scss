@@ -8,7 +8,7 @@
 
   .border {
     &.menu {
-      z-index: 4 !important;
+      z-index: 22 !important;
     }
 
     border: #{$border};
@@ -111,7 +111,7 @@
 }
 
 .nav-2 {
-  z-index: 2;
+  z-index: 22;
 }
 
 .nav-1 {
@@ -130,6 +130,7 @@
   position: absolute;
   top: 0;
   right: 16px;
+  visibility: hidden;
 
   .social-share {
     display: grid;
@@ -154,7 +155,7 @@
   height: 100vh;
   padding-bottom: 60px;
   visibility: hidden;
-  background-color: #{$white};
+  background-color: #{$aqua};
   border-left: #{$border};
   transition: all .8s ease-in-out;
   z-index: 20;
@@ -214,5 +215,9 @@
       width: 62px;
       height: 75px;
     }
+  }
+
+  .sidebar {
+    visibility: visible;
   }
 }
