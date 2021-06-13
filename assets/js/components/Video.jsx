@@ -1,6 +1,8 @@
-import { faPauseCircle, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
 import { ThemeContext } from '../theme-context';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPauseCircle, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default class Video extends Component {
   static contextType = ThemeContext
@@ -26,6 +28,19 @@ export default class Video extends Component {
         this.setState({videoPlay: true})
       }
     })
+
+    // document.addEventListener('mousemove')
+  }
+
+  fadeIcon() {
+    const icon = document.querySelector('.icon-pause')
+    if(icon) {
+      icon.style.opacity = 1
+
+      setTimeout(() => {
+        icon.style.opacity= 0
+      }, 3000)
+    }
   }
   
 
@@ -34,31 +49,12 @@ export default class Video extends Component {
     return (
       <React.Fragment>
         {this.state.visiblePage
-          ? <div className="container-video" style={{height: "100%", width: "100%", zIndex: 999999}}>
+          ? <div className="container-video" onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 999999}}>
             {!this.state.videoPlay
-              ? <div className="icon-play" style={{
-                  width: "50px",
-                  height: "50px",
-                  background: "#EBEBEB",
-                  border: "1px solid red",
-                  zIndex: 9999,
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%"
-                }}>
+              ? <div className="icon-play">
                   <FontAwesomeIcon icon={faPlayCircle} />
                 </div>
-              : <div className="icon-play" style={{
-                  width: "50px",
-                  height: "50px",
-                  background: "#000",
-                  border: "1px solid red",
-                  borderRadius: "50px",
-                  zIndex: 9999,
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%"
-                }}>
+              : <div className="icon-pause">
                   <FontAwesomeIcon icon={faPauseCircle} />
                 </div>
             }
