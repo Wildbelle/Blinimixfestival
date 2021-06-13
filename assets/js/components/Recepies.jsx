@@ -16,7 +16,7 @@ class Recepies extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({visiblePage:true})
-    }, 3000)
+    }, 1000)
 
     fetch('/api/recepies', {
       headers: {
@@ -29,14 +29,21 @@ class Recepies extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.visiblePage
-          ? this.state.recepies.map((value, index) => {
-              return (
-                <Recepie key={index} index={index} recepie={value} />
-              )
-            })
-          : null
-        }
+        <div className="grid-recepie">
+          {this.state.visiblePage
+            ? this.state.recepies.map((value, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <div className="card-recepie">
+                      Recepie {index}
+                    </div>
+                    <Recepie index={index} recepie={value} />
+                  </React.Fragment>
+                )
+              })
+            : null
+          }
+        </div>
       </React.Fragment>
     );
   }

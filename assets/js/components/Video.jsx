@@ -28,8 +28,6 @@ export default class Video extends Component {
         this.setState({videoPlay: true})
       }
     })
-
-    // document.addEventListener('mousemove')
   }
 
   fadeIcon() {

@@ -50,7 +50,7 @@ class MobileCard extends React.Component {
   
     this.state = {
       //visible: this.props.index == 0 ? true : false,
-       visible: true,
+       visible: false,
        modalWidth: 0,
        stepIndex: 0,
        sliderContainer: ""
@@ -200,7 +200,7 @@ class DesktopCard extends React.Component {
     this.hide = this.hide.bind(this)
   
     this.state = {
-       visible: true,
+       visible: false,
        modalWidth: 0,
        stepIndex: 0,
        sliderContainer: ""
