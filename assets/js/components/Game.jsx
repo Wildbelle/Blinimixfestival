@@ -20,6 +20,17 @@ export default class Game extends Component {
     setTimeout(() => {
       this.setState({visiblePage:true})
     }, 3000)
+    const { mobile } = this.state
+
+    window.innerWidth < 992 && this.setState({mobile:true})
+    
+    window.addEventListener('resize', () => {
+      if(mobile && window.innerWidth > 992) {
+        this.setState({mobile: false})
+      } else if (!mobile && window.innerWidth < 992) {
+        this.setState({mobile: true})
+      }
+    })
   }
 
   addResponse = (response) => {
@@ -31,7 +42,6 @@ export default class Game extends Component {
       this.setState({allResponses: newAllResponses})
     }
   }
-  
   render() {
     return (
       <React.Fragment>
@@ -44,18 +54,23 @@ export default class Game extends Component {
                 : <AllQuestions addResponse={this.addResponse} />
 
               : <div className="modal-play-game">
+                  {this.state.mobile
+                  ?
+                  <div>
                   <div className="header-modal">
                     <div>
                       <p className="info">PLACES</p>
                       <h5>10 <span className="h6">Offertes</span></h5>
                     </div>
-                    <h5>Jeu<br/>concours</h5>
                     <div>
                       <p className="info">DATE</p>
                       <h5>4 <span className="h6">Sept.</span></h5>
                     </div>
                   </div>
-
+                  <h5>Jeu<br/>concours</h5>
+                  </div>
+                  : <DesktopGame {...this.props} /> 
+                }
                   <div className="body-modal">
                     <p>Tentez de gagner 10 places pour le Positive Urban Festival qui aura lieu le 4 septembre 2021 au Zénith et des super kits apéro du festivalier</p>
                   </div>
@@ -70,6 +85,32 @@ export default class Game extends Component {
     );
   }
 }
+
+class DesktopGame extends React.Component {
+  
+  render() {
+    return (
+      <React.Fragment>
+        { 
+          <div>             
+          <div className="header-modal">
+            <div>
+              <p className="info">PLACES</p>
+              <h5>10 <span className="h6">Offertes</span></h5>
+            </div>
+            <h5>Jeu<br/>concours</h5>
+            <div>
+              <p className="info">DATE</p>
+              <h5>4 <span className="h6">Sept.</span></h5>
+            </div>
+          </div>
+          </div> 
+        }
+      </React.Fragment>
+    );
+  }
+}
+
 
 class AllQuestions extends React.Component {
 

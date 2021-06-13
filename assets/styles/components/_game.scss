@@ -16,6 +16,8 @@
 
   .header-modal {
     @extend %flex-box;
+    display: flex;
+    align-items: center;
 
     div {
       @extend %flex-box;
@@ -23,6 +25,8 @@
       width: 74px;
       padding: 5px;
       flex-direction: column;
+      margin: 6px;
+
 
       .info {
         font-family: "GillSansBoldC" !important;
@@ -48,7 +52,7 @@
   top: 51%;
   left: 51%;
   transform: translate(-50%, -50%);
-  width: calc(350px - 10px);
+  width: calc(280px - 10px);
   height: 260px;
 
   .header-modal {
@@ -82,5 +86,11 @@
   [class*="modal-question"] {
     width: calc(400px - #{$padding-card});
     padding: #{$padding-card};
+  }
+
+  .header-modal {
+    div {
+      margin: none;
+    }
   }
 }

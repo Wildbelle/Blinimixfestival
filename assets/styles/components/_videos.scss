@@ -8,9 +8,6 @@
     z-index: 1;
     right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    background: #000;
   }
 }
 
@@ -27,6 +24,20 @@
 
   svg {
     width: 100% !important;
+    height: 100%;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .canvas-video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .canvas-video {
+    width: auto;
     height: 100%;
   }
 }

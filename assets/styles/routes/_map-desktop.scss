@@ -6,6 +6,7 @@
 
   .illus-map {
     z-index: 2;
+
     .illus-map-img {
       opacity: 0;
     }
@@ -22,10 +23,6 @@
   &.blinks {
     a.global {
       filter: grayscale(60%) !important;
-    }
-
-    [class*="theme-"] {
-
     }
   }
 }

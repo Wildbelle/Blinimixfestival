@@ -18,12 +18,14 @@ class Sidebar extends Component {
                         <FontAwesomeIcon className="icon" icon={faFacebook}/>
                         </a>
                     </button>
-                    <button className="btn btn-icon">
+                    <button className="btn btn-icon twitter-share-button">
+                        <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="https://blinimixfestival.fr" data-hashtags="blinimixfestival" data-related="" data-show-count="false">
                         <FontAwesomeIcon className="icon" icon={faTwitter}/>
+                        </a>
                     </button>
-                    <button className="btn btn-icon">
+                    {/* <button className="btn btn-icon">
                         <FontAwesomeIcon className="icon" icon={faWhatsapp}/>
-                    </button>
+                    </button> */}
                 </div>
                 <div className="social-network">
                     <button className="btn btn-icon">

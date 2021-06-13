@@ -46,6 +46,16 @@ export default class Scene extends Component {
     this.context.changeTheme(name)
 
     switch (pathname) {
+      case "/map":
+        if (navVisible) {
+          this.setState({
+            navVisible: true,
+            recepiesModalOpen: false,
+            gameModalOpen: false,
+            sceneVideo:false
+          })
+        }
+        break;
       case "/food":
         if (navVisible) {
           this.setState({

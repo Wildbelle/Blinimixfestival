@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SceneButton from '../components/SceneButton';
 import { ThemeContext, themes } from '../theme-context';
 
-import Navigation from './../components/Navigation';
+import NavigationMap from '../components/NavigationMap';
 import Sidebar from './../components/Sidebar';
 
 class InteractiveMap extends Component {
@@ -52,7 +52,7 @@ class InteractiveMap extends Component {
           <h1 dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
           <h5 className="subtitle-scene">{this.state.subtitle}</h5>
           </div>
-          <Navigation {...this.props} />
+          <NavigationMap {...this.props} />
           <div className="page-interactive-map">
             {this.state.mobile
               ? <div className="bloc-interactive-map">

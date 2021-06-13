@@ -111,6 +111,7 @@ button {
     .subtitle-scene {
         font-family: 'GillSansBoldC' !important;
         line-height: 25px;
+        opacity: 0;
     }
 }
 
@@ -130,7 +131,12 @@ button {
         line-height: 40px;
     }
 
-    .subtitle-scene {
-        line-height: 46px;
+    .title-scene,
+    .title-map {
+
+        .subtitle-scene {
+            line-height: 46px;
+            opacity: 1 !important;
+        }
     }
 }
