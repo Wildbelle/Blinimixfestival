@@ -1,3 +1,4 @@
+import { faPauseCircle, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
 import { ThemeContext } from '../theme-context';
 
@@ -36,18 +37,20 @@ export default class Video extends Component {
           ? <div className="container-video" style={{height: "100%", width: "100%", zIndex: 999999}}>
             {!this.state.videoPlay
               ? <div className="icon-play" style={{
-                  width: "10px",
-                  height: "10px",
+                  width: "50px",
+                  height: "50px",
                   background: "#EBEBEB",
                   border: "1px solid red",
                   zIndex: 9999,
                   position: "absolute",
                   top: "50%",
                   left: "50%"
-                }}></div>
+                }}>
+                  <FontAwesomeIcon icon={faPlayCircle} />
+                </div>
               : <div className="icon-play" style={{
-                  width: "10px",
-                  height: "10px",
+                  width: "50px",
+                  height: "50px",
                   background: "#000",
                   border: "1px solid red",
                   borderRadius: "50px",
@@ -55,7 +58,9 @@ export default class Video extends Component {
                   position: "absolute",
                   top: "50%",
                   left: "50%"
-                }}></div>
+                }}>
+                  <FontAwesomeIcon icon={faPauseCircle} />
+                </div>
             }
               <video id="canvas-video" className="canvas-video">
                 <source src={"/videos/" + videoName} type="video/mp4" />

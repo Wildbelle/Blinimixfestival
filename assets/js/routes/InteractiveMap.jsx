@@ -113,7 +113,7 @@ class DesktopMap extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="canvas-map">
+        <div className="canvas-map blinks-illus">
           <img src="/img/IllusMap.png" className="global" alt="scene svg" />
           {Object.keys(themes).map((value, index) => {
             const current = Object.values(themes)[index]
