@@ -175,7 +175,6 @@ export default class Scene extends Component {
           ? <Recepies />
           : null
         }
-
         {sceneVideo
           ? <Video {...this.props} />
           : null

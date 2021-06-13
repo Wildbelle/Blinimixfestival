@@ -7,7 +7,6 @@ import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
 import { faUtensils } from '@fortawesome/free-solid-svg-icons'
 
 import logo from '../../img/LogoBliniMix.png'
-import InteractiveMap from '../routes/InteractiveMap';
 
 class Navigation extends Component {
   
@@ -40,10 +39,8 @@ class Navigation extends Component {
     burger.classList.toggle('active')
 
     if(this.state.showLinks) {
-      console.log('close nav')
       this.setState({showLinks: false})
     } else {
-      console.log('open nav')
       this.setState({showLinks: true})
     }
   }

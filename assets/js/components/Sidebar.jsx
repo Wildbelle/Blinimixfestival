@@ -13,8 +13,10 @@ class Sidebar extends Component {
         <React.Fragment>
             <div className="sidebar">
                 <div className="social-share">
-                    <button className="btn btn-icon">
+                    <button className="btn btn-icon fb-share-button" data-href="https://blinimixfestival.fr">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblinimixfestival.fr%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">
                         <FontAwesomeIcon className="icon" icon={faFacebook}/>
+                        </a>
                     </button>
                     <button className="btn btn-icon">
                         <FontAwesomeIcon className="icon" icon={faTwitter}/>
