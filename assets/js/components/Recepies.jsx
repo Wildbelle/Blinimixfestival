@@ -29,16 +29,11 @@ class Recepies extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="grid-recepie">
+        <div className="grid-recepie-all">
           {this.state.visiblePage
             ? this.state.recepies.map((value, index) => {
                 return (
-                  <React.Fragment key={index}>
-                    <div className="card-recepie">
-                      Recepie {index}
-                    </div>
-                    <Recepie index={index} recepie={value} />
-                  </React.Fragment>
+                  <Recepie key={index} index={index} recepie={value} />
                 )
               })
             : null

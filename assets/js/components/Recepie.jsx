@@ -22,10 +22,14 @@ export default class Recepie extends Component {
         this.setState({mobile: true})
       }
     })
+    console.log('props', this.props)
   }
   render() {
     const {
-      props,
+      props: {
+        recepie,
+        index
+      },
       state: {
         visible,
         mobile
@@ -33,9 +37,19 @@ export default class Recepie extends Component {
     } = this
     return (
       <React.Fragment>
-        {mobile
-          ? <MobileCard {...props} />
-          : <DesktopCard {...props} />
+        <div className="card-recepie" onClick={() => this.setState({visible: true})}>
+          <div className="content-card-recepie">
+            <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
+            <div className="block-title-card-recepie">
+              <h6 className="title-recepie">{recepie.name}</h6>
+            </div>
+          </div>
+        </div>
+        {visible
+          ? mobile
+            ? <MobileCard {...this.props} />
+            : <DesktopCard {...this.props} />
+          : null
         }
       </React.Fragment>
     );
@@ -50,7 +64,7 @@ class MobileCard extends React.Component {
   
     this.state = {
       //visible: this.props.index == 0 ? true : false,
-       visible: false,
+       visible: true,
        modalWidth: 0,
        stepIndex: 0,
        sliderContainer: ""
@@ -200,7 +214,7 @@ class DesktopCard extends React.Component {
     this.hide = this.hide.bind(this)
   
     this.state = {
-       visible: false,
+       visible: true,
        modalWidth: 0,
        stepIndex: 0,
        sliderContainer: ""
@@ -220,10 +234,8 @@ class DesktopCard extends React.Component {
         item.style.width = modalWidth + "px"
       })
       
-      modal.style.top = `${51 - index}%`
-      modal.style.left = `${51 - index}%`
-      modal.style.zIndex = 10 - (index * 2)
-      btnClose.style.zIndex = 9 - (index * 2)
+      modal.style.zIndex = 15 - (index * 2)
+      btnClose.style.zIndex = 14 - (index * 2)
       this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
     }
   }
