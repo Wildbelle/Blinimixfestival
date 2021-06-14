@@ -1,16 +1,16 @@
 .bkg-mobile {
     position: absolute;
     bottom: -20px;
-    //bottom: 0;
     left: 0;
+    right: 0;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 1;
+    opacity: 0;
 
     img {
-        width: 60%;
+        width: 70%;
         align-content: center;
     }
 }
@@ -22,6 +22,25 @@
 
     img {
         width: 100%;
+    }
+}
+
+@media (min-width: 370px) {
+    .bkg-mobile {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+
+        img {
+            width: 70%;
+            align-content: center;
+        }
     }
 }
 

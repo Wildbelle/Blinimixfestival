@@ -121,12 +121,13 @@ function FormGame(props) {
                 <input type="text" placeholder="Adresse mail" ref={register} name="email" />
                 <div className="box-newsletter">
                   <input className="input-newsletter" type="checkbox" name="newsletter" ref={register} />
-                    <p>J'accepte de recevoir la newsletter Blini</p>
+                    <p className="sm">J’accepte de recevoir par e-mail des recettes, des inspirations et des offres de bons de réduction de la part de Maison Foody (l’atelier Blini, Labeyrie, Blini et Delpierre). Je peux à tout moment me désabonner des e-mails de Maison Foody grâce au lien de désabonnement présent dans toutes les communications. 
+                    * champs obligatoires <a href="https://maisonfoody.com/mentions-legales" target="_blank" rel="noopener noreferrer">Mentions légales</a> | <a href="https://maisonfoody.com/" target="_blank" rel="noopener noreferrer">Maison Foody</a></p>
                 </div>
                 <div className="box-cgi">
                   <input className="input-cgi" type="checkbox" name="cgi" ref={register} />
-                    <p>
-                      J'accepte les <button className="btn btn-cgi" onClick={toggle}>conditions générales du concours</button>
+                    <p className="sm">
+                      J'accepte les <button className="btn btn-cgi sm" onClick={toggle}>conditions générales du concours</button>
                     </p>
                 </div>
 
