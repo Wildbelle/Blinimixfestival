@@ -78,7 +78,8 @@ class Navigation extends Component {
                     exact to={{
                       pathname: theme.url,
                       state: {
-                        theme: theme
+                        theme: theme,
+                        removeListener: true
                       }
                     }}
                   > {theme.title} </NavLink>

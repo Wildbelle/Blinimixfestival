@@ -9,6 +9,8 @@ export default class Video extends Component {
 
   constructor(props) {
     super(props)
+
+    this.handleStatePlay = this.handleStatePlay.bind(this)
   
     this.state = {
        visiblePage: true,
@@ -17,20 +19,21 @@ export default class Video extends Component {
     }
   }
 
+  handleStatePlay = () => {
+    const video = document.querySelector('.canvas-video-' + (this.props.location.pathname.split('/').pop()))
+    if(this.state.videoPlay) {
+      console.log('pause')
+      video.pause()
+      this.setState({videoPlay: false})
+    } else {
+      console.log('play')
+      video.play()
+      this.setState({videoPlay: true})
+    }
+  }
+
   componentDidMount() {
-    const container = document.querySelector('.container-video')
-    const video = document.getElementById('canvas-video')
     this.setState({currentPath: this.props.location.pathname})
-    container.addEventListener('click', () => {
-      if(this.state.videoPlay) {
-        console.log('play')
-        video.pause()
-        this.setState({videoPlay: false})
-      } else {
-        video.play()
-        this.setState({videoPlay: true})
-      }
-    })
   }
 
   componentDidUpdate() {
@@ -38,6 +41,7 @@ export default class Video extends Component {
     const currentPath = this.props.location.pathname
 
     if(currentPath !== statePath) {
+      this.eventVideo()
       this.setState({currentPath: currentPath, visiblePage: false}, () => {
         setTimeout(() => {
           this.setState({visiblePage: true, videoPlay: false})
@@ -63,7 +67,7 @@ export default class Video extends Component {
     return (
       <React.Fragment>
         {this.state.visiblePage
-          ? <div className="container-video" onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 999999}}>
+          ? <div onClick={() => this.handleStatePlay()} className={"container-video-" + (this.props.location.pathname.split('/').pop())} onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 999999}}>
             {!this.state.videoPlay
               ? <div className="icon-play">
                   <FontAwesomeIcon icon={faPlayCircle} />
@@ -72,7 +76,7 @@ export default class Video extends Component {
                   <FontAwesomeIcon icon={faPauseCircle} />
                 </div>
             }
-              <video id="canvas-video" className="canvas-video">
+              <video id="canvas-video" className={"canvas-video-" + (this.props.location.pathname.split('/').pop())}>
                 <source src={"/videos/" + videoName} type="video/mp4" />
                 <p>Votre navigateur ne prends pas en charge les vidéos HTML5.
                   <a href={"videos/" + videoName}>Télécharger la vidéo</a>
