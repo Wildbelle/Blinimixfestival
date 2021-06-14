@@ -28,14 +28,14 @@ function FormGame(props) {
           setMessage("Votre participation a bien été enregistré !")
           setTimeout(() => {
             props.history.push('/map')
-          }, 2000)
+          }, 1500)
         }
       })
     } else {
       setMessage("Veuillez accepter les conditions générales du concours !")
       setTimeout(() => {
         setMessage("")
-      }, 3000)
+      }, 1500)
     }
   }
 

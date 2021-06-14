@@ -41,7 +41,7 @@ export default class Video extends Component {
       this.setState({currentPath: currentPath, visiblePage: false}, () => {
         setTimeout(() => {
           this.setState({visiblePage: true, videoPlay: false})
-        }, 2000)
+        }, 1500)
       })
     }
   }
@@ -53,7 +53,7 @@ export default class Video extends Component {
 
       setTimeout(() => {
         icon.style.opacity= 0
-      }, 2000)
+      }, 1500)
     }
   }
   

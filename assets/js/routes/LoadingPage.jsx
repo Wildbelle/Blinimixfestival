@@ -7,7 +7,7 @@ class LoadingPage extends Component {
   componentDidMount() {
       setTimeout(() => {
         this.props.history.push('/map')
-      }, 2000)
+      }, 1500)
   }
 
   render() {
