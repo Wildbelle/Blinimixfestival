@@ -7,4 +7,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 1s ease-in;
+  opacity: 0;
+}
+
+@media #{$medium-up} {
+  .bubble-bkg {
+    opacity: 1;
+  }
 }
