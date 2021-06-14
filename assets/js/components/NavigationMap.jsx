@@ -52,7 +52,7 @@ class NavigationMap extends Component {
     return (
       <React.Fragment>
         <div className="nav-1">
-          <NavLink exact to="/map"><img className="navbrand" src={logo} alt="logo"/></NavLink>
+          <a href="https://www.instagram.com/blini_fr/?hl=fr" target="_blank"><img className="navbrand" src={logo} alt="logo"/></a>
           {!this.props.location.pathname.includes('map')
             &&  <div className="menu border">
                   <div className="burger-box" onClick={() => this.setNav()}>
