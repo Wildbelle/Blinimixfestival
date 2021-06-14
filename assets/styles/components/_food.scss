@@ -179,3 +179,18 @@
     }
   }
 }
+
+
+@media (-webkit-device-pixel-ratio: 2) and (max-width: #{$extraSmall}) {
+  [class*="modal-recepie"] {
+    &.mobile {
+      width: 315px;
+      height: 460px;
+
+      .title-recepie {
+        font-size: 70%;
+      }
+    }
+  }
+  
+}
