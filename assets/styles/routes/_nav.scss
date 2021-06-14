@@ -111,8 +111,8 @@
   z-index: 10;
 
   h6 {
-    font-size: 14px;
-    line-height: 12px;
+    font-size: 12px;
+    line-height: 10px;
   }
 
   .border {
@@ -220,6 +220,13 @@
       width: 60px;
       height: 75px;
     }
+
+    h6 {
+      font-size: 14px;
+      line-height: 12px;
+    }
+
+
   }
 
   .sidebar {

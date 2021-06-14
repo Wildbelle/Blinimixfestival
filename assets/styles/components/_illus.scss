@@ -1,3 +1,19 @@
+.bkg-mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+
+    img {
+        width: 60%;
+        align-content: center;
+    }
+}
+
 .block-img {
     position: fixed;
     right: 2%;
@@ -13,5 +29,9 @@
         position: fixed;
         top: 5%;
         right: 15%;
+    }
+
+    .bkg-mobile {
+        opacity: 0;
     }
 }

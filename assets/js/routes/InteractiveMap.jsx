@@ -42,10 +42,10 @@ class InteractiveMap extends Component {
 
   setupTitleMap = (title) => {
     if(title !== "") {
-      this.setState({title: title.replace(' ', '<br/>'), subtitle: "by Blini"})
+      this.setState({title: title.replace(' ', '<br/>')})
     } else {
       
-      this.setState({title: title.replace(' ', '<br/>'), subtitle: ""})
+      this.setState({title: title.replace(' ', '<br/>')})
     }
   }
   
@@ -53,16 +53,18 @@ class InteractiveMap extends Component {
     return (
       <React.Fragment>
         <Footer />
+        <div className="bkg-mobile">
+          <img className="scene" src="/img/SceneMap.png"></img>
+        </div>
         <div className="bubble-bkg"></div>
         <Sidebar />
         <div className="container">
           <div className="title-map">
           <h1 dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
-          <h5 className="subtitle-scene">{this.state.subtitle}</h5>
+          {/* <h5 className="subtitle-scene">{this.state.subtitle}</h5> */}
           </div>
           <NavigationMap {...this.props} />
           <div className="page-interactive-map">
-            <div className="blinks-click"><h6>Cliquez sur une illustration !</h6></div>
             {this.state.mobile
               ? <React.Fragment>
                   <div className="bloc-interactive-map">
