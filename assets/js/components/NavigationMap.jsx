@@ -114,8 +114,8 @@ class NavigationMap extends Component {
                 <FontAwesomeIcon icon={faDiceD6}/>
               </div>
               <div className="title">
-                <h6>blini</h6>
                 <h6>jeu</h6>
+                <h6>concours</h6>
               </div>
             </NavLink>
           </div>
