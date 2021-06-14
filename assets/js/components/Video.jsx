@@ -13,13 +13,14 @@ export default class Video extends Component {
     this.state = {
        visiblePage: true,
        videoPlay: false,
-       update: 0
+       currentPath: ""
     }
   }
 
   componentDidMount() {
     const container = document.querySelector('.container-video')
     const video = document.getElementById('canvas-video')
+    this.setState({currentPath: this.props.location.pathname})
     container.addEventListener('click', () => {
       if(this.state.videoPlay) {
         video.pause()
@@ -29,6 +30,19 @@ export default class Video extends Component {
         this.setState({videoPlay: true})
       }
     })
+  }
+
+  componentDidUpdate() {
+    const statePath = this.state.currentPath
+    const currentPath = this.props.location.pathname
+
+    if(currentPath !== statePath) {
+      this.setState({currentPath: currentPath, visiblePage: false}, () => {
+        setTimeout(() => {
+          this.setState({visiblePage: true})
+        }, 2000)
+      })
+    }
   }
 
   fadeIcon() {

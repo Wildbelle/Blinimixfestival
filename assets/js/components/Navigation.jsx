@@ -73,9 +73,9 @@ class Navigation extends Component {
                       const burger = document.querySelector('.burger-box')
                       burger.classList.toggle('active')
                       this.setState({showLinks: false})
-                      setTimeout(() => {
-                        window.location.reload()
-                      }, 2000)
+                      // setTimeout(() => {
+                      //   window.location.reload()
+                      // }, 2000)
                     }}
                     className="btn"
                     exact to={{
