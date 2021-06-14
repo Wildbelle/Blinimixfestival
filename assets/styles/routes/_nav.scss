@@ -207,6 +207,18 @@
   }
 }
 
+.social-nav {
+  position: absolute;
+  right: 0;
+  bottom: 7rem;
+  padding: 20px;
+
+  .social-share {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media #{$medium-up} {
 
   .nav-1 {

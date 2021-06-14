@@ -141,7 +141,6 @@ class AllQuestions extends React.Component {
             <Question key={index} index={index} question={value} addResponse={this.props.addResponse} />
           )
         })}
-        {/* <FormGame /> */}
       </React.Fragment>
     )
   }

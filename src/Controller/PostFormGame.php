@@ -31,6 +31,8 @@ final class PostFormGame extends AbstractController
     $participant->setAnswer3($answers[2]->response);
     $participant->setAnswer4($answers[3]->response);
 
+    $participant->setNewsletter($content->newsletter);
+
     $em->persist($participant);
     $em->flush();
 

@@ -10,24 +10,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function FormGame(props) {
   const { register, handleSubmit } = useForm();
   const {revele, toggle} = ModalCgi();
-  const [message, setMessage] = useState(false)
+  const [message, setMessage] = useState("")
 
   const onSubmit = (data) => {
-    data.items = props.responses
-    fetch('/api/participants', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then(result => {
-      if(result.ok) {
-        setMessage(true)
-        setTimeout(() => {
-          props.history.push('/map')
-        }, 2000)
-      }
-    })
+    if (data.cgi) {
+      data.items = props.responses
+      delete data.cgi
+      
+      fetch('/api/participants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(result => {
+        if(result.ok) {
+          setMessage("Votre participation a bien été enregistré !")
+          setTimeout(() => {
+            props.history.push('/map')
+          }, 2000)
+        }
+      })
+    } else {
+      setMessage("Veuillez accepter les conditions générales du concours !")
+      setTimeout(() => {
+        setMessage("")
+      }, 3000)
+    }
   }
 
   const Modal = ({revele, cache}) => revele ? (
@@ -98,8 +107,8 @@ function FormGame(props) {
 
     return (
       <React.Fragment>
-        {message
-          ? <div className="message-form">Votre participation a bien été enregistré !</div>
+        {message !== ""
+          ? <div className="message-form"> {message} </div>
           : <div className="card-form">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <select name="civility" id="civility-select" ref={register} name="civility">
@@ -111,8 +120,15 @@ function FormGame(props) {
                 <input type="text" placeholder="Prénom" ref={register} name="firstname" />
                 <input type="text" placeholder="Date de naissance" ref={register} name="dateOfBirth" />
                 <input type="text" placeholder="Adresse mail" ref={register} name="email" />
-                <div>
-                  <button className="btn btn-cgi" onClick={toggle}>conditions générales du concours</button>
+                <div className="box-newsletter">
+                  <input className="input-newsletter" type="checkbox" name="newsletter" ref={register} />
+                    <p>J'accepte de recevoir par emails des recettes, des inspirations...</p>
+                </div>
+                <div className="box-cgi">
+                  <input className="input-cgi" type="checkbox" name="cgi" ref={register} />
+                    <p>
+                      J'accepte les <button className="btn btn-cgi" onClick={toggle}>conditions générales du concours</button>
+                    </p>
                 </div>
 
                 <button type="submit" className="btn btn-action">Je participe</button>
@@ -120,9 +136,9 @@ function FormGame(props) {
             </div>
         }
         <Modal
-                    revele={revele}
-                    cache={toggle}
-                  />
+          revele={revele}
+          cache={toggle}
+        />
         
       </React.Fragment>
     )

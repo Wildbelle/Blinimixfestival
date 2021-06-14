@@ -89,6 +89,24 @@
 
 }
 
+.box-cgi, .box-newsletter {
+  display: flex;
+  align-items: center;
+  margin: .5rem 0;
+
+  p {
+    margin: 0;
+  }
+
+  .input-cgi, .input-newsletter {
+    width: auto;
+    margin: 0 .5rem;
+  }
+  .btn-cgi {
+    display: contents;
+  }
+}
+
 @media #{$medium-up} {
   .card-form {
     padding: 20px;

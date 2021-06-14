@@ -72,6 +72,11 @@ class Participants
      */
     private $answer4;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $newsletter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -181,6 +186,18 @@ class Participants
     public function setAnswer4(?string $answer4): self
     {
         $this->answer4 = $answer4;
+
+        return $this;
+    }
+
+    public function getNewsletter(): ?bool
+    {
+        return $this->newsletter;
+    }
+
+    public function setNewsletter(bool $newsletter): self
+    {
+        $this->newsletter = $newsletter;
 
         return $this;
     }

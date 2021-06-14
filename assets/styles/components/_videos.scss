@@ -1,9 +1,9 @@
-.container-video {
+[class*="container-video"] {
   //width: 100%;
   //display: flex;
   cursor: pointer;
 
-  .canvas-video {
+  [class*="canvas-video"] {
     position: fixed;
     z-index: 1;
     right: 0;

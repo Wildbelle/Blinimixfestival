@@ -33,6 +33,13 @@
       grid-template-rows: 1fr 1fr;
     }
 
+    .block-img-recepie {
+      
+      img {
+        border-bottom: #{$border};
+      }
+    }
+
   }
 
   .btn-next,

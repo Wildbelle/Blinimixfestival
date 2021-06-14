@@ -20,9 +20,17 @@
 
     .flex-ingredients {
       margin: 0 #{$padding-card};
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       text-align: center;
+      
+      .block-img-recepie, .col-ingredients {
+        margin: .5rem 0;
+
+        img {
+          width: 100%;
+        }
+      }
 
       .title-list-ingredient {
         line-height: 45px;
@@ -76,6 +84,21 @@
 
       .block-title {
         padding: 0 #{$padding-card};
+      }
+    }
+
+    .flex-ingredients {
+      margin: 0 #{$padding-card};
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+      .block-img-recepie {
+        display: none;
+      }
+      
+      .col-ingredients {
+        margin: 0;
       }
     }
 

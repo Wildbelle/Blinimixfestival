@@ -17,10 +17,13 @@ export default class Video extends Component {
     }
   }
 
+  detectEventVideo() {
+  }
+
   componentDidMount() {
-    const container = document.querySelector('.container-video')
-    const video = document.getElementById('canvas-video')
     this.setState({currentPath: this.props.location.pathname})
+    const container = document.querySelector('.container-video-' + (this.props.location.pathname.split('/').pop()))
+    const video = document.getElementById('canvas-video-' + (this.props.location.pathname.split('/').pop()))
     container.addEventListener('click', () => {
       if(this.state.videoPlay) {
         video.pause()
@@ -33,6 +36,7 @@ export default class Video extends Component {
   }
 
   componentDidUpdate() {
+    this.detectEventVideo()
     const statePath = this.state.currentPath
     const currentPath = this.props.location.pathname
 
@@ -62,7 +66,7 @@ export default class Video extends Component {
     return (
       <React.Fragment>
         {this.state.visiblePage
-          ? <div className="container-video" onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 999999}}>
+          ? <div className={"container-video-" + (this.props.location.pathname.split('/').pop())} onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 999999}}>
             {!this.state.videoPlay
               ? <div className="icon-play">
                   <FontAwesomeIcon icon={faPlayCircle} />
@@ -71,7 +75,7 @@ export default class Video extends Component {
                   <FontAwesomeIcon icon={faPauseCircle} />
                 </div>
             }
-              <video id="canvas-video" className="canvas-video">
+              <video id={"canvas-video-"  + (this.props.location.pathname.split('/').pop())} className="canvas-video">
                 <source src={"/videos/" + videoName} type="video/mp4" />
                 <p>Votre navigateur ne prends pas en charge les vidéos HTML5.
                   <a href={"videos/" + videoName}>Télécharger la vidéo</a>

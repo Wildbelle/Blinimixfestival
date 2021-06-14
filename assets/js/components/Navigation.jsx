@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { themes } from '../theme-context';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
-import { faUtensils } from '@fortawesome/free-solid-svg-icons'
+import { faDiceD6, faUtensils } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 import logo from '../../img/LogoBliniMix.png'
 
@@ -86,6 +86,22 @@ class Navigation extends Component {
               }
             })}
           </div>
+          {this.state.mobile &&
+            <div className="social-nav">
+              <div className="social-share">
+                    <button className="btn btn-icon fb-share-button" data-href="https://blinimixfestival.fr">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblinimixfestival.fr%2F&amp;src=sdkpreparse">
+                        <FontAwesomeIcon className="icon" icon={faFacebook}/>
+                        </a>
+                    </button>
+                    <button className="btn btn-icon twitter-share-button">
+                        <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="https://blinimixfestival.fr" data-hashtags="blinimixfestival" data-related="" data-show-count="false">
+                        <FontAwesomeIcon className="icon" icon={faTwitter}/>
+                        </a>
+                    </button>
+                </div>
+            </div>
+          }
         </div>
       
 

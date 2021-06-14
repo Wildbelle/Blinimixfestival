@@ -272,7 +272,6 @@ class DesktopCard extends React.Component {
         hide
       },
       state: {
-        visible,
         stepIndex
       }
     } = this
@@ -307,7 +306,9 @@ class DesktopCard extends React.Component {
                   </p>
                 </div>
                 <div className="flex-ingredients">
-                  
+                  <div className="block-img-recepie">
+                    <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
+                  </div>
                   <div key={index} className="col-ingredients">
                     <h6 className="title-list-ingredient">Ingrédients</h6>
                     <hr/>
