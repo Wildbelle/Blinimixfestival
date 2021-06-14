@@ -13,7 +13,6 @@ export default class Footer extends Component {
   }
   
   updateVisible = () => {
-    console.log('update')
     this.setState({visible: !this.state.visible})
   }
     

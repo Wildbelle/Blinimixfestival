@@ -34,8 +34,8 @@ class Navigation extends Component {
   }
 
   setNav = () => {
-    const burger = document.querySelector('.burger-box')
     const nav = document.querySelector('.canvas-nav-burger')
+    const burger = document.querySelector('.burger-box')
     burger.classList.toggle('active')
 
     if(this.state.showLinks) {
@@ -69,6 +69,14 @@ class Navigation extends Component {
                 return (
                   <NavLink
                     key={index}
+                    onClick={() => {
+                      const burger = document.querySelector('.burger-box')
+                      burger.classList.toggle('active')
+                      this.setState({showLinks: false})
+                      setTimeout(() => {
+                        window.location.reload()
+                      }, 2000)
+                    }}
                     className="btn"
                     exact to={{
                       pathname: theme.url,

@@ -20,7 +20,7 @@ export default class Scene extends Component {
        navVisible: true,
        gameModalOpen: false,
        recepiesModalOpen: false,
-       sceneVideo: false,
+       sceneVideo: false
     }
   }
 

@@ -12,7 +12,8 @@ export default class Video extends Component {
   
     this.state = {
        visiblePage: true,
-       videoPlay: false
+       videoPlay: false,
+       update: 0
     }
   }
 

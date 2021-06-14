@@ -27,6 +27,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      animation: blinks 3s ease-out;
 
       .illus-map-img {
         max-width: 100%;
@@ -43,6 +44,33 @@
         font-family: 'GillSansBoldC';
       }
     }
+  }
+}
+
+@keyframes blinks {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  36% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

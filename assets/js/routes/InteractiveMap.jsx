@@ -41,7 +41,12 @@ class InteractiveMap extends Component {
   }
 
   setupTitleMap = (title) => {
-    this.setState({title: title.replace(' ', '<br/>')})
+    if(title !== "") {
+      this.setState({title: title.replace(' ', '<br/>'), subtitle: "by blini"})
+    } else {
+      
+      this.setState({title: title.replace(' ', '<br/>'), subtitle: ""})
+    }
   }
   
   render() {
