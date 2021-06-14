@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 0;
 
   .bloc-interactive-map {
     display: flex;
@@ -16,11 +17,12 @@
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
+      padding: 0 10px;
     }
 
     .illus-map {
       width: auto;
-      height: 150px;
+      height: 125px;
       border-radius: 100%;
       margin: 16px 8px;
       display: flex;
@@ -42,6 +44,8 @@
         width: 100%;
         transform: translateX(-50%);
         font-family: 'GillSansBoldC';
+        font-size: 30px;
+        line-height: 28px;
       }
     }
   }
@@ -51,24 +55,31 @@
   0% {
     opacity: 0;
   }
+
   12% {
     opacity: 1;
   }
+
   24% {
     opacity: 0;
   }
+
   36% {
     opacity: 1;
   }
+
   48% {
     opacity: 0;
   }
+
   70% {
     opacity: 1;
   }
+
   82% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -102,6 +113,7 @@
 @media #{$small-up} and (min-height: #{$medium}) {
 
   .page-interactive-map {
+
     .bloc-interactive-map {
 
       .illus-map {
@@ -115,6 +127,7 @@
 @media #{$medium-up} and (min-height: #{$medium}) {
 
   .page-interactive-map {
+
     .bloc-interactive-map {
       .illus-map {
         width: 250px;
@@ -127,6 +140,7 @@
 @media #{$medium-up} {
 
   .page-interactive-map {
+
     .bloc-interactive-map {
       .illus-map {
         width: 200px;

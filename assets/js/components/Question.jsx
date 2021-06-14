@@ -20,7 +20,7 @@ class Question extends Component {
     const modal = document.querySelector(`.modal-question-${index}`)
     modal.style.top = `${51 - index}%`
     modal.style.left = `${51 - index}%`
-    modal.style.zIndex = 4 - index
+    modal.style.zIndex = 40 - index
   }
 
   reply (response) {

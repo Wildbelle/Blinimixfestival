@@ -55,7 +55,7 @@ h4,
 h5,
 .h5 {
     font-size: 40px;
-    line-height: 28px;
+    line-height: 38px;
 }
 
 h6,
@@ -109,6 +109,7 @@ button {
     bottom: 50px;
     display: flex;
     align-items: flex-end;
+    z-index: 25;
 
     .subtitle-scene {
         font-family: 'GillSansBoldC' !important;

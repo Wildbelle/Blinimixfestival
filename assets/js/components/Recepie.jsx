@@ -87,7 +87,7 @@ class MobileCard extends React.Component {
     })
 
     modal.style.zIndex = 20 - (index * 2)
-    btnClose.style.zIndex = 9 - (index * 2)
+    btnClose.style.zIndex = 20 - (index * 2)
     this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
   }
 
@@ -225,8 +225,8 @@ class DesktopCard extends React.Component {
       item.style.width = modalWidth + "px"
     })
     
-    modal.style.zIndex = 15 - (index * 2)
-    btnClose.style.zIndex = 14 - (index * 2)
+    modal.style.zIndex = 35 - (index * 2)
+    btnClose.style.zIndex = 34 - (index * 2)
     this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
   }
 
