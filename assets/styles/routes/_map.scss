@@ -16,7 +16,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-direction: column;
+      //flex-direction: column;
       padding: 0 10px;
     }
 
@@ -24,9 +24,11 @@
       width: auto;
       height: 125px;
       border-radius: 100%;
-      margin: 16px 8px;
+      margin: 20px 2px;
+      //margin: 16px 8px;
       display: flex;
-      align-items: center;
+      align-items: unset;
+      //align-items: center;
       justify-content: center;
       position: relative;
 
@@ -43,8 +45,10 @@
         width: 100%;
         transform: translateX(-50%);
         font-family: 'GillSansBoldC';
-        font-size: 30px;
-        line-height: 28px;
+        font-size: 20px;
+        line-height: 18px;
+        //font-size: 30px;
+        //line-height: 28px;
       }
     }
   }
@@ -61,7 +65,7 @@
   border: #{$border};
   padding: #{$padding-card};
   animation: delete 6s ease-out both;
-  
+
   h6 {
     animation: blinks 5s ease-out both;
   }
@@ -71,9 +75,11 @@
   0% {
     opacity: 1;
   }
+
   99% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     z-index: -1;
@@ -116,8 +122,8 @@
     .bloc-interactive-map {
 
       .illus-map {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
       }
     }
   }

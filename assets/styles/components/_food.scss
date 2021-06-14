@@ -81,7 +81,7 @@
   .card-recepie {
     @extend %block-recepie;
     width: 18%;
-    margin: .4rem;
+    margin: .4rem 0;
     margin-left: auto;
 
     &:hover {
@@ -153,6 +153,7 @@
 
     .card-recepie {
       margin-left: .4rem;
+
       &:hover {
         background: #{$pink};
       }
@@ -184,13 +185,15 @@
 @media (-webkit-device-pixel-ratio: 2) and (max-width: #{$extraSmall}) {
   [class*="modal-recepie"] {
     &.mobile {
-      width: 315px;
-      height: 460px;
+      width: 250px;
+      height: 400px;
+      //width: 315px;
+      //height: 460px;
 
       .title-recepie {
         font-size: 70%;
       }
     }
   }
-  
+
 }
