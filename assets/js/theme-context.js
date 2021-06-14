@@ -45,18 +45,6 @@ export const themes = {
       right: 0
     }
   },
-  blue : {
-    name: "blue",
-    color: "#CEF2FF",
-    title: "blini jeu",
-    url: "/game",
-    illusName: "IllusGameRoom.svg",
-    illusNameDesktop: "IllusMapGame.svg",
-    styleDesktop: {
-      bottom: 0,
-      left: 0
-    }
-  },
   pink: {
     name: "pink",
     color: "#FFBCD7",
@@ -64,6 +52,18 @@ export const themes = {
     url: "/food",
     illusName: "IllusFoodRoom.svg",
     illusNameDesktop: "IllusMapFood.svg",
+    styleDesktop: {
+      bottom: 0,
+      left: 0
+    }
+  },
+  blue : {
+    name: "blue",
+    color: "#CEF2FF",
+    title: "blini jeu",
+    url: "/game",
+    illusName: "IllusGameRoom.svg",
+    illusNameDesktop: "IllusMapGame.svg",
     styleDesktop: {
       bottom: 0,
       right: 0
