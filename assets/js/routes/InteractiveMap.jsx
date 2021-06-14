@@ -4,6 +4,7 @@ import { ThemeContext, themes } from '../theme-context';
 
 import NavigationMap from '../components/NavigationMap';
 import Sidebar from './../components/Sidebar';
+import Footer from '../components/Footer';
 
 class InteractiveMap extends Component {
   static contextType = ThemeContext
@@ -17,7 +18,8 @@ class InteractiveMap extends Component {
       items: [],
       title: "",
       subtitle: "",
-      mobile: false
+      mobile: false,
+      visibleCGV: true
     }
   
   }
@@ -45,6 +47,7 @@ class InteractiveMap extends Component {
   render() {
     return (
       <React.Fragment>
+        <Footer />
         <div className="bubble-bkg"></div>
         <Sidebar />
         <div className="container">
