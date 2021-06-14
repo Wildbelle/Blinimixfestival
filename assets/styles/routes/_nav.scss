@@ -1,7 +1,7 @@
 .nav-1,
 .nav-2 {
   position: relative;
-  z-index: 22;
+  z-index: 26;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,7 +166,7 @@
   background-color: #{$aqua};
   border-left: #{$border};
   transition: all .8s ease-in-out;
-  z-index: 20;
+  z-index: 25;
 
   // position: absolute;
   // height: 100%;
