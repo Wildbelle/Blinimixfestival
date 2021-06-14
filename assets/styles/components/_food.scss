@@ -34,7 +34,7 @@
     }
 
     .block-img-recepie {
-      
+
       img {
         border-bottom: #{$border};
       }
@@ -44,7 +44,7 @@
 
   .btn-next,
   .btn-prev {
-    z-index: 9;
+    z-index: 10;
     position: absolute;
     bottom: 20px;
     border: none;
@@ -68,7 +68,7 @@
 .grid-recepie-all {
   position: absolute;
   width: 100%;
-  z-index: 4;
+  z-index: 10;
   bottom: 35%;
   display: flex;
   flex-wrap: wrap;

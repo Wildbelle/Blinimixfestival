@@ -54,7 +54,7 @@
   transform: translate(-50%, -50%);
   width: calc(250px - 10px);
   height: 260px;
-  z-index: 40;
+  z-index: 10;
 
   .header-modal {
     @extend %flex-box;

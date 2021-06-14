@@ -41,7 +41,6 @@ function FormGame(props) {
 
   const Modal = ({revele, cache}) => revele ? (
       <React.Fragment>
-        <div className="overlay"/>
 
         <div className="wrapper">
           <div className="modal-cgi">
@@ -122,7 +121,7 @@ function FormGame(props) {
                 <input type="text" placeholder="Adresse mail" ref={register} name="email" />
                 <div className="box-newsletter">
                   <input className="input-newsletter" type="checkbox" name="newsletter" ref={register} />
-                    <p>J'accepte de recevoir par emails des recettes, des inspirations...</p>
+                    <p>J'accepte de recevoir la newsletter Blini</p>
                 </div>
                 <div className="box-cgi">
                   <input className="input-cgi" type="checkbox" name="cgi" ref={register} />
