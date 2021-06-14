@@ -3,6 +3,7 @@ import { ThemeContext } from '../theme-context';
 
 import Navigation from './Navigation';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 
 import Game from './Game';
 import Recepies from './Recepies';
@@ -184,6 +185,7 @@ export default class Scene extends Component {
         <h1 dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
         <h5 className="subtitle-scene">{theme.subtitle}</h5>
         </div>
+        <Footer />
         </div>
      </React.Fragment>
     );
