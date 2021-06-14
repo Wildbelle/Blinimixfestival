@@ -227,6 +227,7 @@ class DesktopCard extends React.Component {
     
     modal.style.zIndex = 15 - (index * 2)
     btnClose.style.zIndex = 14 - (index * 2)
+    this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
   }
 
   nextStep = () => {
