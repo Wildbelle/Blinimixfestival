@@ -41,7 +41,6 @@ export default class Video extends Component {
     const currentPath = this.props.location.pathname
 
     if(currentPath !== statePath) {
-      this.eventVideo()
       this.setState({currentPath: currentPath, visiblePage: false}, () => {
         setTimeout(() => {
           this.setState({visiblePage: true, videoPlay: false})
