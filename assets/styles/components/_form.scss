@@ -117,6 +117,10 @@
 }
 
 @media #{$medium-up} {
+  .wrapper {
+    width: 350px;
+  }
+
   .card-form {
     padding: 20px;
   }
