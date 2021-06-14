@@ -46,16 +46,6 @@ export default class Scene extends Component {
     this.context.changeTheme(name)
 
     switch (pathname) {
-      case "/map":
-        if (navVisible) {
-          this.setState({
-            navVisible: true,
-            recepiesModalOpen: false,
-            gameModalOpen: false,
-            sceneVideo:false
-          })
-        }
-        break;
       case "/food":
         if (navVisible) {
           this.setState({
@@ -192,7 +182,7 @@ export default class Scene extends Component {
         <Illus />
         <div className="title-scene">
         <h1 dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
-        <h5 className="subtitle-scene">by blini</h5>
+        <h5 className="subtitle-scene">{theme.subtitle}</h5>
         </div>
         </div>
      </React.Fragment>

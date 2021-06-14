@@ -14,11 +14,11 @@ export default class Recepie extends Component {
 
   componentDidMount() {
     const { mobile } = this.state
-    window.innerWidth < 768 && this.setState({mobile:true})
+    window.innerWidth < 770 && this.setState({mobile:true})
     window.addEventListener('resize', () => {
-      if(mobile && window.innerWidth > 768) {
+      if(mobile && window.innerWidth > 770) {
         this.setState({mobile: false})
-      } else if (!mobile && window.innerWidth < 768) {
+      } else if (!mobile && window.innerWidth < 770) {
         this.setState({mobile: true})
       }
     })
@@ -85,7 +85,7 @@ class MobileCard extends React.Component {
         item.style.width = modalWidth + "px"
       })
 
-      modal.style.top = `${51 - index}%`
+      // modal.style.top = `${50 - index}%`
       modal.style.zIndex = 20 - (index * 2)
       btnClose.style.zIndex = 9 - (index * 2)
       this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})

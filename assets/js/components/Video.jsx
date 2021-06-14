@@ -37,7 +37,7 @@ export default class Video extends Component {
 
       setTimeout(() => {
         icon.style.opacity= 0
-      }, 3000)
+      }, 2000)
     }
   }
   

@@ -9,7 +9,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 355px;
+  width: 300px;
   overflow: hidden;
 
   .grid-recepie {
@@ -26,7 +26,7 @@
   }
 
   &.mobile {
-    height: 600px;
+    height: 500px;
 
     .grid-recepie {
       grid-template-columns: 1fr;
@@ -75,7 +75,6 @@
 
     &:hover {
       cursor: pointer;
-      background: #{$pink};
     }
 
     .content-card-recepie {
@@ -98,17 +97,16 @@
         width: 50%;
         display: flex;
         align-items: center;
-        justify-content: center;
         transition: .5 ease;
         opacity: 0;
       }
 
-      &:hover .block-title-card-recepie {
-        opacity: 1;
+      .block-title-card-recepie {
+        opacity: 0;
       }
 
       &:hover img {
-        opacity: 0;
+        opacity: 1;
       }
     }
   }
@@ -129,6 +127,39 @@
 
         img {
           height: 100%;
+        }
+      }
+    }
+  }
+
+  .grid-recepie-all {
+
+    .card-recepie {
+
+      &:hover {
+        background: #{$pink};
+      }
+
+      .content-card-recepie {
+
+        .block-title-card-recepie {
+          position: absolute;
+          right: 10px;
+          left: 10px;
+          bottom: 10px;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          transition: .5 ease;
+          opacity: 0;
+        }
+
+        &:hover .block-title-card-recepie {
+          opacity: 1;
+        }
+
+        &:hover img {
+          opacity: 0;
         }
       }
     }

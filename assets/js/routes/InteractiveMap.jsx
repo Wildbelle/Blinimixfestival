@@ -16,7 +16,7 @@ class InteractiveMap extends Component {
     this.state = {
       items: [],
       title: "",
-      subtitle: "by blini",
+      subtitle: "",
       mobile: false
     }
   

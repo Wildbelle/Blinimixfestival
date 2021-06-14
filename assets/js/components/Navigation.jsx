@@ -22,12 +22,12 @@ class Navigation extends Component {
   componentDidMount() {
     const { mobile } = this.state
     
-    window.innerWidth < 768 && this.setState({mobile:true})
+    window.innerWidth < 770 && this.setState({mobile:true})
     
     window.addEventListener('resize', () => {
-      if(mobile && window.innerWidth > 768) {
+      if(mobile && window.innerWidth > 770) {
         this.setState({mobile: false})
-      } else if (!mobile && window.innerWidth < 768) {
+      } else if (!mobile && window.innerWidth < 770) {
         this.setState({mobile: true})
       }
     })

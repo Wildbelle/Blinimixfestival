@@ -36,29 +36,6 @@
       border: none;
     }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 24;
-    }
-
-    .wrapper {
-      z-index: 25;
-      height: 500px;
-      width: 700px;
-      background: #{$blue};
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-
-
     select,
     input {
       width: 100%;
@@ -84,6 +61,33 @@
   transform: translate(-50%, -50%);
   color: #{$dark};
   padding: 15px;
+}
+
+.wrapper {
+  z-index: 25;
+  background: #{$blue};
+  border: #{$border};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .modal-cgi {
+    width: 50vw;
+    height: 80vh;
+    display: block;
+    overflow-y: scroll;
+
+    .content-modal {
+      width: 100%;
+      padding: 20px;
+
+      h5 {
+        text-align: center;
+      }
+    }
+  }
+
 }
 
 @media #{$medium-up} {

@@ -19,7 +19,7 @@ export default class Game extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({visiblePage:true})
-    }, 3000)
+    }, 2000)
     const { mobile } = this.state
 
     window.innerWidth < 992 && this.setState({mobile:true})
