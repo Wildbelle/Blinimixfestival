@@ -8,7 +8,8 @@ export default class Recepie extends Component {
     super(props)
   
     this.state = {
-       mobile: false
+       mobile: false,
+       visible: false
     }
   }
 
@@ -22,8 +23,12 @@ export default class Recepie extends Component {
         this.setState({mobile: true})
       }
     })
-    console.log('props', this.props)
   }
+
+  hide = () => {
+    this.setState({visible: false})
+  }
+
   render() {
     const {
       props: {
@@ -47,8 +52,8 @@ export default class Recepie extends Component {
         </div>
         {visible
           ? mobile
-            ? <MobileCard {...this.props} />
-            : <DesktopCard {...this.props} />
+            ? <MobileCard {...this.props} hide= {this.hide} />
+            : <DesktopCard {...this.props} hide= {this.hide} />
           : null
         }
       </React.Fragment>
@@ -59,11 +64,8 @@ export default class Recepie extends Component {
 class MobileCard extends React.Component {
   constructor(props) {
     super(props)
-
-    this.hide = this.hide.bind(this)
   
     this.state = {
-      //visible: this.props.index == 0 ? true : false,
        visible: true,
        modalWidth: 0,
        stepIndex: 0,
@@ -73,27 +75,20 @@ class MobileCard extends React.Component {
   
 
   componentDidMount() {
-    if(this.state.visible) {
-      const { index } = this.props
-      const modal = document.querySelector(`.modal-recepie-${index}`)
-      const modalWidth = modal.getBoundingClientRect().width
-      const btnClose = document.querySelector(`.btn-close-${index}`)
-      const sliderContainer = document.querySelector(`.recepie-container-slider-${index}`)
-      const itemsContainer = sliderContainer.children
-      sliderContainer.style.width = (itemsContainer.length * modalWidth) + "px"
-      itemsContainer.forEach(item => {
-        item.style.width = modalWidth + "px"
-      })
+    const { index } = this.props
+    const modal = document.querySelector(`.modal-recepie-${index}`)
+    const modalWidth = modal.getBoundingClientRect().width
+    const btnClose = document.querySelector(`.btn-close-${index}`)
+    const sliderContainer = document.querySelector(`.recepie-container-slider-${index}`)
+    const itemsContainer = sliderContainer.children
+    sliderContainer.style.width = (itemsContainer.length * modalWidth) + "px"
+    itemsContainer.forEach(item => {
+      item.style.width = modalWidth + "px"
+    })
 
-      // modal.style.top = `${50 - index}%`
-      modal.style.zIndex = 20 - (index * 2)
-      btnClose.style.zIndex = 9 - (index * 2)
-      this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
-    }
-  }
-
-  hide() {
-    this.setState({visible: false})
+    modal.style.zIndex = 20 - (index * 2)
+    btnClose.style.zIndex = 9 - (index * 2)
+    this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
   }
 
   nextStep = () => {
@@ -134,13 +129,13 @@ class MobileCard extends React.Component {
     const {
       props: {
         index,
-        recepie
+        recepie,
+        hide
       },
       state: {
         visible,
         stepIndex
-      },
-      hide
+      }
     } = this
 
     return (
@@ -210,11 +205,8 @@ class MobileCard extends React.Component {
 class DesktopCard extends React.Component {
   constructor(props) {
     super(props)
-
-    this.hide = this.hide.bind(this)
   
     this.state = {
-       visible: true,
        modalWidth: 0,
        stepIndex: 0,
        sliderContainer: ""
@@ -222,26 +214,19 @@ class DesktopCard extends React.Component {
   }
 
   componentDidMount() {
-    if(this.state.visible) {
-      const { index } = this.props
-      const modal = document.querySelector(`.modal-recepie-${index}`)
-      const modalWidth = modal.getBoundingClientRect().width
-      const btnClose = document.querySelector(`.btn-close-${index}`)
-      const sliderContainer = document.querySelector(`.recepie-container-slider-${index}`)
-      const itemsContainer = sliderContainer.children
-      sliderContainer.style.width = (itemsContainer.length * modalWidth) + "px"
-      itemsContainer.forEach(item => {
-        item.style.width = modalWidth + "px"
-      })
-      
-      modal.style.zIndex = 15 - (index * 2)
-      btnClose.style.zIndex = 14 - (index * 2)
-      this.setState({modalWidth: modalWidth, sliderContainer: sliderContainer})
-    }
-  }
-
-  hide() {
-    this.setState({visible: false})
+    const { index } = this.props
+    const modal = document.querySelector(`.modal-recepie-${index}`)
+    const modalWidth = modal.getBoundingClientRect().width
+    const btnClose = document.querySelector(`.btn-close-${index}`)
+    const sliderContainer = document.querySelector(`.recepie-container-slider-${index}`)
+    const itemsContainer = sliderContainer.children
+    sliderContainer.style.width = (itemsContainer.length * modalWidth) + "px"
+    itemsContainer.forEach(item => {
+      item.style.width = modalWidth + "px"
+    })
+    
+    modal.style.zIndex = 15 - (index * 2)
+    btnClose.style.zIndex = 14 - (index * 2)
   }
 
   nextStep = () => {
@@ -282,18 +267,17 @@ class DesktopCard extends React.Component {
     const {
       props: {
         index,
-        recepie
+        recepie,
+        hide
       },
       state: {
         visible,
         stepIndex
-      },
-      hide
+      }
     } = this
 
     return (
       <React.Fragment>
-        {visible &&
           <div className={"modal-recepie-" + (index)}>
             <button className={"btn btn-close-" + (index)} onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
             {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => this.prevStep()}>⟵</button>}
@@ -349,7 +333,6 @@ class DesktopCard extends React.Component {
               </div>
             </div>
           </div>
-        }
       </React.Fragment>
     )
   }
