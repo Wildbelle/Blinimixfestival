@@ -37,15 +37,18 @@
       border: none;
     }
 
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
     select,
     input {
       width: 100%;
       border: none;
       border-bottom: #{$border};
       background: transparent;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
 
       &::placeholder {
         color: #{$dark};
