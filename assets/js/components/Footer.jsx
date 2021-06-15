@@ -38,7 +38,8 @@ export default class Footer extends Component {
                 <p>Pays : France</p>
                 <p>Roubaix Site Web : <a href="http://www.ovh.com/" target="_blank" rel="noopener noreferrer">http://www.ovh.com/</a> Téléphone : <a href="tel:+33972101007">09 72 10 10 07</a></p>  
                 <div id="cookiefirst-policy-page"></div>
-  <div>Cette déclaration de cookie a été créée et mise à jour par <a href="https://cookiefirst.com">CookieFirst.com</a>.</div>
+                <div>Cette déclaration de cookie a été créée et mise à jour par <a href="https://cookiefirst.com">CookieFirst.com</a>.</div>
+  
   
             </div>
             <div>
