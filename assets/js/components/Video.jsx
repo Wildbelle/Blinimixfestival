@@ -66,7 +66,7 @@ export default class Video extends Component {
     return (
       <React.Fragment>
         {this.state.visiblePage
-          ? <div onClick={() => this.handleStatePlay()} className={"container-video-" + (this.props.location.pathname.split('/').pop())} onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 999999}}>
+          ? <div onClick={() => this.handleStatePlay()} className={"container-video-" + (this.props.location.pathname.split('/').pop())} onMouseMove={() => this.state.videoPlay && this.fadeIcon()} style={{height: "100%", width: "100%", zIndex: 1}}>
             {!this.state.videoPlay
               ? <div className="icon-play">
                   <FontAwesomeIcon icon={faPlayCircle} />
