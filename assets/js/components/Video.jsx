@@ -76,7 +76,7 @@ export default class Video extends Component {
                 </div>
             }
               <video id="canvas-video" className={"canvas-video-" + (this.props.location.pathname.split('/').pop())}>
-                <source src={"/videos/" + videoName} type="video/mp4" />
+                <source src={"/videos/" + videoName} type="video/mp4" preload="true" />
                 <p>Votre navigateur ne prends pas en charge les vidéos HTML5.
                   <a href={"videos/" + videoName}>Télécharger la vidéo</a>
                 </p>

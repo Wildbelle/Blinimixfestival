@@ -42,10 +42,10 @@ class InteractiveMap extends Component {
 
   setupTitleMap = (title) => {
     if(title !== "") {
-      this.setState({title: title.replace(' ', '<br/>')})
+      this.setState({title: title.replace(' ', '<br/>'), subtitle: "by Blini"})
     } else {
       
-      this.setState({title: title.replace(' ', '<br/>')})
+      this.setState({title: title.replace(' ', '<br/>'), subtitle: ""})
     }
   }
   
@@ -53,15 +53,12 @@ class InteractiveMap extends Component {
     return (
       <React.Fragment>
         <Footer />
-        <div className="bkg-mobile">
-          <img className="scene" src="/img/SceneMap.png"></img>
-        </div>
         <div className="bubble-bkg"></div>
         <Sidebar />
         <div className="container">
           <div className="title-map">
           <h1 dangerouslySetInnerHTML={{__html: this.state.title}}></h1>
-          {/* <h5 className="subtitle-scene">{this.state.subtitle}</h5> */}
+          <h5 className="subtitle-scene">{this.state.subtitle}</h5>
           </div>
           <NavigationMap {...this.props} />
           <div className="page-interactive-map">
@@ -124,7 +121,7 @@ class DesktopMap extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="canvas-map blinks-illus">
+        <div className="canvas-map">
           <img src="/img/IllusMap.png" className="global" alt="scene svg" />
           {Object.keys(themes).map((value, index) => {
             const current = Object.values(themes)[index]

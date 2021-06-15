@@ -20,9 +20,8 @@
     }
   }
 
-  &.blinks {
-    a.global {
-      filter: grayscale(60%) !important;
-    }
+  a.global {
+    filter: grayscale(60%) !important;
   }
+
 }
