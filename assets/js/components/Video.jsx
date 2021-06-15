@@ -22,11 +22,9 @@ export default class Video extends Component {
   handleStatePlay = () => {
     const video = document.querySelector('.canvas-video-' + (this.props.location.pathname.split('/').pop()))
     if(this.state.videoPlay) {
-      console.log('pause')
       video.pause()
       this.setState({videoPlay: false})
     } else {
-      console.log('play')
       video.play()
       this.setState({videoPlay: true})
     }
