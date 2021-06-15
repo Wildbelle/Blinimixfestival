@@ -60,7 +60,7 @@ export default class Game extends Component {
                   <div className="header-modal">
                     <div>
                       <p className="info">PLACES</p>
-                      <h3>10 <br></br><span className="h6">à gagner</span></h3>
+                      <h3>10 <br></br><span className="h6">à Gagner</span></h3>
                     </div>
                     <div>
                       <p className="info">DATE</p>
@@ -96,12 +96,12 @@ class DesktopGame extends React.Component {
           <div className="header-modal">
             <div>
               <p className="info">PLACES</p>
-              <h5>10 <span className="h6">à Gagner</span></h5>
+              <h5>10 <br></br><span className="h6">à Gagner</span></h5>
             </div>
             <h5>Jeu<br/>concours</h5>
             <div>
               <p className="info">DATE</p>
-              <h5>4 <span className="h6">Sept.</span></h5>
+              <h5>4 <br></br><span className="h6">Sept.</span></h5>
             </div>
           </div>
           </div> 
