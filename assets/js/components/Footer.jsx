@@ -21,7 +21,7 @@ export default class Footer extends Component {
     return (
       <React.Fragment>
         <div className="footer">
-                <script id="CookieDeclaration" src="https://consent.cookiebot.com/719f2804-665a-40bd-8c48-d1ec7c25b86a/cd.js" type="text/javascript" async></script>
+            <script id="CookieDeclaration" src="https://consent.cookiebot.com/719f2804-665a-40bd-8c48-d1ec7c25b86a/cd.js" type="text/javascript" async></script>
             <button className="cookies btn btn-icon">
                 <FontAwesomeIcon className="icon" icon={faCookieBite}/>
             </button>
