@@ -103,7 +103,8 @@ button {
     align-items: flex-end;
     z-index: 1;
 
-    .subtitle-scene {
+    .subtitle-scene,
+    .subtitle-map {
         font-family: 'AbrilFatFace' !important;
         line-height: 28px;
     }
@@ -134,8 +135,13 @@ button {
         line-height: 28px;
     }
 
-    .subtitle-scene {
-        line-height: 38px;
+    .title-map,
+    .title-scene {
+
+        .subtitle-scene,
+        .subtitle-map {
+            line-height: 38px;
+        }
     }
 }
 
@@ -177,7 +183,12 @@ button {
         line-height: 14px;
     }
 
-    .subtitle-scene {
-        line-height: 48px;
+    .title-map,
+    .title-scene {
+
+        .subtitle-scene,
+        .subtitle-map {
+            line-height: 48px;
+        }
     }
 }

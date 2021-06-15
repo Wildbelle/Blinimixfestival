@@ -41,7 +41,7 @@ class InteractiveMap extends Component {
   }
 
   setupTitleMap = (title) => {
-    if(title !== "") {
+    if(title == "str'eat food") {
       this.setState({title: title.replace(' ', '<br/>'), subtitle: "by Blini"})
     } else {
       
