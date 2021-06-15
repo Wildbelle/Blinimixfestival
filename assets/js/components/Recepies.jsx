@@ -65,9 +65,7 @@ class Recepies extends Component {
           }
 
           {this.state.recepies.map((recepie, index) => {
-            console.log('index', recepie.id)
             if(this.state.recepieActive === recepie.id) {
-              console.log('recepie active', recepie)
               if(this.state.mobile) {
                 return (
                   <MobileCard
