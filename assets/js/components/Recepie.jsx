@@ -3,65 +3,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-export default class Recepie extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       mobile: false,
-       visible: false
-    }
-  }
-
-  componentDidMount() {
-    const { mobile } = this.state
-    window.innerWidth < 770 && this.setState({mobile:true})
-    window.addEventListener('resize', () => {
-      if(mobile && window.innerWidth > 770) {
-        this.setState({mobile: false})
-      } else if (!mobile && window.innerWidth < 770) {
-        this.setState({mobile: true})
-      }
-    })
-  }
-
-  hide = () => {
-    this.setState({visible: false})
-  }
-
-  render() {
-    const {
-      props: {
-        recepie,
-        index
-      },
-      state: {
-        visible,
-        mobile
-      }
-    } = this
-    return (
-      <React.Fragment>
-        <div className="card-recepie" onClick={() => this.setState({visible: true})}>
-          <div className="content-card-recepie">
-            <img src={`/img/recepie_${index + 1}.png`} alt="image de la recette" />
-            <div className="block-title-card-recepie">
-              <h6 className="title-recepie">{recepie.name}</h6>
-            </div>
-          </div>
-        </div>
-        {visible
-          ? mobile
-            ? <MobileCard {...this.props} hide= {this.hide} />
-            : <DesktopCard {...this.props} hide= {this.hide} />
-          : null
-        }
-      </React.Fragment>
-    );
-  }
-}
-
-class MobileCard extends React.Component {
+export class MobileCard extends React.Component {
   constructor(props) {
     super(props)
   
@@ -75,6 +17,7 @@ class MobileCard extends React.Component {
   
 
   componentDidMount() {
+    console.log('mobile')
     const { index } = this.props
     const modal = document.querySelector(`.modal-recepie-${index}`)
     const modalWidth = modal.getBoundingClientRect().width
@@ -135,7 +78,9 @@ class MobileCard extends React.Component {
       state: {
         visible,
         stepIndex
-      }
+      },
+      prevStep,
+      nextStep
     } = this
 
     return (
@@ -143,8 +88,8 @@ class MobileCard extends React.Component {
       {visible &&
         <div className={"mobile modal-recepie-" + (index)}>
           <button className={"btn btn-close-" + (index)} onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
-          {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => this.prevStep()}>⟵</button>}
-          {stepIndex !== 2 && <button className="btn btn-next" onClick={() => this.nextStep()}>⟶</button>}
+          {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => prevStep()}>⟵</button>}
+          {stepIndex !== 2 && <button className="btn btn-next" onClick={() => nextStep()}>⟶</button>}
           <div className={"mobile recepie-container-slider-" + (index)}>
             <div className="item-slider grid-recepie">
               <div className="block-img-recepie">
@@ -202,7 +147,7 @@ class MobileCard extends React.Component {
   }
 }
 
-class DesktopCard extends React.Component {
+export class DesktopCard extends React.Component {
   constructor(props) {
     super(props)
   
@@ -214,6 +159,7 @@ class DesktopCard extends React.Component {
   }
 
   componentDidMount() {
+    console.log('desktop')
     const { index } = this.props
     const modal = document.querySelector(`.modal-recepie-${index}`)
     const modalWidth = modal.getBoundingClientRect().width
@@ -273,15 +219,17 @@ class DesktopCard extends React.Component {
       },
       state: {
         stepIndex
-      }
+      },
+      prevStep,
+      nextStep
     } = this
 
     return (
       <React.Fragment>
           <div className={"modal-recepie-" + (index)}>
             <button className={"btn btn-close-" + (index)} onClick={() => hide()}><FontAwesomeIcon icon={faTimes}/></button>
-            {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => this.prevStep()}>⟵</button>}
-            {stepIndex !== 2 && <button className="btn btn-next" onClick={() => this.nextStep()}>⟶</button>}
+            {stepIndex !== 0 && <button className="btn btn-prev" onClick={() => prevStep()}>⟵</button>}
+            {stepIndex !== 2 && <button className="btn btn-next" onClick={() => nextStep()}>⟶</button>}
             <div className={"recepie-container-slider-" + (index)}>
               <div className="item-slider grid-recepie">
                 <div className="block-img-recepie">
