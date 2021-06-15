@@ -21,11 +21,11 @@ export default class Footer extends Component {
     return (
       <React.Fragment>
         <div className="footer">
-            <script id="CookieDeclaration" src="https://consent.cookiebot.com/719f2804-665a-40bd-8c48-d1ec7c25b86a/cd.js" type="text/javascript" async></script>
+            <p className="sm">Copyright © 2021 | Blini | <span className="sm" onClick={() => this.updateVisible()}>Mentions légales</span></p>
+            
             <button className="cookies btn btn-icon">
                 <FontAwesomeIcon className="icon" icon={faCookieBite}/>
             </button>
-            <p className="sm">Copyright © 2021 | Blini | <span className="sm" onClick={() => this.updateVisible()}>Mentions légales</span></p>
         </div>
         {this.state.visible && 
           <div className="modal-cgv">
@@ -36,10 +36,9 @@ export default class Footer extends Component {
                 <p>N° TVA : FR36788810992</p>
                 <p>Email : <a href="mailto:contact@gustave-et-rosalie.com">contact@gustave-et-rosalie.com</a></p>
                 <p>Pays : France</p>
-                <p>Roubaix Site Web : <a href="http://www.ovh.com/" target="_blank" rel="noopener noreferrer">http://www.ovh.com/</a> Téléphone : <a href="tel:+33972101007">09 72 10 10 07</a></p>
-                <p>Les cookies</p>
-                <script id="CookieDeclaration" src="https://consent.cookiebot.com/719f2804-665a-40bd-8c48-d1ec7c25b86a/cd.js" type="text/javascript" async></script>
+                <p>Roubaix Site Web : <a href="http://www.ovh.com/" target="_blank" rel="noopener noreferrer">http://www.ovh.com/</a> Téléphone : <a href="tel:+33972101007">09 72 10 10 07</a></p>  
             </div>
+            <div id="cookiefirst-policy-page"></div> <div>Cette déclaration de cookie a été créée et mise à jour par <a href="https://cookiefirst.com">CookieFirst.com</a>.</div>
             <div>
             </div>
           </div>
