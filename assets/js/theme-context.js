@@ -40,7 +40,7 @@ export const themes = {
     title: "remix room",
     subtitle: false,
     url: "/scene/1",
-    videoName: "video_2.mov",
+    videoName: "video_2.mp4",
     illusName: "IllusRemixRoom.svg",
     illusNameDesktop: "IllusMapRemix.svg",
     styleDesktop: {
