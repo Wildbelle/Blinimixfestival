@@ -21,6 +21,9 @@ export default class Footer extends Component {
     return (
       <React.Fragment>
         <div className="footer">
+            <div className="bkg-mobile">
++             <img className="scene" src="/img/SceneMap.png"></img>
++           </div>
             <p className="sm">Copyright © 2021 | Blini | <span className="sm" onClick={() => this.updateVisible()}>Mentions légales</span></p>
             
             <button className="cookies btn btn-icon">
