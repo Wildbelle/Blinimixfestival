@@ -23,6 +23,11 @@
         top: 2%;
         right: 2%;
         z-index: 9999;
+
+        .svg-inline--fa {
+            height: 1.2em;
+            width: 1.8em;
+        }
     }
 
     &:hover {
@@ -32,11 +37,6 @@
 
     &.btn-icon {
         border: none;
-    }
-
-    .btn-close>.svg-inline--fa {
-        height: 1.2em;
-        width: 1.8em;
     }
 }
 
