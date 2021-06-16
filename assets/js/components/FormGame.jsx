@@ -159,11 +159,13 @@ Les Participants disposent d’un droit d’accès, de rectification, d’opposi
           ? <div className="message-form"> {message} </div>
           : <div className="card-form">
               <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="selected">
                 <select name="civility" id="civility-select" ref={register} name="civility">
                   <option value="">Civilité</option>
                   <option value="M.">Monsieur</option>
                   <option value="Mme.">Madame</option>
                 </select>
+                </div>
                 <input type="text" placeholder="Nom" ref={register} name="lastname" />
                 <input type="text" placeholder="Prénom" ref={register} name="firstname" />
                 <input type="text" placeholder="Date de naissance" ref={register} name="dateOfBirth" />
