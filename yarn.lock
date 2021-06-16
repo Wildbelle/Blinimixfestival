@@ -4056,6 +4056,11 @@ react-cookie-consent@^6.2.4:
     js-cookie "^2.2.1"
     prop-types "^15.7.2"
 
+react-cookiefirst@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-cookiefirst/-/react-cookiefirst-0.1.2.tgz#0d1461ea8cf4af09862e63b6d26626aff64c79ba"
+  integrity sha512-qsyR+eJnbUeBMKDSakDupMrcwNz2+0IS7CuEcNjBq/trwRm6Zvs1O9jLeEigO9lvtyONFt+AaMqf4pixImKkyA==
+
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"

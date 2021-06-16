@@ -5,7 +5,8 @@ import { ThemeContext } from '../theme-context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Scene from './Scene';
 
-import CookieConsent from 'react-cookie-consent';
+import ReactCookieFirst from "react-cookiefirst";
+// import CookieConsent from 'react-cookie-consent';
 
 class Theme extends Component {
   static contextType = ThemeContext
@@ -22,7 +23,8 @@ class Theme extends Component {
             <Route exact path="/map" component={InteractiveMap} />
             <Route path={['/food', '/game', '/scene']} component={Scene} />
           </Router>
-          <CookieConsent
+          <ReactCookieFirst apiKey="af692491-489f-43a1-bc16-42763011252b" />
+          {/* <CookieConsent
             location="bottom"
             enableDeclineButton={true}
             buttonText="J'accepte"
@@ -50,7 +52,7 @@ class Theme extends Component {
               background: "transparent",
               border: "2px solid #262c7e"
             }}
-          >Nous utilisons des cookies pour optimiser notre site web et notre service.</CookieConsent>
+          >Nous utilisons des cookies pour optimiser notre site web et notre service.</CookieConsent> */}
         </div>
       </React.Fragment>
     );

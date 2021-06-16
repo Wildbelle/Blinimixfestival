@@ -54,8 +54,8 @@ class InteractiveMap extends Component {
       <React.Fragment>
         <Footer />
         <div className="bkg-mobile">
-+             <img className="scene" src="/img/SceneMap.png"></img>
-+           </div>
+            <img className="scene" src="/img/SceneMap.png"></img>
+        </div>
         <div className="bubble-bkg"></div>
         <Sidebar />
         <div className="container">

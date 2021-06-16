@@ -25,6 +25,7 @@
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
         "react-cookie-consent": "^6.2.4",
+        "react-cookiefirst": "^0.1.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^6.14.2",
         "react-router-dom": "^5.2.0",
