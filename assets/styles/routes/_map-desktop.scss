@@ -21,6 +21,9 @@
   }
 
   a.global {
+    -webkit-filter: grayscale(60%) !important;
+    -moz-filter: grayscale(60%) !important;
+    -ms-filter: grayscale(60%) !important;
     filter: grayscale(60%) !important;
   }
 

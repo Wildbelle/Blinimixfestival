@@ -48,6 +48,7 @@
   @extend %card-design;
   background: #{$blue};
   position: absolute;
+  display: -ms-grid;
   display: grid;
   top: 51%;
   left: 51%;
@@ -61,9 +62,12 @@
   }
 
   .grid-answer {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
     gap: 20px;
 
     .btn-answer {

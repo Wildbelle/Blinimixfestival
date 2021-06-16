@@ -13,8 +13,11 @@
   overflow: hidden;
 
   .grid-recepie {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-column: 1.25fr .75fr;
     grid-template-columns: 1.25fr .75fr;
+
 
     .block-img-recepie {
       position: relative;
@@ -29,7 +32,9 @@
     height: 500px;
 
     .grid-recepie {
+      -ms-grid-column: 1fr;
       grid-template-columns: 1fr;
+      -ms-grid-row: 1fr 1Fr;
       grid-template-rows: 1fr 1fr;
     }
 
