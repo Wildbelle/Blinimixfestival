@@ -98,9 +98,11 @@
 
 .box-cgi,
 .box-newsletter {
-  display: flex;
+  //display: flex;
+  display: -webkit-box;
   align-items: center;
   margin: .5rem 0;
+  padding-right: 20px;
 
   .sm,
   a {
