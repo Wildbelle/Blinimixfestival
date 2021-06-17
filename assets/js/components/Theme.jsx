@@ -6,7 +6,23 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Scene from './Scene';
 
 import ReactCookieFirst from "react-cookiefirst";
-// import CookieConsent from 'react-cookie-consent';
+import { adform } from 'react-vue-adform';
+
+const params = {
+  pm: 2377172,
+  divider: encodeURIComponent('|'),
+  pagename: encodeURIComponent('LP Blinimix Festival')
+    (function () {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://s2.adform.net/banners/scripts/st/trackpoint-async.js';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    })()
+};
+
+adform.initialize(params);
 
 class Theme extends Component {
   static contextType = ThemeContext
@@ -16,7 +32,7 @@ class Theme extends Component {
       <React.Fragment>
         <div
           className="main"
-          style={{backgroundColor: this.context.theme.color}}
+          style={{ backgroundColor: this.context.theme.color }}
         >
           <Router>
             <Route exact path="/" component={LoadingPage} />
