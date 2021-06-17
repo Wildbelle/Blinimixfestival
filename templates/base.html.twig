@@ -34,7 +34,6 @@ gtag('config', 'UA-156984796-23');
 		{% endblock %}
 	</head>
 	<body>
-		{% block body %}{% endblock %}
 		<!-- Adform Tracking Code BEGIN -->
 		<script type="text/javascript">
 			window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);
@@ -54,6 +53,7 @@ x.parentNode.insertBefore(s, x);
 			</p>
 		</noscript>
 		<!-- Adform Tracking Code END -->
+		{% block body %}{% endblock %}
 
 	</body>
 </html>
