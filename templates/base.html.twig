@@ -12,14 +12,14 @@
 		{% endblock %}
 
 		{% block javascripts %}
-			<!-- Cookies -->
+			<!-- Cookiefirst Traking BEGIN -->
 			<script src="https://consent.cookiefirst.com/banner.js" data-cookiefirst-key="af692491-489f-43a1-bc16-42763011252b"></script>
+			<!-- CookieFIRST Traking END -->
 
-			<!-- GoogleTagManager -->
+			<!-- Gobal site tag (gtag.js) - Google Analytics BEGIN -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156984796-23%22%3E"></script>
 			<script>
 				window.dataLayer = window.dataLayer || [];
-
 function gtag() {
 dataLayer.push(arguments);
 }
@@ -27,8 +27,10 @@ gtag('js', new Date());
 
 gtag('config', 'UA-156984796-23');
 			</script>
-			<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v11.0" nonce="67bDoQHI"></script>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<!-- Google Analytics END -->
+
+
+			<!-- Adform Tracking Code BEGIN -->
 			<script type="text/javascript">
 				window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);
 window._adftrack.push({HttpHost: 'track.adform.net', pm: 2377172, divider: encodeURIComponent('|'), pagename: encodeURIComponent('LP Blinimix Festival')});
@@ -46,6 +48,7 @@ x.parentNode.insertBefore(s, x);
 					<img src="https://track.adform.net/Serving/TrackPoint/?pm=2377172&ADFPageName=LP%20Blinimix%20Festival&ADFdivider=|" width="1" height="1" alt=""/>
 				</p>
 			</noscript>
+			<!-- Adform Tracking Code END -->
 
 
 			{{ encore_entry_script_tags('app') }}
