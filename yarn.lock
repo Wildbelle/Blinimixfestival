@@ -7013,6 +7013,11 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
+react-vue-adform@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-vue-adform/-/react-vue-adform-1.0.2.tgz#a3a2700897745d86125695e1c3df85e1c4f8c12e"
+  integrity sha512-tTwDz2DZxjd9Q3/Ab0S9zwyUJB/TV0A9szt9QHlGXNmhXcdaZcEMUa5Ox1WafY7pPV3+lC1d2G9GYO0/z5qeqw==
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
