@@ -32,36 +32,7 @@ class Theme extends Component {
             <Route exact path="/map" component={InteractiveMap} />
             <Route path={['/food', '/game', '/scene']} component={Scene} />
           </Router>
-          <ReactCookieFirst apiKey="af692491-489f-43a1-bc16-42763011252b" />
-          {/* <CookieConsent
-            location="bottom"
-            enableDeclineButton={true}
-            buttonText="J'accepte"
-            declineButtonText="Je décline"
-            cookieName="monCookieDeLespace"
-
-            style={{
-              color: "#262c7e",
-              background: "#FFF",
-              borderTop: "2px solid #262c7e",
-              fontFamily: "GillSans"
-            }}
-
-            declineButtonClasses="btn"
-            buttonClasses="btn"
-
-            declineButtonStyle={{
-              color: "#262c7e",
-              background: "transparent",
-              border: "2px solid #262c7e"
-            }}
-
-            buttonStyle={{
-              color: "#262c7e",
-              background: "transparent",
-              border: "2px solid #262c7e"
-            }}
-          >Nous utilisons des cookies pour optimiser notre site web et notre service.</CookieConsent> */}
+          <ReactCookieFirst apiKey="401bb93e-5265-46d5-8650-477f878d1211" />
         </div>
       </React.Fragment>
     );
