@@ -3,9 +3,15 @@ import Theme from './components/Theme';
 import { ThemeContext, themes } from './theme-context';
 import ReactCookieFirst from "react-cookiefirst";
 import { adform } from 'react-vue-adform';
+import Cookies from 'js-cookie';
 
 
 function App() {
+  const params = {
+    pm: 2377172,
+    divider: encodeURIComponent('|'),
+    pagename: encodeURIComponent('LP Blinimix Festival')
+  };
 
   const [currentTheme, setCurrentTheme] = useState(themes['white'])
 
@@ -19,12 +25,10 @@ function App() {
   }
 
   useEffect(() => {
-    const params = {
-      pm: 2377172,
-      divider: encodeURIComponent('|'),
-      pagename: encodeURIComponent('LP Blinimix Festival')
-    };
-    adform.initialize(params);
+    const consent = Cookies.get('cookiefirst-consent')
+    if(consent && JSON.parse(consent).advertising) {
+      adform.initialize(params);
+    }
   }, [])
 
   return (
