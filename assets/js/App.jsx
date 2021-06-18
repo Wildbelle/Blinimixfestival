@@ -6,12 +6,6 @@ import { adform } from 'react-vue-adform';
 
 
 function App() {
-  const params = {
-    pm: 2377172,
-    divider: encodeURIComponent('|'),
-    pagename: encodeURIComponent('LP Blinimix Festival')
-  };
-  adform.initialize(params);
 
   const [currentTheme, setCurrentTheme] = useState(themes['white'])
 
@@ -23,6 +17,15 @@ function App() {
     theme: currentTheme,
     changeTheme
   }
+
+  useEffect(() => {
+    const params = {
+      pm: 2377172,
+      divider: encodeURIComponent('|'),
+      pagename: encodeURIComponent('LP Blinimix Festival')
+    };
+    adform.initialize(params);
+  }, [])
 
   return (
     <ThemeContext.Provider value={contextValue}>
