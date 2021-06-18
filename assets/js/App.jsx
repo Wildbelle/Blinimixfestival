@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Theme from './components/Theme';
 import { ThemeContext, themes } from './theme-context';
 import ReactCookieFirst from "react-cookiefirst";
