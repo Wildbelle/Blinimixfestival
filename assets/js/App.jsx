@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import Theme from './components/Theme';
 import { ThemeContext, themes } from './theme-context';
+import ReactCookieFirst from "react-cookiefirst";
 import { adform } from 'react-vue-adform';
 
-const params = {
-  pm: 2377172,
-  divider: encodeURIComponent('|'),
-  pagename: encodeURIComponent('LP Blinimix Festival')
-};
-adform.initialize(params);
-
-import ReactCookieFirst from "react-cookiefirst";
 
 function App() {
+  const params = {
+    pm: 2377172,
+    divider: encodeURIComponent('|'),
+    pagename: encodeURIComponent('LP Blinimix Festival')
+  };
+  adform.initialize(params);
 
   const [currentTheme, setCurrentTheme] = useState(themes['white'])
 
