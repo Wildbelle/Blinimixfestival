@@ -5,7 +5,6 @@ import { ThemeContext } from '../theme-context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Scene from './Scene';
 
-import ReactCookieFirst from "react-cookiefirst";
 import { adform } from 'react-vue-adform';
 
 const params = {
@@ -13,6 +12,8 @@ const params = {
   divider: encodeURIComponent('|'),
   pagename: encodeURIComponent('LP Blinimix Festival')
 };
+
+import ReactCookieFirst from "react-cookiefirst";
 
 adform.initialize(params);
 
