@@ -12,10 +12,10 @@ const params = {
   divider: encodeURIComponent('|'),
   pagename: encodeURIComponent('LP Blinimix Festival')
 };
+adform.initialize(params);
 
 import ReactCookieFirst from "react-cookiefirst";
 
-adform.initialize(params);
 
 class Theme extends Component {
   static contextType = ThemeContext
