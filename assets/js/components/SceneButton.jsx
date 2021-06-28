@@ -10,12 +10,12 @@ class SceneButton extends Component {
 
   constructor(props) {
     super(props)
-  
+
     this.state = {
       visible: false
     }
   }
-  
+
   componentDidMount() {
     const {
       props: {
@@ -31,8 +31,8 @@ class SceneButton extends Component {
       canvas.style.filter = "grayscale(60%) "
       element.style.transform = "translate(-50%, -50%) scale(100)"
       element.style.background = theme.color
-      
-      this.setState({visible: true})
+
+      this.setState({ visible: true })
       setTimeout(() => {
         setupTitleMap(theme.title)
       }, 300)
@@ -42,7 +42,7 @@ class SceneButton extends Component {
       canvas.style.filter = "grayscale(0)"
       element.style.transform = "translate(-50%, -50%) scale(1)"
 
-      this.setState({visible: false})
+      this.setState({ visible: false })
       setTimeout(() => {
         setupTitleMap('')
       }, 300)
@@ -53,6 +53,7 @@ class SceneButton extends Component {
     const { theme, desktop } = this.props
     return (
       <NavLink
+
         className={"illus-map theme-" + (theme.name)}
         style={desktop ? theme.styleDesktop : {}}
         to={{
@@ -66,15 +67,15 @@ class SceneButton extends Component {
           ? null
           : <h5 className="title-illus-map">{theme.title}</h5>
         }
-      <img
-        className="illus-map-img"
-        src={'/img/' + (this.props.desktop ? theme.illusNameDesktop : theme.illusName)}
-        style={{
-          opacity: this.props.desktop
-                    ? this.state.visible ? 1 : 0
-                    : 1
-        }}
-        alt=""
+        <img
+          className="illus-map-img"
+          src={'/img/' + (this.props.desktop ? theme.illusNameDesktop : theme.illusName)}
+          style={{
+            opacity: this.props.desktop
+              ? this.state.visible ? 1 : 0
+              : 1
+          }}
+          alt=""
         />
       </NavLink>
     );

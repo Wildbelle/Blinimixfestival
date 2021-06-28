@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LoadingPage from '../routes/LoadingPage'
 import InteractiveMap from '../routes/InteractiveMap'
 import { ThemeContext } from '../theme-context';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Scene from './Scene';
 
 
@@ -10,6 +10,7 @@ class Theme extends Component {
   static contextType = ThemeContext
 
   render() {
+
     return (
       <React.Fragment>
         <div

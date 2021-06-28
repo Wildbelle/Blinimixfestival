@@ -61,7 +61,7 @@ export const themes = {
       left: 0
     }
   },
-  blue : {
+  blue: {
     name: "blue",
     color: "#CEF2FF",
     title: "jeu concours",
@@ -79,5 +79,5 @@ export const themes = {
 
 export const ThemeContext = React.createContext({
   theme: {},
-  changeTheme: () => {}
+  changeTheme: () => { }
 })
