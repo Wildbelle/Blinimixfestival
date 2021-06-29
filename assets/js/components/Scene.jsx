@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeContext } from '../theme-context';
+import { ThemeContext, themes } from '../theme-context';
 
 import Navigation from './Navigation';
 import Sidebar from './Sidebar';
@@ -21,6 +21,39 @@ export default class Scene extends Component {
        gameModalOpen: false,
        recepiesModalOpen: false,
        sceneVideo: false
+    }
+  }
+
+  assignThemeByUrl = () => {
+    const path = this.props.location.pathname 
+    switch (path) {
+      case "/food":
+        this.props.history.push(path, {
+          theme: themes.pink
+        })
+        break;
+      case "/game":
+        this.props.history.push(path, {
+          theme: themes.blue
+        })
+        break;
+      case "/scene/1":
+        this.props.history.push(path, {
+          theme: themes.red
+        })
+        break;
+      case "/scene/2":
+        this.props.history.push(path, {
+          theme: themes.yellow
+        })
+        break;
+      case "/scene/3":
+        this.props.history.push(path, {
+          theme: themes.green
+        })
+        break;
+      default:
+        break;
     }
   }
 
@@ -139,9 +172,13 @@ export default class Scene extends Component {
   }
 
   componentDidMount() {
-    this.setupTheme()
+    if(!this.props.location.state) {
+      this.assignThemeByUrl()
+    } else {
+      this.setupTheme()
+    }
   }
-
+  
   componentDidUpdate() {
     this.setupTheme()
   }
@@ -150,9 +187,7 @@ export default class Scene extends Component {
     const {
       props: {
         location: {
-          state: {
-            theme
-          }
+          state
         }
       },
       state: {
@@ -162,6 +197,7 @@ export default class Scene extends Component {
         sceneVideo
       }
     } = this
+
     return (
       <React.Fragment>
         <Sidebar />
@@ -182,8 +218,8 @@ export default class Scene extends Component {
         }
         <Illus />
         <div className="title-scene">
-          <h1 dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
-          <h5 className="subtitle-scene">{theme.subtitle}</h5>
+          {/* <h1 dangerouslySetInnerHTML={{__html: theme.title.replaceAll(' ', '</br>')}}></h1>
+          <h5 className="subtitle-scene">{theme.subtitle}</h5> */}
         </div>
         <Footer />
         </div>
